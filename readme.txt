@@ -1,5 +1,11 @@
 PatchPae2 by wj32 + PatchPae3 evgen_b MOD
 
+Executable releases:
+
+PatchPae3: PatchPAE3_2018_07_20.zip
+PatchPae2: PatchPae2.zip
+
+-
 https://github.com/wj32/PatchPae2
 
 https://wj32.org/wp/2016/02/01/pae-patch-updated-for-windows-10/
