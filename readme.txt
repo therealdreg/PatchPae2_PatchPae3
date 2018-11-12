@@ -1,5 +1,7 @@
 PatchPae2 by wj32 + PatchPae3 evgen_b MOD
 
+https://github.com/wj32/PatchPae2
+
 https://wj32.org/wp/2016/02/01/pae-patch-updated-for-windows-10/
 https://wj32.org/wp/2013/10/25/pae-patch-updated-for-windows-8-1/
 https://wj32.org/wp/2012/12/26/pae-patch-updated-for-windows-8/
