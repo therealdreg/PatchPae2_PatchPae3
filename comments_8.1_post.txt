@@ -1,0 +1,2239 @@
+295 Comments
+AGVirt
+October 26, 2013 at 6:35 am
+Thanks a lot!!!!!
+
+Reply
+Bruce
+August 10, 2015 at 3:18 am
+I was usiing Patchpae2 fine on windows 8.1. Now I have upgraded to windows 10 and the program will not work anymore – say “wrong kernel level”. Will there be an update – or another way to use more that 2.75 GB on a 32 bit system?
+
+Reply
+angel
+August 31, 2015 at 7:11 am
+what was the reply for this question
+
+Reply
+iculater
+October 11, 2015 at 3:41 am
+Same issues. Need updates.
+
+Reply
+Escape75
+October 11, 2015 at 3:46 am
+https://mega.nz/#!3tASjKpS!MyJfOB3v2lOTFx1nXHtKors2fpdHLJD_Ik_DfPidA3Q
+Mine still works … 7,8,10
+
+Reply
+Joshua Juarez
+December 2, 2015 at 10:57 am
+Website don’t work no more.
+
+Escape75
+December 2, 2015 at 10:59 am
+Look below, there’s an updated link … here it is again:
+
+https://mega.nz/#!f8wXzQwL!qoytlGnjIlCLrRb2Sf8yeerb-wwB71lRDFb62bRPUFw
+
+The Knight
+December 4, 2015 at 6:05 am
+Download link below posted on December 2 worked for me (Windows 10 32 bit). Thanks Escape 75!
+Here’s another Mirror in case it goes down http://www.mediafire.com/download/3xko6f25gsbwa5u/Pae-mod.rar
+
+zx
+October 26, 2013 at 5:31 pm
+Thanks!!!
+
+Reply
+P Sv Rns Srikanth
+October 26, 2013 at 10:57 pm
+Thank you so much for this updated Patch for Windows 8.1. I am eagerly waiting for this. 100% works on Windows 8.1 (32-bits(X86)) all versions ??
+
+Reply
+alex
+October 29, 2013 at 9:47 pm
+it wont boot after:
+
+@echo off
+TITLE …::: Win8 32-bit Unlocker Script :::… by: Wiwi-maX
+color 30
+echo Script use PatchPae v2.
+cd %Windir%\system32
+
+C:\PatchPae2\PatchPae2.exe -type kernel -o ntoskrnx.exe ntoskrnl.exe
+C:\PatchPae2\PatchPae2.exe -type loader -o winloadp.exe winload.exe
+echo.
+bcdedit /copy {current} /d “Windows 8 (Unlocked)”
+echo.
+echo.
+bcdedit /set {current} kernel ntoskrnx.exe
+bcdedit /set {current} path \Windows\system32\winloadp.exe
+bcdedit /set {current} nointegritychecks 1
+bcdedit /default {current}
+bcdedit /set {bootmgr} timeout 2
+
+shutdown.exe -r -f -t 5 -c “RAM 2GB’s Limit Removed.”
+
+Reply
+pao
+June 22, 2014 at 4:45 pm
+can you teach me the step 5? “what should i put after /set? should i put “{current}”?
+
+Reply
+Ferdinand N
+October 31, 2013 at 4:06 pm
+WOWWW…. thanks alot man…
+
+Reply
+Puneet Verma
+October 31, 2013 at 9:00 pm
+command not working for me,
+http://i42.tinypic.com/w1eoli.jpg
+
+Reply
+seruno1
+October 31, 2013 at 11:35 pm
+Hello, not work for me…
+http://img1.imagilive.com/1013/sshot-595b.jpg
+http://img1.imagilive.com/1013/sshot-4c53.jpg
+
+Thanks anyway…. saludos
+
+Reply
+Andre
+November 4, 2013 at 3:09 am
+Works great – thank you so much!
+
+After getting the new boot entry like {12345678-abcd-1234-abcd-123456789abc},
+you can copy your {…} to the associated commands in your personal “readme.txt”.
+For example:
+bcdedit /set {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx} kernel ntoskrnx.exe
+becomes
+bcdedit /set {12345678-abcd-1234-abcd-123456789abc} kernel ntoskrnx.exe
+Then work with copy&paste to insert 100% correct commands to your Command prompt window.
+
+Reply
+slalalavka
+November 11, 2013 at 11:40 pm
+C:\Windows\System32>C:\WherePatchPaeIs\PatchPae2.exe -type kernel -o ntoskrnx.ex
+e ntoskrnl.exe
+Unsupported kernel version.
+
+Reply
+hunterlove1512
+November 27, 2013 at 2:41 pm
+not working, when patch windows 8.1 restart loop
+
+Reply
+hunterlove1512
+November 27, 2013 at 2:44 pm
+any help please ?
+
+Reply
+Jackson
+November 27, 2013 at 11:23 pm
+I had the boot loop as well on 8.1. I just let it keep rebooting, eventually it worked after maybe 7 or 8 attempts. I made the mistake of having updates pending on the reboot. Thought that’s why it might have given problems. Seems fine now.
+
+Reply
+Stefan
+December 12, 2013 at 8:13 pm
+It works. Thank you! ??
+
+Reply
+Nina Goa
+December 14, 2013 at 6:21 am
+It didn’t worked, thanks for this bullshit. Now I’ve newly installed my OS ??
+
+Reply
+amigo
+December 19, 2013 at 8:49 pm
+perfect my friend http://i.imgur.com/n25e0lu.png
+
+Reply
+DavidB
+December 21, 2013 at 5:33 pm
+Thank you very much.
+
+But disabling the integrity checks is a stability and security risk.
+Is there any way to patch the ntkrnlpa.exe/ntoskrnl.exe file so the digital signature would check out ok…?
+
+Best regards, DavidB
+
+Reply
+PaVink
+December 24, 2013 at 7:19 pm
+Thank you so much, Wen Jia!
+Installation was simple and straightforward.
+
+I had dug up a similar patch (albeit way more complicated than this one!) under Win 7, and I hated going back to 3-something GB under Win 8 when I switched over. I am so happy being back at 4 GB now. Great job – thank you for your efforts and proving (once again) that all the Microsoft language about the 4GB limitation is just bullshit.
+
+Reply
+Erik
+January 10, 2014 at 12:26 am
+Hola, probé el script en 8.1, y todo se ejecutó perfecto, pero al reiniciar empezó a dar pantallazos -como de incompatibilidad de driver o resolución de video- y apareció la linda pantalla azul de volcado de memoria. Alguién sabe si hay alguna corrección que realizar antes?
+Atte,
+Erik
+
+Reply
+Sepp Meier
+January 28, 2014 at 12:20 am
+d:\patchpae2\PatchPae2.exe -type kernel -o ntoskrnx.exe ntoskrnl.exe
+
+Sorry, at the first command I get “Unable to copy file: access denied” (Win 8.1 pro)
+Of course I started the cmd as administrator.
+Only the TrustedInstaller has the right to write.
+
+Reply
+intika
+January 31, 2014 at 12:10 am
+Thanks a million ??
+i am testing that
+
+Reply
+Sepp Meier
+February 1, 2014 at 7:50 pm
+The patch works ??
+But not with an on-board graphic card! I see only pixels on my screen.
+
+It would be better for testing to change the wait time in the boot menu to 30 seconds to have enough time to select the normal boot if something goes wrong.
+
+Reply
+Caleb
+February 9, 2014 at 6:38 am
+I can patch but its not giving me the new boot code after I patch So I do not know what to use for: bcdedit /set {12345678-abcd-1234-abcd-123456789abc} kernel ntoskrnx.exe
+
+How would I get the new boot code if this one does not give on patch & or the winload.exe patch?
+Running windows 7 ultimate Sp1 on an AMD FX-8350 8 core 4.00 GHz with 8 gig ram 1TB HD.
+
+Reply
+sergey
+February 11, 2014 at 4:18 am
+thanks. maybe add in next version gui?
+
+Reply
+Shenzie
+March 20, 2014 at 3:01 am
+Patch works great…with one small problem: When the PC starts, sound almost always has various patterns of static and/or hash. (Rarely, sound starts w/o this.) Resetting Windows Audi Service one or more times (not consistent) clears it—the hash pattern changes with every service reset. AudioSrv.dll is byte-for-byte identical to correct MS version.
+
+This is 8 GB on Win7 Home Premium—all other programs and functions work perfectly.
+
+Any advice on how to solve the audio problem?
+
+Shenzie
+
+Reply
+JonathanA
+March 22, 2014 at 8:27 pm
+Thank you very much! Worked like a charm.
+
+Reply
+miken
+April 7, 2014 at 9:05 am
+I’m seeing some folks talked about how they got stuck in a loop when they rebooted their machine after successfully installing the patch. I had the same problem. Never got it to work. I would get the blue screen with an error saying KMODE_EXCEPTION_NOT_HANDLED. Eventually, I would get lucky and have a chance to choose to start the non patch windows. Anyone have luck resolving this?
+
+Reply
+Terry
+April 10, 2014 at 6:11 pm
+It would seem that the patch can be affected by video drivers. It did not work using intel HD onboard graphics, neither did it work with a new Nvidia GEForce 610 card using the supplied video driver. It would work however using basic 640×480 VGA mode driver.
+
+I got the patch to work perfectly by installing an older 2 year old GEForce 610 driver from another computer running Windows 7 for which the patch worked perfectly.
+
+The recent update to Windows 8.1 (April 8) did not cause any problems.
+
+Reply
+Pingback: ?????? » ?????Windows XP(32bit)?????4GB?????????PAE?
+PaVink
+April 18, 2014 at 8:10 pm
+Unfortunately, for me the patch stopped working after installing the 8.1 Update. ??
+
+I had disabled/removed the patch before applying the 8.1 upgrade (just to be sure), then applied it again after the upgrade. When booting, I get a windows error (Windows 8-style blue screen) related to the video driver and the system freezes at that point.
+
+I then downloaded the latest video drivers (nVidia GeForce), but that that doesn’t make any difference.
+
+Too bad – I did like my 1 GB of extra memory! Anybody seeing same/similar issues …?
+
+Reply
+abdulrahmanok
+April 19, 2014 at 9:11 am
+pls upade it to win 8.1 >> this version don’t work
+
+Reply
+Terry
+April 21, 2014 at 2:53 pm
+Hi PaVink, it may be worthwhile finding and installing older nvidia drivers, and see if the patch then works.
+The Nvidia website has some older drivers.
+
+If the patch works in safe mode, or when the Nvidia drivers are uninstalled and you use a standard VGA display, then it confirms a driver problem.
+
+If you go through the comments on the Windows 7 page, (wj32 gives a link at the top of this page), the common failure theme is video drivers.
+
+Reply
+Pingback: ?????? » ?????Windows XP(32bit)?????4GB?????????PAE??2
+devDark
+April 29, 2014 at 7:15 am
+Hi.
+After applying this patch to the new kernel ntkrnlpa.exe version 6.1.7601.18247 (win7sp1_gdr.130828-1532) Windows 7 after booting with the modified kernel goes to pseudo cyclo rebooting, specifically continuously displays shutdowning.
+But this patch still works fine with the old kernel ntkrnlpa.exe version 6.1.7601.17514 (win7sp1_rtm.101119-1850) without any problems.
+
+Files are attached to this post.
+https://drive.google.com/folderview?id=0B0lhbwujz_6AOHJWY2ZHbVUxeVU&usp=sharing
+https://www.virustotal.com/ru/file/7a68f8c22255496d6153fde0b31b6f5917fb373a1afdffa0aa7b5105db375174/analysis/1398712540/
+https://www.virustotal.com/ru/file/e2fabd65e41c7dbc66ae6c191ad80dfd515b2f72f011a7a6a74019e8aa2e6ae7/analysis/1398714041/
+https://www.virustotal.com/ru/file/a9b7a8c65da08f88953cf412b167f11f8a120dfbece9c7d37fe24bbaf74dc32e/analysis/1398715099/
+
+Reply
+swishee
+May 31, 2014 at 9:58 pm
+Do you know how to change your kernel to an older version to get it to work?
+
+Reply
+dimapvdevDark
+June 4, 2014 at 8:59 pm
+Yes, above are attached link to the older version of patched and successful worked kernel, but this kernel was used with the older Nvidia driver, so I believe that this problem isn’t in the kernel, this is more like a bugs in the latest GPU drivers such as Nvidia / Intel.
+
+Reply
+Gary
+June 28, 2014 at 6:53 am
+It worked! Thanks!  ??
+
+Reply
+Gary
+June 28, 2014 at 6:54 am
+Installed the patch onto the Windows 8.1 OS. So far it works great!
+
+Reply
+Jeff
+July 7, 2014 at 10:12 pm
+hi, can you please confirm this still works with win8.1 UPDATE 1, it was going fine for me until 1 day I got a bsod, so I was wondering if it had to be updated to make sure nothing changed in UPDATE 1, I wonder if the kernel version changed?!
+
+Reply
+Terry
+July 12, 2014 at 11:53 am
+The patch works ok for me with Win8.1 + update 1 and “old” Nvidia drivers but if you have automatic updates set then your system may download and install updated video drivers which may be the cause of the problem.
+
+Reply
+Jeff
+July 12, 2014 at 11:56 am
+thanks for the update, I only use AMD, nothing Nvidia in my system, but possibly updates overrode the patched kernel
+
+Reply
+Tpfumefx
+August 15, 2014 at 12:13 pm
+Does this patch work only for ms windows, or along with practical apps like 3dsmax photoshop etc… I mean can other applications other than windows make the use of more than 4gb Like computer graphics apps for exemple?
+
+Reply
+Achraf52
+November 16, 2014 at 1:48 pm
+Not really, any given application can only use maximum 4GB using this trick, because pointer address sizes are still 4 bytes long (not 8 bytes like in Windows 64 bit versions) which means a program like Adobe Photoshop can only access a maximum of 4.2 Billion memory addresses, even though there’s more left unused and can be assigned by Windows to other applications.
+If you have 8GB and you use PAE then you can run Adobe Photoshop for example and use 4GB maximum and Adobe Illustrator and use the rest (roughly 3GB) at the same time.
+
+Reply
+Gabriel
+August 25, 2014 at 4:16 am
+I have applied the patch on a Windows 7 Ultimate SP1, but I cannot find a “PAE compatible” nVidia driver (I have a Quadro FX 580). Lots of artifacts and after a while BSODs appear (when using modified kernel), related to graphics drivers. I have read some were lucky with older nVidia drivers…so I would like to know which driver versions are confirmed to work perfectly while in PAE-enabled kernel mode. Thank you very much in advance, GABRIEL.
+
+Reply
+Terry
+September 6, 2014 at 6:37 pm
+You will probably need to go to the Nvidia website, driver downloads page, click on ‘Beta and Older Drivers’ put your Quadro FX 580 details into the boxes and click Search.
+
+http://www.nvidia.com/Download/index.aspx
+
+They appear to have Beta drivers for your card going back as far as 2009.
+You could try these and see if the patch works.
+
+It will be very much trial and error.
+
+In my case I found the driver for the GE Force GT610, dated 2/10/2012 version 9.18.13.697 which I already had for an older version of GT610, worked OK, whereas the newer version which came on the disk with a new video card was dated sometime in 2013 didn’t work.
+
+Reply
+josrob21
+September 22, 2014 at 10:47 am
+hola se ve interesante el programa pero nose como utilizarlo no habló inglesh y por eso no lo entiendo nose si puden hacer un videoguia porfavor para W7 y W8 lo se agradeceria porfavor mucho lo necesito urgente.
+
+in engles
+
+hello program looks interesting but nose how to use Inglesh not speak and so do not get nose if puden videoguide please make a W7 and W8 to know much appreciate please I need urgent.
+
+Reply
+jacob
+September 25, 2014 at 10:28 am
+I cant get past step 3, with typing the cmd code: C:\WherePatchPaeIs\PatchPae2.exe -type kernel -o ntoskrnx.exe ntoskrnl.exe. –It keeps saying “The system cannot find the path specified”. What am I doing wrong?
+
+Reply
+Terry
+September 30, 2014 at 6:46 pm
+You don’t actually type ‘WherePatchPaeIs’, instead of that you type the directory where you put PatchPae2.exe.
+I assume that is why the system cannot find the path specified, but excuse me if I am wrong ??
+
+In my case I put it in C:\Windows\System32, but you could put it anywhere, as long as it isn’t in a place where it could get deleted, such as a temporary folder.
+
+Reply
+PaVink
+October 8, 2014 at 5:37 am
+I previously reported that after upgrading to Win 8.1, the patch stopped working for me (pc would not boot). I finally got around to seek and download some older video drivers (nVidia, release 331.82 from November 2013), and now all is fine again. Windows 8.1 + PatchPae2 working great.
+
+Again, thank you for making this available!
+
+Reply
+PaVink
+October 8, 2014 at 5:39 am
+If you don’t understand the instructions, you are probably not the right person to even attempt this… Better keep a good backup handy!  ??
+
+Reply
+StGreg
+October 15, 2014 at 11:43 am
+After recent update of Win7Sp1 this patch is no longer working. System cannot boot with old patched files due to “winloadp.exe is corrupted. Also, when i started OS with normal kernel & loader and tried to patch it again i get “Failed” when patching loader. ;/
+
+Reply
+George
+October 16, 2014 at 12:11 pm
+Yes, same problem here for my Windows 7 SP1. ??
+
+Reply
+Giangi
+October 16, 2014 at 8:08 pm
+http://wj32.org/wp/2011/02/23/pae-patch-updated-for-windows-7-sp1/#comment-3253
+
+I had the same today after appling them… I have noticed that both ntkrnlpa.exe and winload.exe have been updated (mine are 6.1.7601.22736).
+The first was patched correctly but winload not; the PatchPae2 output is “Failed.”
+I think the offending one is http://support.microsoft.com/kb/2949927 (Availability of SHA-2 hashing algorithm) because it updates both files! I’ll remove it asap…
+
+Reply
+George
+October 24, 2014 at 6:27 am
+Yes, thanks for the update, after removing MS KB2949927 update, PAE is working again.
+
+Reply
+Patch
+February 19, 2018 at 7:57 pm
+KB4056897 broke it again, Winload.exe 6.1.7601.23992
+
+Reply
+Al
+October 15, 2014 at 7:30 pm
+Patch doesnt work with latest nvidia drivers, you get only reboot loop or bsod. Need old nvidia driver. However, this does not make sense, requiring older nvidia drivers unfit to W 8.1 Update 1
+Please update the patch!
+
+Reply
+john_doe
+October 16, 2014 at 1:44 pm
+@StGreg:
+here is patched winload and kernel for win7sp1 october 15 update
+
+http://rghost.net/58547303
+
+Reply
+Chavez Clemons Jr.
+March 11, 2015 at 10:26 am
+“here is patched winload and kernel for win7sp1 october 15 update
+
+http://rghost.net/58547303”
+
+Use this for March 2015 update. Got me back to a full 8GB of ram and full updates. I have an ATI HD5650.
+
+Reply
+Giangi
+October 16, 2014 at 8:39 pm
+http://wj32.org/wp/2013/10/25/pae-patch-updated-for-windows-8-1/#comment-3295
+
+I confirm that removing KB2949927 has solved the booting problem on my Seven! I guess we have to wait for an updated patcher…
+
+ntkrnlpa.exe v6.1.7601.22616
+winload.exe v6.1.7601.17514
+
+Reply
+gcalzo
+October 24, 2014 at 6:34 pm
+MS has officially removed the KB294927!!!
+
+https://technet.microsoft.com/en-us/library/security/2949927.aspx
+Revisions
+•V1.0 (October 14, 2014): Advisory published.
+•V2.0 (October 17, 2014): Removed Download Center links for Microsoft security update 2949927. Microsoft recommends that customers experiencing issues uninstall this update. Microsoft is investigating behavior associated with this update, and will update the advisory when more information becomes available.
+
+Reply
+Dragos
+October 27, 2014 at 1:22 am
+Does this work in 8.1 Update 1 ? Intel GMA X4500 graphics
+
+Reply
+Terry
+October 29, 2014 at 7:03 pm
+The patch works with Win 8.1 update 1, and may well work with an Intel graphics card, but you would need to try installing the patch to find out if it does.
+It appears to be Intel HD onboard graphics that causes conflicts in the memory above 4GB.
+
+Reply
+Dragos
+October 29, 2014 at 7:10 pm
+Thanks for replying Terry, I did tried it but had no success with it. It may be because of the integrated graphics .. I will try another driver as now I use a modified version of the Intel driver.
+
+I’ll post back if this works.
+
+Reply
+Khanh TQ
+November 1, 2014 at 2:11 pm
+Like and Thanks you for your idea.
+
+Reply
+Marinescu Ionu?-Drago?
+March 13, 2015 at 7:14 pm
+I did try another Intel driver version but to no avail, now I’m using an old ATI card and it is working on the latest 8.1 release (downloaded from MS a few days ago).
+
+There is one update for Windows kernel (KB3035131) that I did not install yet.
+
+Reply
+DeMoN
+April 17, 2015 at 9:36 pm
+(KB3035131) does break this patch on WIndows 7. unfortunately, Im on a domain with a very persistent WSUS server and matching GP. Does anyone know a way to block a specific update from the registry? the “hide update” is greyed out.
+
+Reply
+Dragos
+November 2, 2014 at 11:41 am
+Well, I’ve tried another version (ie the Windows Update one, as I don’t have that many options to choose for the GMA X4500) and I cannot boot to desktop because Windows starts in autorecovery mode … I’ve disabled that and it seems that this driver doesn’t work because I get no video after the Windows logo … it stays at a blank screen (monitor turns off ) for a minute or so then reboots.
+
+I’ll give it another go after I get a dedicated video card and I’ll post back ??
+
+If you’re using Windows 8.1 update 1 and have this graphics card and the patched worked for you, please let me know by commenting here, thanks.
+
+Reply
+Terry
+November 3, 2014 at 10:41 am
+Dragos, you could always bite the bullet and get Windows 64 bit OS ??
+
+Reply
+Dragos
+November 3, 2014 at 8:46 pm
+Haha Terry, I doubt that would help my case. My system has only 4GB of RAM so this patch would have proved efficient to my setup.
+
+If I switch to x64 it will be pointless cause from I’ve gathered, the x64 version will actually use more RAM, for example some folks were talking about x64 taking about 1.2/4 GB of RAM at idle, while the x86 takes around 6/700MB.
+
+From my own conclusion I would suspect that to be true, because for an x86 app. to run on x64, there will be 2 instances in RAM? …
+
+Anyway I will have tot test this out for sure.
+
+Reply
+Pietia
+November 14, 2014 at 9:24 am
+Can anyone help me ? I recently installed win7 32 professional and wanted to use this hack , I upgraded my system thought windows update so my winloadp is 6.1.7601.17514 and my ntkrnl is 6.1.7601.18409 I booted into pae patched kernel but there were 2 BSOD’s my laptop is acer v3 771G and here are .dmp files:
+http://www.filedropper.com/dumps
+caused by ntfs.sys and ntkrnlpx.exe
+Thank you very much ??
+
+Reply
+Pingback: 32?? ??(Vista/7/8/8.1) ?? 4G ?? ??? ???? | ????? ??? ??
+Terry
+December 13, 2014 at 5:39 pm
+After installing the latest Microsoft updates for Windows 8.1 (being careful not to accept the Nvidia video update), the computer would not boot using the patched kernel, and got the message ‘critical process died’ so I deleted patchpae using the boot option in msconfig.
+
+When I get time I’ll investigate further and report back if PatchPae is successfully re-installed.
+
+Reply
+Terry
+December 14, 2014 at 9:35 am
+I should have re-read the text file that came with the patch and re-run step 3 after Windows Update ??
+
+Re-patching the kernel restored enabling more than 4GB ram.
+
+Reply
+Garbo
+January 5, 2015 at 4:16 am
+Works perfectly for me. Windows 7 Ultimate 32 bits up-to-date, KB2949927 removed, 16 GB RAM and ATI Radeon graphic card. Many thanks!!
+
+Reply
+CpServiceSpb
+January 8, 2015 at 2:21 am
+Hi anybody.
+Can somebody post “live” links to “magic” Barton88 intel video drivers which should allow to use intel hd (1st/2nd generation) with Windows 7/8 x32 (32-bit) and with 4+ Gb RAM patch ?
+
+Reply
+gcalzo
+January 14, 2015 at 7:37 pm
+Does anybody tried the latest http://support.microsoft.com/kb/3023266 which contains both an updated kernel and winload?
+
+Reply
+Garbo
+January 17, 2015 at 5:56 am
+This update was installed yesterday on my computer and it still works like a charm.
+
+Reply
+gcalzo
+January 22, 2015 at 7:41 pm
+In my case I had to remove a “not public” hotfix…
+http://wj32.org/wp/2011/02/23/pae-patch-updated-for-windows-7-sp1/#comment-7364
+
+Reply
+Keith Fukumoto
+January 22, 2015 at 9:11 pm
+Wow, this patch rocks. So simple to apply and it WORKS. (Just copy and paste from the “read me” text file so little room for error.) The only “problem”, if you can call it that, is one of the two patches kept prompting windows to repair itself. (Deleted that patch since repair wasn’t successful.) The only thing that could be improved is being able to copy and paste the long { } string. I’ll know how much more improvement I’ve gained once my 8GB ram chips arrive. But for now, things seem to run faster than before.
+
+Keithhf
+
+Reply
+Terry
+January 23, 2015 at 5:11 pm
+Keith, you can copy and paste the long string when in the Command Prompt window by selecting Quick Edit.
+This is very handy as it reduces the possibility of typing errors.
+
+It tells you how here: https://technet.microsoft.com/en-us/library/bb491037.aspx
+
+Reply
+Keith Fukumoto
+January 23, 2015 at 8:00 pm
+Ah, thanks for the hint. The 8GB ram chips arrived. Windows 7 shows 8GB installed but only 3GB available. Regardless of what Windows 7 says, however, my laptop is running so much faster. So this may be a matter of not looking a gift horse in the mouth and just accepting the excellent results. Thanks again.
+
+Reply
+Terry
+January 24, 2015 at 9:19 am
+If Properties page says that only 3GB is available, then it means the patch has not been applied. It should just say “Installed memory (RAM): 8.00 GB”
+
+It may pay you to go through the procedure again.
+
+Reply
+keith fukumoto
+January 24, 2015 at 11:01 am
+ok, thanks. should i remove the previous patch or just repeat the steps?
+
+Terry
+January 24, 2015 at 2:50 pm
+Keith, I would carefully go through the steps again for Windows 7, being sure you don’t inadvertently use any Windows 8 only instructions. I’d suggest you put PatchPae2.exe into C:\Windows\System32\, and that is what you type where it says “C:\WherePatchPaeis\”, ie the path to where you put PatchPae2.exe.
+
+The re-typed commands will overwrite any you have already made.
+
+One or two people have thought that you type “WherePatchPaeis”  ??
+
+It is easy to make a mistake in typing out the commands, copying the string to the clipboard at step 5 is a great help as it has to be entered a few times.
+
+If you get it right, then either the patch will work and you will get the full 8GB…hurrah…, or it wont ?? and your computer may hang or get a black screen.
+
+If it hangs try restarting in safe mode and remove the patch via msconfig as it describes in the readme file.
+
+If it doesn’t work then there is probably some hardware conflict or a device trying to write into the memory space above 4GB. Have a read through the comments.
+
+Reply
+keith fukumoto
+January 24, 2015 at 6:47 pm
+Thanks again, will repeat step. Patch is in Windows\system 32 already. For whatever reason, the addition of another 4GB of RAM and your patch does seem to make my laptop a lot snappier. Dell e4300, 64GB SATA 3, SSD and 300GB SATA 3, HDD. Windows 7 SP1, OEM version. No BSODs in any event.
+
+Reply
+Pingback: ?????? » ????Win XP(32bit)?????4GB???????????????????????????
+ircddl
+February 23, 2015 at 2:03 am
+Can you update for windows10 32bit?
+
+Reply
+Garbo
+March 12, 2015 at 3:40 am
+Unfortunately, the last Microsoft updates (march 2015) broke this excellent patch ?? It’s not possible to apply it anymore, it fails when applying the loader part… Too bad !
+
+Reply
+Garbo
+March 13, 2015 at 3:36 am
+Well, removing the update KB3033929 does the trick for me (this patch updates the kernel for SHA-2 code signing support).
+
+Reply
+cappoccia
+March 13, 2015 at 5:06 am
+how did you removed it? because i can’t… at reboot windows installs it!
+
+Reply
+Marinescu Ionu?-Drago?
+March 13, 2015 at 5:22 am
+If Windows reinstall the update automatically, you need to set Windows Updates to notify you before installing updates instead of automatically installing them.
+
+To do this follow these steps:
+
+Control Panel > System and Security > Windows Update : Change Settings (upper left) then select either:
+
+Never check for updates (and you will have to manually do this once in a while, like once or twice a month)
+or
+Check for updates but let me choose whether to download and install
+
+Reply
+arny
+March 17, 2015 at 4:36 am
+Fixed it for me, thanks for that. Just hope I don’t regret not having the update ??
+
+Reply
+Chavez Clemons Jr.
+March 13, 2015 at 5:27 am
+From @john_doe
+
+“here is patched winload and kernel for win7sp1 october 15 update
+
+http://rghost.net/58547303”
+
+Use this for March 2015 update. Got me back to a full 8GB of ram and full updates. I have an ATI HD5650.
+
+Reply
+Garbo
+March 13, 2015 at 9:37 pm
+But how do you replace the windloadp et ntkrnl files, since Windows protects these files ?
+
+Reply
+Marinescu Ionu?-Drago?
+March 13, 2015 at 11:20 pm
+This patch doesn’t replace the files, instead it copies them and patches the copies, then ads a new boot entry pointing to the patched files.
+
+You should re-read what this patch does and try to understand how it works before continuing.
+
+Reply
+Garbo
+March 13, 2015 at 11:32 pm
+I suggest you read my previous contributions before replying to my posts…
+
+I know what this patch does and I applied it successfully several times. My last question wasn’t about the patch itself but the patched versions of the kernel files (see above : http://rghost.net/58547303).
+
+Achmed
+April 11, 2015 at 10:51 pm
+I wouldn’t use kernel files of unknown origin. Or do you like NSA, hackers and this kind of people ?
+
+Reply
+Marinescu Ionu?-Drago?
+March 13, 2015 at 7:18 pm
+Does anyone have a batch file to automate this patch ?
+
+Thanks
+
+I’ve tried to use this:
+
+TITLE RAM Patch for Windows 8.1 32-bit (PatchPAE2)
+color E0
+copy “%~dp0PatchPae2.exe” “%Windir%\system32\patchpae2.exe”
+echo.
+%systemdrive%
+cd\
+cd %Windir%\system32
+PatchPae2.exe -type kernel -o ntoskrnx.exe ntoskrnl.exe
+PatchPae2.exe -type loader -o winloadp.exe winload.exe
+echo.
+bcdedit /copy {current} /d “Windows 8.1 (PAE Patch)”
+echo.
+bcdedit /set description “Windows 8.1 (PAE Patched)”
+bcdedit /default {current}
+bcdedit /set {current} kernel ntoskrnx.exe
+bcdedit /set {current} path \Windows\system32\winloadp.exe
+bcdedit /set {current} nointegritychecks 1
+bcdedit /set {bootmgr} timeout 10
+del %Windir%\system32\patchpae2.exe
+echo.
+echo Done
+echo.
+echo RESTART PC!
+pause > nul
+
+But I get :
+“An error occurred while attempting to reference the specified entry”
+
+This reffers to the {current} part of the code …
+
+Reply
+Marinescu Ionu?-Drago?
+March 13, 2015 at 11:15 pm
+Nevermind, I figured it out, so for Windows 8.1 this batch works:
+
+@echo off
+TITLE RAM Patch for Windows 8 32-bit (PatchPAE2)
+color A0
+ECHO.
+ECHO.PatchPae (v2) by wj32.
+ECHO.Tested on: Windows Vista SP2, 7 SP0, 7 SP1, 8, 8.1
+ECHO.
+copy PatchPae2.exe “%Windir%\system32\patchpae2.exe”
+%systemdrive%
+cd\
+cd %Windir%\system32
+ECHO.
+PatchPae2.exe -type kernel -o ntoskrnx.exe ntoskrnl.exe
+ECHO.
+PatchPae2.exe -type loader -o winloadp.exe winload.exe
+ECHO.
+bcdedit /copy {current} /d “Windows 8.1 BAK”
+ECHO.
+bcdedit /set {current} kernel ntoskrnx.exe
+ECHO.
+bcdedit /set {current} path \Windows\system32\winloadp.exe
+ECHO.
+bcdedit /set {current} nointegritychecks 1
+bcdedit /set {bootmgr} default {current}
+REM bcdedit /set {bootmgr} timeout 1
+
+pause > nul
+
+Make sure you have PatchPae2.exe in the same directory as this script.
+
+Reply
+Chavez Clemons Jr.
+March 17, 2015 at 4:44 am
+From @john_doe
+
+“here is patched winload and kernel for win7sp1 october 15 update
+
+http://rghost.net/58547303”
+
+Use this for March 2015 update. Got me back to a full 8GB of ram and full updates. I have an ATI HD5650.
+
+Use the patch above and replace the files either using the Recovery Console, a Windows Recovery Disk, or booting into the non-patched Windows Kernel (you should have two boot entries: one with your non-patched kernel and one with the patched one).
+
+Reply
+cappoccia
+March 17, 2015 at 7:50 am
+I have done all as you have described but I still have 2,96Gb visibile used by windows.
+I have all the patches installed by windowsupdate because I can’t uninstall; also tried all of http://support.microsoft.com/it-it/kb/949358/en-us but still doesn’t unistall
+
+Reply
+Jhon
+April 10, 2015 at 2:44 am
+we have removed KB3033929 update and successful patched system without effect ??
+usable memory from 6 gb memory is still 2.64 GB
+
+Reply
+Deyvid Snk
+April 10, 2015 at 7:05 am
+NVIDIA NO DA VIDEO
+
+Reply
+Alexander S.
+April 14, 2015 at 1:03 am
+This winloadp.exe did indeed work out for my Win7 SP1 with KB3033929 installed:
+http://rghost.net/58547303
+
+I first had to boot the unpatched Windows a few times, until the update was installed. Then i replaced the old winloadp.exe with the version above. And then patched ntkrnlpa.exe a second time (dont know if this is really necessary)
+
+Reply
+Boris
+April 15, 2015 at 8:19 am
+Winload 6.1.7601.18649 failed to patch. I patched it manually, with help from PatchPae2 source and pdb symbols:
+00000130: 44 B2
+000282AE: 7D EB
+
+Reply
+Al
+April 15, 2015 at 5:24 pm
+Hi Boris,
+Please kindly share the instructions on how to patch it manually.
+
+Reply
+Yury
+May 10, 2015 at 3:13 am
+You may use any HEX editor (for example xvi32 http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm) Open winload.exe, go to the destination address by type Ctrl-G –> (00000130) and change here hex data from 44 to B2, and similarly for second offset (000282AE)
+
+Reply
+Yury
+May 10, 2015 at 3:31 am
+please don’t forget to save patched winload.exe. as winloadp.exe to the “%Windir%\system32\” directory, everything else will be done by Patchpae2 patcher. Hope that it’s author will release a PatchPae3 soon, with minor changes for winload.exe patching and some automation (as a batch file for Windows 7 32-bit in this archive http://rghost.ru/6HZbtkfj8)
+
+Reply
+istin
+April 16, 2015 at 2:19 am
+winload.exe ver 6.1.7601.18649 failed to patch, windows7 could not boot (patched) after a recent windows update (I do not know which one)
+
+Reply
+Mike
+April 17, 2015 at 11:05 am
+KB3045685 and KB3045999, both published on 4/14/2015 as part of MS15-038 broke the existing PAE patch (done manually a few years ago) on my Windows 7 computer resulting in BSOD errors on boot. Uninstalling these hotfixes fixed the PAE problem. Now I just have to add this to the Nvidia driver as something I can’t update for the foreseeable future.
+
+Reply
+Tung Bach
+April 17, 2015 at 12:51 pm
+winload.exe ver 6.3.9600.17238 for Windows 8.1 could not patched. Windows update 15/04/2015. THANKS
+
+Reply
+PaVink
+April 17, 2015 at 7:01 pm
+This patch has always worked and is still working on my fully updated 8.1 system.
+Just follow the instructions provided. Of course, if you have no idea what is happening here, you probably should not even attempt this!
+
+Reply
+DeMoN
+April 17, 2015 at 9:43 pm
+(KB3035131) breaks this patch and trying to re-patch fails the winload step. This is with current Nvidia Drivers if it matters. If you are having issues, try to uninstall this recent patch (i think it said it was published 4/10/2015 so not very old. If anyone finds a work around besides uninstalling this patch. I’m on a corporate domain with a very persistent WSUS server and i have no way to permanently keep this update away…
+
+Reply
+DeMoN
+April 17, 2015 at 10:05 pm
+doing it the old fashioned way with a hex editor also does not end well. the 7C11 8B45 & 7C10 8B45 flags are still there, but the rest of the string is significantly different. It still signs and It all looks well and good though until you get to windows. Windows boots slowly, shows even less available ram, and does not “have enough free memory to open” ANYthing… even notepad…
+
+Reply
+JB
+May 11, 2015 at 9:15 am
+Quit hacking your kernel and just use this, works for me…
+
+http://news.saferbytes.it/analisi/2013/02/saferbytes-x86-memory-bootkit-new-updated-build-is-out/
+
+Reply
+tom
+May 16, 2015 at 10:40 pm
+new winload.exe from 31.10.2014 patch failed please check, thanks
+
+Win 7 Ultimate 32 Bit
+
+Reply
+gcalzo
+May 17, 2015 at 4:31 am
+Try this http://wj32.org/wp/2011/02/23/pae-patch-updated-for-windows-7-sp1/#comment-9294
+It worked for me and others!!
+
+Reply
+Pingback: ??????????? ?? ??? ??????????? - ?????? otstrel.ru
+alexio
+June 28, 2015 at 9:24 am
+I used this for the win8 install of my dual boot win8/vista, which win8 manages with its boot loader. It got stuck in a repair loop, I fixed the bmr with a live cd. I do have nvidea drivers for a 5 year old nvidea card. Can someone with a working install provide a list of updates I have to remove?
+
+Reply
+theclubpenguineherald
+July 21, 2015 at 1:11 am
+The third step fails ..
+Some windows updates got installed overnight..
+Cannot boot onto the the patched version anymore.
+I have tried Patching it again ..
+but it fails at the the below step
+
+PatchPae2.exe -type loader -o winloadp.exe winload.exe
+
+An error is displayed as “failed”..
+
+Please help.
+
+Thanks,
+Harry
+
+Reply
+gcalzo
+July 21, 2015 at 6:36 pm
+http://wj32.org/wp/2013/10/25/pae-patch-updated-for-windows-8-1/#comment-10111
+
+Reply
+theclubpenguineherald
+July 22, 2015 at 7:48 pm
+Works like a charm, I missed to check that.
+
+Thank you gcalzo
+
+Reply
+PCDocNY
+August 29, 2015 at 8:46 am
+Uninstall KB3033929 and C:\WherePatchPaeIs\PatchPae2.exe -type loader -o winloadp.exe winload.exe command is successful.
+
+Apparently, it’s a known issue with KB3033929 – https://support.microsoft.com/en-us/kb/3033929
+
+Reply
+Frank Shashaty
+July 23, 2015 at 1:55 am
+Dear Mr. Liu,
+
+First, Thank You for providing the patch; it works perfectly on our 7 and 8x systems.
+
+We are planning to upgrade to windows 10 in the near future and we assume the new OS will change/upgrade the kernel. Is that correct?
+
+If yes, can we use the patch on the windows 10 OS?
+
+If not, will you be releasing a windows 10 version?
+
+Many thanks again for your service.
+
+Reply
+Rikky Citra
+July 31, 2015 at 1:46 pm
+hi, does the patch support windows 10 32bit? can you update the patch to support windows 10 32bit? my machine has problems with 64bit so i have to use 32bit windows 10. but i have more than 3GB Ram.
+Thank you
+
+Reply
+Aaron
+July 31, 2015 at 5:28 pm
+The big request to you ! make the PAE patch for windows 10 ?? I really need it I’m using windows 10 pro
+
+Reply
+NikZ
+August 4, 2015 at 8:40 pm
+Really need this patch for windows 10:)
+
+Reply
+liyox
+August 5, 2015 at 7:22 am
+Please make it Win 10! ??
+
+Reply
+Ferdinand
+August 5, 2015 at 6:24 pm
+pretty please for Windows 10 Support ^_^
+
+Reply
+jeffery
+August 7, 2015 at 8:52 pm
+Windows 10, please, please, please
+
+Reply
+evgeny
+August 11, 2015 at 9:13 am
+patchpae2 modified xttp://rutracker.org/forum/viewtopic.php?t=4694409
+for Windows XP, 2003, Vista, 2008, 7 (supports KB3035131), 8/8.1, 10
+with GUI (russian only, sorry), balalaika, vodka and bear.
+
+Reply
+meister68
+August 14, 2015 at 4:30 pm
+Bitte Schön! http://rghost.net/8mxJ2fz2D
+
+Progamm starten rechten Button klicken,PC neu starten wertig!
+Windows 10
+
+Reply
+evgeny
+August 14, 2015 at 9:12 pm
+it’s internal pre-beta for testing only.
+u can download full version 0.39 from mirror http://rghost.ru/78cjgLmCb or forum rutracker.org
+
+Reply
+mudakun
+August 17, 2015 at 2:16 pm
+Trouble with bcdedit /copy {current} /d “Windows7Patched” ???
+A DESCRIPTION FOR THE NEW ENTRY MUST BE SPECIFIED….
+
+Using real double quotes in ascii, not some weird variant you got by cutting and pasting from a blog page.
+Copy the lines into notepad, go over the { ” ] quotes with fresh ones try again..
+
+I think some web publishing blog engines try to pretty up the double quote by turning it
+into the leading and inverted ones in pairs.
+
+After they were excised and replaced with real ones, it worked like a charm! Many thanks
+Pavilion DV2412ca 4gb ram installed Windows 7 ultimate N, SP1 clean install.
+
+Reply
+Gabriel
+August 20, 2015 at 12:24 am
+The patches above for Windows 10 are infected, says Windows Defender. I really hope an official one release soon.
+
+Reply
+evgeny
+August 20, 2015 at 4:35 am
+Yes. Windows Defender already know that fix128 patched windows kernel and loader. I really hope you understand micro$oft politic for software activated or patched Windows. Windows Defender must delete it, of course. NOD32, Kaspersky, Avast, Avira, DrWeb, McAfee no says infected. fix128 is 7zip-sfx, it packed with upack. there are patchpae2 modified to support new windows and vbs-script for GUI in sfx archive.
+
+Reply
+evgeny
+August 20, 2015 at 4:48 am
+However, Micro$oft also says that 32-bit windows can’t support more than 4 Gb of memory. Hah!
+
+Reply
+Achmed
+August 20, 2015 at 7:56 am
+Patch http://rghost.net/8mxJ2fz2D is marked as deleted
+Patch http://rghost.ru/78cjgLmCb download was blocked by Kaspersky, now ist marked as deleted.
+Opening the ZIP with win explorer starts a program
+Be careful…
+
+Reply
+evgeny
+August 20, 2015 at 6:28 pm
+Deleted patch is beta-version fix128. You may read the thread before write.
+If f*ck_ng Kaspersky blocked the file, you may add the item to exception list.
+A can release new version of fix128? but in some days some antivirus delete it. Sooner or later. Welcome to Windows-10 Era!
+If you want to use fix128, you will find method to download it. If you don’t, you may f*c_k my mind and your mind and all minds around.
+Opening ZIP in my Windows 8.1 in Explorer do not starts program.
+
+CLI version only: http://rghost.ru/8KFT4tSJw
+Support thread: http://rutracker.org/forum/viewtopic.php?t=4694409
+
+Reply
+evgeny
+August 20, 2015 at 6:31 pm
+2 Achmed
+
+Reply
+Neal
+August 21, 2015 at 3:34 pm
+In case it needs repeating: the links by evgeny above, supposedly to a Win10 PAE patch, ARE INFECTED WITH A TROJAN. DO NOT USE THEM. 32 separate malware scanners confirm it.
+
+Here’s hoping a real Win10 PAE patch arrives soon
+
+Reply
+evgeny
+August 21, 2015 at 4:23 pm
+Can you say what do this trojan?
+
+Reply
+Neal
+August 22, 2015 at 1:04 am
+Don’t be coy. Any scanner you run on it will tell you it’s a trojan — Microsoft shows it as Trojan:Win32/Skeeyah.A!bit.
+
+Reply
+evgeny
+August 22, 2015 at 5:04 am
+> CLI version only: http://rghost.ru/8KFT4tSJw
+https://www.virustotal.com/ru/file/cca573bc2ae8dab289f569a54c616a955fc90a2cdc106269eca78aa36d7f555d/analysis/1440134892/
+> In case it needs repeating…
+Are u p*ranoi_d? 0/56, Karl.
+
+new patchpae is included in 7-zip SFX irchive in fix128, that was packed with upack. I already wrote this, no secrets.
+You can extract Visual Basic Script file of GUI from SFX archive and read it in notepad.
+Where are malware?
+
+Reply
+evgeny
+August 22, 2015 at 5:17 am
+If some s_t*pid antimalware see upack or VBS, will be false alarm. All small malware scanners buy single antivirus base from larger antivirus developers.
+
+https://www.virustotal.com/ru/file/23bd6be9d26e9a9ba5e2e51a74da394c57e981673e9d15289b9803e2e914f5b1/analysis/1439241706/
+upack, Trojan.Win32.Packer.Upack0.3.9 (ep), HW32.Packed.90A4, Trj/Pupack.A, Cryp_Xed-12
+See you word “upack”? IT IS UPACK. It is crypt packer i use.
+VBS:VBS.Trojan.Alal!35714
+See you word “VBS”? IT IS GUI.
+
+Reply
+evgeny
+August 22, 2015 at 5:27 am
+What problem? Run 7-zip archiver and extract all files from fix128.
+Open ntk128gb.vbs from SFX in notepad. Then show me line in open source code with malware.
+You can say bla-bla-bla only, NO FACTS.
+You say Trojan:*. What do this trojan? What files it damage, what process it run, what about network activity? Nothing! It’s false alarm. There is no malware. Never.
+
+Reply
+Neal
+August 22, 2015 at 7:03 am
+So, you say I should trust your code. Let’s have a look.
+
+Chrome and IE refuse to download it, because of the trojan alert. Using wget, I can retrieve the file; again the scanner detects the trojan and deletes the .exe from inside the zip. Disabling that, 7zip then refuses to unzip the enclosed .exe, because it too detects the trojan.
+
+Shutting down all scans, I finally uncompress everything. Here’s what I get:
+
+6 DLL’s, all of which begin with HAL.
+31 SYS files, 27 of which begin with USB, and the rest with HID.
+A handful of other files and directories — 4 EXE’s, and directories named 2003 and 2008__.
+
+And: your VBS file — 8100+ lines of code, a thousand of which are in Russian.
+
+You *must* be joking me.
+
+Reply
+evgeny
+August 22, 2015 at 8:31 am
+Ok. 31 *.sys files.
+
+They are in ZIP 2003\SYSTEM32\drivers\ directory (not SFX!).
+Windows XP has some troubles with USB 2.0 in PAE-mode. This drivers from server 2003 for replace XP drivers when fix128 installed on XP. After uninstall fix128 on XP, it replace with original backup XP files. You can read http://www.overclock.net/t/77229/windows-xp-ram-limit/50 for more information about usbvideo.sys, usbstor.sys, etc. Heh, you say Server 2003 is malware. You are joking too.
+
+Similar to 2008\SYSTEM32\drivers\ directory. But 2008 is renamed to ___2008 and is not used. I found some windows-7 with beta-SP1 systems needing replacement of original usb2 drivers too. it’s experimental future and in russian manual it isn’t recommended (and 2008 is renamed to ___2008). This *.sys files from… Server 2008. You just say Server 2008 is malware. Great.
+
+at installation the fix128 copies files from 2003|2008 automatically in windows.
+
+next, 6 DLL…
+
+Reply
+evgeny
+August 22, 2015 at 8:59 am
+continue… 6 DLLs
+When you patch Windows XP, you need to patch HAL. And modified patchpae2 can do it.
+Another way is to copy HAL DLL from XP SP1, wich supports more then 4 Gb of memory.
+http://www.overclock.net/t/77229/windows-xp-ram-limit/60#post_22142268. I tested this method, but it’s not working with my system. And it isn’t recommended in russian manual. This method activated only if you run fix128.exe with +XPSP1HAL key in command line.
+6 DLL’s in xpsp1hal directory, all of which begin with HAL is HAL drivers from XP SP1. And you just say Windows XP SP1 is malware. You are more joking.
+
+Reply
+evgeny
+August 22, 2015 at 9:02 am
+next, 4 EXE…
+
+Reply
+evgeny
+August 22, 2015 at 9:27 am
+continue, 4 *.exe
+
+There is 2 way to load patched (i.e. with damaged signature) kernel. 1 – you can patch loader to disable signature verification (PatchPae2.exe -type loader …). 2 – original method by Geoff Chappell based on test-signing. http://www.geoffchappell.com/notes/windows/license/memory.htm And fix128.exe has key +TestCert to use this method. You need some utils from Visual Studio for 2nd method: makecert.exe, certmgr.exe and signtool.exe. It is in utils directory of SFX archive. You just say Visual Studio is malware. You are more and more by more joking.
+
+Reply
+evgeny
+August 22, 2015 at 9:44 am
+Oh! We lost 1 *.exe in SFX archive : utils\PatchPae2.exe
+
+It is modified patch with support for win xp, win 7 with KB3033929, win 10, serv 2003.
+I posted links for this file and virustotal earlier. 0/56. no malware.
+
+Reply
+evgeny
+August 22, 2015 at 9:57 am
+I need to have a rest a little…
+I will explain 8100+ lines of VBS code later=)
+
+summing up the result. 6 files + 31 files + 4 files = 41 files. Neal, you are alarmist of 0x29h Level. Panic-monster.
+
+Reply
+Achmed
+August 22, 2015 at 9:14 pm
+Maybe something on the download server modified your zip – this would explain the start of a program while extracting it…
+
+Reply
+jeffery
+August 22, 2015 at 11:05 am
+evgeny,
+
+I use CLI version only patched 32bit Win10-10240RTM, it’s amazing, thank you so much.
+
+Reply
+Terry
+August 23, 2015 at 6:54 pm
+evgeny,
+
+I used your patchpae2 to patch Windows 10 32 bit Home Edition.
+Very successful, no trojans, repeat no trojans  ??
+
+I am using an old Nvidia graphics driver as newer ones caused problems when patching Windows 7 and 8.1 with wj32’s patch. That is a problem in itself, Windows 10 has to be set so that it doesn’t automatically install the latest drivers.  ??
+
+Next test will be to see if up to date video drivers will work, though I am not too hopeful.
+
+Many thanks
+
+Reply
+Gecata
+August 26, 2015 at 3:48 am
+So… patch v.039 working fine and smooth. After few days of test and experiments i can say it’s GREAT and WORKING ! So i made and test this scenario:
+
+1. Make virtual machine KVM on CentOs 7.1 Linux and patched Windows 10 Enterprise 32bit-10240RTM
+2. Make full machine backup with EaseUs ToDo Backup 6.1
+3. Restored backup to VmWare virtual machine on Windows 8.1
+4. Restored backup on VirtualBox machine on Windows 7 32 bit
+5. Restored machine on bare metal
+
+Patch is there all the time and work great, even different video drivers on different VM’s.
+Today tested patched machine with 7 all day connected user over RDP /thinstation clients/ and it working fine and stable!
+
+Many thanks to evgeny for great work and sharing knowledge!
+
+Reply
+Gabriel
+August 26, 2015 at 8:34 pm
+However, I still can’t trust it, until reasonable explanation why ALL of the used software says it is infected. There’s obviously something in the code, which is causing it. C’mon man, just reveal it and we’ll use your patch.
+
+Reply
+evgeny
+August 27, 2015 at 11:21 am
+May i kneel down to You afterwards and take an Your blessing?
+
+Reply
+Luciano
+August 27, 2015 at 9:07 am
+evgeny, why not simply uploading the _source code_ of PatchPae2 CLI, enhanced for Windows 10 too? The code is well structured, well documented for all supported different kernel versions.
+
+Then, you could also simply use the old plain safe .zip format instead of SFX if you don’t have nothing to hide…
+
+Reply
+evgeny
+August 27, 2015 at 11:19 am
+What problem?
+You may download 7zip
+You may download fix128.exe from link above
+You can open sfx-archive fix128.exe by 7zip.
+You can extract the file fix128.exe\utils\main.c with _source code_ of PatchPae2 CLI, enhanced for Windows 10
+You can extract the file fix128.exe\utils\PatchPae2.exe CLI binary, enhanced for Windows 10, which I uploaded above
+You can extract the file fix128.exe\ntk128gb.vbs with _source code_ of GUI
+I could encrypt VBS, archive, etc, but I didn’t.
+You may read all, but you didn’t.
+Why?
+You are f_ck*ng Writer, not reader.
+Why are you can’t read the _source code_? You have not a notepad? Are you banned on 7zip download page? Maybe you’re too lazy?
+What problem?
+The _source code_ always was here.
+
+Reply
+Gabriel
+August 29, 2015 at 8:32 pm
+Well, if you keep answering like this and you keep insisting to us to download your file without any explanation why, then trust me, no one’s going to do it. Your comments are now becoming a spam without a purpose. If you really want to help, then do it. EXPLAIN. Give us a reason. So we can believe that 99% of anti-malicious software is wrong. Don’t expect anyone to read 8100+ lines of code. Or simply make a clean new patch when you know what is causing it.
+
+Reply
+evgeny
+August 30, 2015 at 7:49 pm
+I do not say “trust me”, I say “source code is included”.
+I do not say “run fix128.exe”, I say “open fix128.exe in 7Zip archiver” to read the file fix128.exe\utils\main.c with 2000+ lines of code.
+It is because You say “there is no source code”.
+You accuse me, and I give the facts and source code, but You are ignore it (as regarding Russia in general too).
+
+to be continue…
+
+Reply
+evgeny
+August 30, 2015 at 7:51 pm
+… continue
+
+source code patchpae2.exe enhanced for Windows 10 from link above
+http://rghost.ru/78cjgLmCb \fix128v39.zip\fix128v39\fix128v-0.0.0.39 +log=detail.exe\utils\main.c
+
+to be continue…
+
+Reply
+evgeny
+August 30, 2015 at 7:52 pm
+x86 binary:
+http://rghost.ru/78cjgLmCb \fix128v39.zip\fix128v39\fix128v-0.0.0.39 +log=detail.exe\utils\PatchPae2.exe
+same http://rghost.ru/8KFT4tSJw
+
+I don’t understand what you want from me. Source code was uploaded many days ago. Maybe you don’t understand English and use Google Translate.
+
+Reply
+Gabriel
+August 31, 2015 at 6:41 am
+Source code is included, you say. Cool. Now should still we try our best to download your patch, because it seems really difficult to do it. There’s hardly a browser in the world, which won’t say file contains a virus. Not even talking about how to open it, because things are getting even more difficult. It looks like the easiest way to reach your patch is to install some “insensitive” OS maybe or what? Just to sit down and read 8000 lines of code, seriously??? Biggest nerd in the world won’t do it, dude.
+
+Malika
+August 31, 2015 at 2:09 pm
+evgeny,
+
+It worked very successful, thank you.
+
+For about NVIDIA Driver, ver 332.21 was good but ver 334.89 was sad.
+
+Reply
+Tom
+October 18, 2015 at 1:47 pm
+Agree, I had GT360 and found Nvidia 332.21 and 334.89 on filehippo, the upgrading from the 322 to 334 caused BSOD. Maybe with Nvidia cards if you want PAE patch, the 322.21 is the dead-end driver.
+
+Reply
+evgeny
+August 31, 2015 at 6:37 pm
+> Gabriel wrote:
+> it seems really difficult to do it.
+It is very difficult to you to download the file. Ok.
+It is very difficult to you to open archive. Ok.
+It is very difficult to you to understand, that (open sfx in archive program) != (start *.exe-file). Ok.
+It is very difficult to you to understand, that modified main.c has 2000+ lines of code, not 8000+ and the original main.c has 900+ lines of code. Real dude won’t read nor 8000, nor 2000, nor 900 lines of code, I guessed?
+You aren’t able to do elementary things, and you poke one’s nose into source code. Cool.
+
+Reply
+cristiansilaghi
+September 1, 2015 at 12:54 am
+Will you make your fix128 into English? At least Russian/English version? The basic buttons of app would be nice. Or a Readme explaining how to use it even if the language is Russian. I don’t understand Russian and I wanted to use it, but there are language barriers. ??
+
+Thank you in advance!
+
+Best Regards.
+
+Reply
+Gabriel
+September 1, 2015 at 4:49 am
+Stop trying to blame others for their incompetence. Instead of doing this, just fix your archive. It’s BAD and it doesn’t matter if it’s a 99% false alarm or a real virus. Of course I can open and analyze it through disabling all protections, using some unheard of browser, going in safe mode, or just on my Linux, but should I do it? Should really anyone be doing it just to install your patch? I hope that’s not the case. Make it simple and we won’t be suspicious.
+
+Reply
+mstech75Martin
+September 3, 2015 at 3:07 am
+Extract to a folder, run Autorun.cmd as administrator to install PAE patch.
+You can re-run the Autorun.cmd later, when the kernel gets updated.
+Tested on latest Win 7, but it should also work on Win 10 …
+
+https://mega.nz/#!6kZjXJgT!fbrWB21LfrzRd6jJPWerbSZ320pwik3wyjOJ6RyHFd0
+
+Reply
+mstech75
+September 3, 2015 at 6:25 am
+Small update to detect Windows 7 or Windows 10 .. still tested only on Windows 7
+https://mega.nz/#!ylR3GbBC!696hw8bJirpVyoGKvhSHjMH0SSuAPa8-tpx183K9Ork
+
+Reply
+escape75
+September 3, 2015 at 8:14 am
+Updated to support Windows 7, 8.x and 10 – tested on 7 and limited testing on 10:
+https://mega.nz/#!3ogCxBCA!F_U5Lp_02J0KrFOq7TRjuKdlO5RXNINs2VVU8RHQm4c
+
+Reply
+evgeny
+September 3, 2015 at 9:34 am
+some laptops has double boot (and more) with win8, win7, etc (bcdedit /enum ^| find “ntkrnlpx.exe” won’t work). maybe {current}?
+imho it will be better and faster: FOR /F %%a in (‘ver | find “6.3.9600”‘) do set windows=8.1
+
+and… testsigning? u can’t load system from UEFI, etc, watermark…
+
+and will be better to use “bcdedit /set {guid} bootmenupolicy legacy” for win8+ (especially with NVidia drivers)
+
+Reply
+escape75
+September 3, 2015 at 9:47 am
+The bcdedit /enum ^| find “ntkrnlpx.exe” only is there to find out if the patch has
+already been applied, and the script will grab the current boot entry using:
+bcdedit /copy {current} /d “Windows %windows% (PAE)”.
+
+I don’t think the watermark is a big issue, but maybe a patched loader is a better way?
+
+I should also add the following after adding the boot entry, it will just fail on Windows 7:
+bcdedit /set {%newguid%} bootmenupolicy legacy >nul 2>&1
+
+Reply
+escape75
+September 3, 2015 at 10:01 am
+I tested WIndows 10, and it shows a text menu without “bootmenupolicy legacy”,
+so it must work automatically when there’s more than 1 entry in boot or timeout specified ?
+
+Reply
+evgeny
+September 3, 2015 at 7:40 pm
+> escape75
+> so it must work automatically when
+there is at least one boot entry with bootmenupolicy legacy option in BCD
+(c) MSDN
+> I should also add the following after adding the boot entry, it will just fail on Windows 7:
+are you writer too? =) i said above:
+> use “bcdedit /set {guid} bootmenupolicy legacy” for win8+
+_win8+_, Karl
+
+win8+ has new modern graphic-style boot menu and older text-style named “legacy”
+
+Reply
+evgeny
+September 3, 2015 at 7:44 pm
+if u have older boot loader, i.e. bootloader from win7 and older, you have only text-style boot menu.
+
+Reply
+escape75
+September 4, 2015 at 5:01 am
+evgeny: What about doing it this way?
+http://pastebin.com/su9YP5jS
+
+Reply
+evgeny
+September 4, 2015 at 6:22 am
+it’s much better… but
+try solution like this. it’s more stable and more faster and more structured…
+
+set winver=0.0.0000
+FOR /F “usebackq tokens=4” %%i IN (`ver`) DO set winver=%%i
+set winver=%winver:~0,-1%
+echo.Your Windows version is: %winver%
+
+set kernel=nothing
+if *%winver%==*6.1.7600 set kernel=ntkrnlpa.exe
+if *%winver%==*6.1.7601 set kernel=ntkrnlpa.exe
+if *%winver%==*6.2.9200 set kernel=ntoskrnl.exe
+if *%winver%==*6.3.9600 set kernel=ntoskrnl.exe
+if *%winver%==*10.0.10240 set kernel=ntoskrnl.exe
+
+if *%kernel%==*nothing echo.Unsupport kernel && pause && exit
+
+patchpae.exe -type kernel -o “%systemroot%\system32\ntkrnlpx.exe” “%systemroot%\system32\%kernel%”
+
+rewrite your script, please, and show me again.
+
+Reply
+escape75
+September 4, 2015 at 6:57 am
+http://pastebin.com/Zkr1WUK4
+
+The reason I wanted to keep bcdedit /enum {current} ^| find “Windows 7”
+is to make sure the patch works is version is changed in windows …
+
+6.1.7600 – Windows 7
+6.1.7601 – Windows 7 SP1
+6.2.9200 – Windows 8
+6.3.9200 – Windows 8.1
+6.3.9600 – Windows 8.1 SR1
+10.0.10240 – Windows 10
+
+Could also do this …
+
+FOR /F “tokens=4” %%g in (‘ver’) do set winver=%%g
+FOR /F “delims=. tokens=1,2” %%g in (‘echo %winver%’) do set winver=%%g%%h
+if %winver% gtr 61 set kernel=ntoskrnl.exe
+if %winver% leq 61 set kernel=ntkrnlpa.exe
+
+Reply
+evgeny
+September 4, 2015 at 7:30 am
+>if %winver% gtr 61…
+It’s good code.
+
+but in pastebin.com/Zkr1WUK4 i see this very much times:
+
+if %windows% equ 7…
+if %windows% equ 8…
+if %windows% equ 10…
+and again
+if %windows% equ 7…
+…
+and again
+if %windows% equ 7…
+…
+
+and it’s bad code. this code need to compact and structure. imho.
+
+>if %errorlevel% neq 0 goto no-kpatch
+it’s very good, you added this code.
+
+Reply
+escape75
+September 4, 2015 at 8:40 am
+This should do it …
+
+http://pastebin.com/TgZuSMSY
+
+Reply
+evgeny
+September 4, 2015 at 9:46 am
+Great work! very readable and useful script.
+
+and some things.
+1)
+>ping 127.0.0.1 -n 6
+fails if offline, maybe it’s better:
+choice /d y /c yn /t 6
+2)
+what about check for administrator permissions in order to work properly?
+best way – with automatically restart your script with admin rights.
+3)
+what about check for x64 Windows and exit in this case?
+
+Reply
+escape75
+September 4, 2015 at 10:17 am
+Good points …
+
+1) choice would be better than ping.
+2) I packed it below in self extract that forces admin rights, so I don’t need to check.
+3) x64 will fail, as it will not find bcdedit (x32 process on x64) but even if it did run it
+would exit: %errorlevel% neq 0 echo – ERROR, Cannot patch %kernel%! & goto end
+
+Thanks!
+
+Reply
+evgeny
+September 4, 2015 at 11:11 am
+2) yes, i saw it, i can read;)
+
+but…
+1. you can disable UAC:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA=0
+and restart your PC
+2 you can login with user-access account
+3 run your exe and it will fail.
+in this case you will never become administrator-account.
+many people disable UAC
+
+3) i think message “x64 not support…” is better and more informative than “something missing”.
+
+?? ??, ?????? ??? ?????. ????? 90112+2249 ???? ????? ? 300 ????????.
+
+Reply
+escape75
+September 4, 2015 at 11:22 am
+If you do 1) it causes some weird issues in Windows 10 – calculator doesn’t work, etc.
+
+Yes on 2) and 3) – maybe someone can modify to make it better ??
+
+And yes, winrar self extract module adds to the size, but makes it easier to run ??
+
+escape75
+September 4, 2015 at 9:06 am
+PAE Patch – working on Windows 7, 8, 8.1 and 10 – extract and run the included .exe
+
+https://mega.nz/#!S5BBlYjZ!oDwmr9I0-lEiHUSTnWhIpO5Wr8JBjlsd1M8YtaxxSUI
+
+Reply
+escape75
+September 4, 2015 at 11:18 am
+Presenting latest edition of PAE Patch for Windows 7, 8, 8.1 and 10 – big thanks to evgeny!
+
+https://mega.nz/#!S45TSb7Y!HWfl3rxMJpJYBqnuPfGbM3QTxa8mFfbLWaAolQ85ob8
+
+Extract and run the included .exe (for 32 bit OS) – that’s all, 288 KB in size!
+
+Here’s the included script in case you’re lazy to check yourself ??
+http://pastebin.com/K844EusW
+
+PS. I kept “ping” for sleep, “choice” doesn’t time out when you switch to another window,
+I think it’s a windows bug …
+
+Reply
+evgeny
+September 4, 2015 at 6:56 pm
+PS.
+
+echo.This program enables PAE in Windows. Wait…
+…
+set x64=0
+if *%PROCESSOR_ARCHITECTURE%==*AMD64 set x64=1
+if *%PROCESSOR_ARCHITEW6432%==*AMD64 set x64=1
+if %x64%==1 echo.Windows x64 not support && pause && exit
+…
+reg.exe QUERY HKEY_USERS\S-1-5-19 /ve
+if %errorlevel% equ 1 echo.Run program as administrator && pause && exit
+…
+you must load boot menu before loading drivers incompatible with PAE in Windows 8-10!!!111 otherwise it cause BSOD before boot menu and you won’t be able to boot absolutely
+
+if %winver% NEQ 7 bcdedit /set {guid} bootmenupolicy legacy
+…
+>ping 127.0.0.1 -n 6
+echo.wscript.sleep 6000>sleep.vbs
+cscript.exe sleep.vbs>nul
+del /f /q sleep.vbs
+
+Reply
+escape75
+September 5, 2015 at 2:18 am
+if %winver% NEQ 7 bcdedit /set {guid} bootmenupolicy legacy
+
+I’ve done a brand new install of 32 bit Windows 10 in virtual box,
+and “bcdedit /set {bootmgr} displaybootmenu yes” makes it display
+a text boot menu without “bootmenupolicy legacy” – strange ?
+There was no previous or older bootloader installed.
+
+Reply
+evgeny
+September 4, 2015 at 7:02 pm
+PPS. you may try http://upx.sourceforge.net/ to compress your sfx.
+
+Reply
+escape75
+September 5, 2015 at 3:34 am
+New version, added x64 detection. Works on Win 32-bit 7, 8, 8.1, 10, Tested on 7 & 10.
+https://mega.nz/#!3tASjKpS!MyJfOB3v2lOTFx1nXHtKors2fpdHLJD_Ik_DfPidA3Q
+
+Reply
+Gabriel
+September 5, 2015 at 7:24 pm
+Tested. Working OK for now(ATI user).
+
+Reply
+LCV
+September 5, 2015 at 9:07 am
+I only have one word to say – OUTSTANDING!!!! it works win windows 10 pro 32 bit as long as you remove any Nvidia Drivers beforehand. I now have 3.75 GB running. Thanks to all involved but especially evgeny and escape 75!!!!
+
+Reply
+escape75
+September 5, 2015 at 9:13 am
+I’m guessing Nvidia still hasn’t fixed the bug when PAE is enabled ?
+https://forums.geforce.com/default/topic/839228/drivers-since-332-21-cannot-use-pae-mode-possibly-affecting-windows-server-2008-enterprise-/
+
+It used to work back in the day, now it’s just crap …
+How do you work with drivers uninstalled?
+
+Reply
+LCV
+September 5, 2015 at 9:49 am
+Am using the MS Basic Display driver on the on-board card and uninstalled all software and drivers for the 2nd card (Nvidia gtx 460) to get it working. Now playing with the 2nd card to see how best to have it working as use it with an HDMI output so will come back with the solution when I find one that works ok ?? but with the on board card only at the moment it works absolutely great! Thanks once again
+
+Reply
+LCV
+September 5, 2015 at 11:17 am
+Right I have now sorted it, thanks to your link escape75, so the way to do it is to download the driver 9.18.13.3221 that you mentioned and install it and make sure you DON´T update it afterwards and stop NVIDIA from updating automatically. Here is the link http://www.nvidia.com/download/driverResults.aspx/71701/en-us
+
+Reply
+escape75
+September 5, 2015 at 11:47 am
+Ok thanks for confirming,- yes I did know the 332.21 worked with PAE.
+That was actually my own post o nvidia forums – but I thought maybe they fixed this.
+I guess nvidia doesn’t care,- this also affects server 2003 as it has PAE without patch.
+
+I think Intel has the same issue, so it’s just ATI that works …
+
+Reply
+LCV
+September 5, 2015 at 12:04 pm
+Yes, I saw that it was your post also and you are 100% right. By the way you also have to stop Windows update from downloading drivers otherwise it automatically downloads the latest Nvidia driver and breaks it again. So basically you have to do everything possible to ensure it doesn´t update from the 332.21.
+
+Reply
+escape75
+September 5, 2015 at 12:14 pm
+Yes, I usually remove all folders from Nvidia drivers, except Display.driver, Hdaudio, Nvi2,
+and Physx and that way it doesn’t install the nvidia auto update stuff. Also windows update
+has to be told not to update like you said. But it would be nice if nvidia would fix this, heh.
+
+Reply
+escape75
+September 5, 2015 at 3:11 pm
+Little off topic but I disassembled nvlddmkm.sys and 332.21 calls halTranslateBusAddress,
+but a newer 334.89 no longer includes such a call whatsoever. Something they’ve changed
+with how memory is being addressed I’m guessing. Causing the PAE crash.
+
+Reply
+evgeny
+September 5, 2015 at 5:58 pm
+for nvidia drivers in Windows 10 with PAE.
+
+howto: install old driver version and prevent installation of newer version of driver.
+
+1. you must temporarily stop and disable the “Windows Update” service. you may do it from “Computer Management”-Services-“Windows Update”,
+but faster way is:
+run Command Prompt as Administrator and enter
+sc stop wuauserv
+sc config wuauserv start= disabled
+
+2. Now Windows Update is stoped. And we can remove all files and subdirectories in c:\Windows\SoftwareDistribution.
+Downloaded updates and drivers are caching in this directory before install and windows automatically remove it after install.
+And we now remove all new drivers for NVidia too.
+
+We must delete the C:\NVidia directory too.
+
+3. Run “Device Manager”.
+Go to “Display adapters”, select NVidia and uninstall it. In “Confirm Device Uninstall” dialog you must activate the “Delete the driver
+software for this device” option!
+
+we deleted all copies of driver.
+
+4. Click Action-“Scan for hardware changes” in “Device Manager”. You will see something like “Micro$oft Basic Display Adapter” in “Display adapters”
+(or hardware without driver).
+
+5. Now you can install old NVidia driver with PAE support.
+
+6. prevent installation of newer version of driver… before this you need to know HardwareId of your NVidia adapter.
+Double click “Micro$oft Basic Display Adapter” (or any hardware to prevent new installation), open the “Details” tab and
+select property “Hardware Ids”. Then copy any value you like. For example, PCI\VEN_10DE&DEV_1341&SUBSYS_381A17AA
+
+7. Run gpedit.msc in Command Prompt.
+Go to “Local Computer Policy”-“Computer Configuration”-“Administrative Templates”-“System”-“Device Installation”-“Device Installation Restrictions”-
+“Prevent installation of devices that match any of these device IDs”
+Click Enabled, then click Show.
+In the “Show Contents dialog” window, paste previously copied HardwareId of your NVidia adapter. Click OK.
+Next, click OK to save your changes in “Prevent installation of devices that match any of these device IDs” window.
+
+https://technet.microsoft.com/ru-ru/library/cc732727.aspx
+
+8. enable and start the “Windows Update” service.
+run Command Prompt as Administrator and enter
+sc config wuauserv start= auto
+sc start wuauserv
+
+9. Now Windows can’t install any another driver for your NVidia adapter. Yes!
+
+Reply
+escape75
+September 6, 2015 at 5:22 am
+Excellent instructions, too bad we never will be able to install
+a newer driver as nvidia dropped support on purpose, maybe after
+they dropped support for server 2003 32bit. Makes me seriously
+consider switching to OSX heh. or windows 64bit.
+
+Reply
+LCV
+September 5, 2015 at 9:03 pm
+This might be an easier way guys: https://support.microsoft.com/en-us/kb/3073930 and this lets you select the gtx460 driver and hide it, then tell it not to install hidden updates ??
+
+Reply
+evgeny
+September 5, 2015 at 9:51 pm
+from russian forum:
+1)
+Windows can release another newer version of driver, and we will have BSOD.
+2)
+This f*uck_ing tool doesn’t show already installed updates. f*uck_ing Windows automatically installs this f*uck_ing updated driver, and we have no time to hide it.
+
+We can uninstall new driver in “Device Manager” but in some seconds f*uck_ing Windows automatically install this f*uck_ing driver, and we have no time to do something.
+
+We can’t uninstall this new driver-update becouse Windows not show it in programs/updates (or Windows Update download and install it in some seconds).
+
+Reply
+LCV
+September 6, 2015 at 3:54 am
+yeah it´s a bit of a nightmare I have temporarily disabled windows update service and now it´s working fine.
+
+Reply
+escape75
+September 6, 2015 at 5:26 am
+I have no issues on windows 7 ??
+makes me wonder if I can load a newer nvidia driver,
+and still replace nvlddmkm.sys from 332.21, hmm.
+
+Reply
+cestpraca
+September 6, 2015 at 10:50 pm
+Any update for window 10?
+
+Reply
+Terry
+September 7, 2015 at 1:54 pm
+cestpraca
+
+If you scroll up you will find a post by evgeny, with a link to what he calls the CLl version,
+or click here “CLI version only: http://rghost.ru/8KFT4tSJw”
+It has the file PatchPae2.exe , use this to replace the one by wj32, but use the same procedure given by wj32 in his readme.txt file.
+
+Reply
+escape75
+September 8, 2015 at 8:52 am
+Or you can just use this installer:
+https://mega.nz/#!3tASjKpS!MyJfOB3v2lOTFx1nXHtKors2fpdHLJD_Ik_DfPidA3Q
+
+Reply
+Ivan Ferrer
+October 24, 2015 at 3:18 am
+thank you, worked flawlessly in Windows 7 SP1
+
+Reply
+Terry
+September 7, 2015 at 2:01 pm
+I solved the Nvidia driver problem by getting an ATI Radeon video card, and removing the Nvidia GEForce, ??
+
+So far I have had no problems with my Win 8.1 computer, but it has only been patched a little while.
+
+My computer with Windows 10 and which also has an Nvidia card has had driver updates disabled and Nvidia update in particular, hidden. The driver I’m using dates back to 2012 and doesn’t cause any problem.
+
+It is a bit difficult to stop W10 updating video drivers, but it can be done
+
+Reply
+Gecata
+September 12, 2015 at 2:20 am
+I confirm ver. 0.40rc0 from here: http://forumsisadmina.ru/topic/65382-fix128-podderzhka-pamiati-bolee-4-gb-v-32-razriadnykh-windows-xp2003vista2008788110/ working fine with driver ver. 355.82 from Nvidia support site.
+
+Details:
+Fresh install Win10 Enterprise 32 bit
+Cpu: Xeon 1275
+MB: Ga-Z77x-D3H – Vt-X and Vt-D enabled in bios
+Memory: 8 gb
+Video: Nvidia GTX-650
+Nvidia driver ver.: 355.82-desktop-win10-32bit-international-whql
+Patch ver.: 0.40rc0
+
+Reply
+escape75
+September 26, 2015 at 4:51 am
+Unfortunately I just tried 355.82 as well as 355.98 on a fresh install of Win 10 x32,
+and just as expected they both crash. You possibly either have an older driver version,
+or you’re running x64 edition, or somehow a GTX 650 works, but my GT 620 doesn’t.
+
+Or you were using a display hooked up to another non nvidia adapter. Don’t know ??
+
+Reply
+nerothtr
+September 16, 2015 at 3:19 pm
+I can’t download the file, it’s says: ‘Download path is invalid’.
+
+Reply
+escape75
+September 16, 2015 at 3:21 pm
+https://mega.nz/#!3tASjKpS!MyJfOB3v2lOTFx1nXHtKors2fpdHLJD_Ik_DfPidA3Q
+but that still works
+
+Reply
+nerothtr
+September 19, 2015 at 3:06 pm
+Thanks! It’s work.
+
+Reply
+irfan
+September 22, 2015 at 12:02 am
+thanks last download link works on windows home premium thanks works
+
+It shows 10GB 8.99Use able before that was 10GB 2.99 useable is it possible to use all available 10GB ???
+
+Reply
+escape75
+September 22, 2015 at 2:02 am
+Probably 1 gb is being used by video card,- just like it was 3 gb before and expected is 4 gb.
+
+Reply
+irfan
+September 22, 2015 at 9:44 pm
+But I have 1GB extra dedicated for Nvidia
+
+Reply
+Luke
+September 23, 2015 at 3:40 am
+My computer keeps on reboot after I installed the patch in the link https://mega.nz/#!3tASjKpS!MyJfOB3v2lOTFx1nXHtKors2fpdHLJD_Ik_DfPidA3Q
+
+Anyone know why? I am using Windows 10 Home Edition
+
+Reply
+escape75
+September 23, 2015 at 3:58 am
+I’m assuming you can still boot using the non-patched boot menu entry?
+
+Check what version of nvidia or intel drivers you have installed after you boot,
+most of the new ones won’t work or just crash.
+
+Reply
+Luke
+September 23, 2015 at 4:10 am
+Yes, I can boot using the non-patched menu. My intel driver for the display is quite old (version 8.15.10.2900 on 26/11/2012).
+
+Reply
+escape75
+September 23, 2015 at 4:20 am
+Strange, could try removing the driver to see that’s the cause …
+
+There might be a crash dump file you could analyze maybe:
+http://www.nirsoft.net/utils/blue_screen_view.html
+
+Reply
+Terry
+September 23, 2015 at 11:25 am
+Intel HD graphics drivers also cause problems.
+
+There are many comments to this affect here: http://wj32.org/wp/2011/02/23/pae-patch-updated-for-windows-7-sp1/
+
+I couldn’t get the patch to work with Intel onboard graphics.
+
+Reply
+Luke
+September 24, 2015 at 2:47 am
+Does it mean nothing I can do in patching with Intel onboard graphics?
+
+Reply
+Ferdinand
+September 24, 2015 at 10:04 am
+you can disable on board graphic on device manager and use ati graphic card. I did that..
+
+Reply
+Luke
+September 24, 2015 at 2:12 pm
+Which ATI graphic card driver I should use?
+
+Reply
+Terry
+September 24, 2015 at 6:32 pm
+Luke,
+You can probably use any AMD/ATI graphics card that is within your price range, and use the driver which is for that card. If you buy new, then there will be a driver CD with the card.
+
+I’m assuming you are using a desktop machine, if you have a laptop, then there isn’t much you can do about fitting a video card AFAIK.
+
+Reply
+Luke
+September 24, 2015 at 11:30 pm
+Too bad! I’m using notebook computer.
+
+Reply
+escape75
+September 25, 2015 at 2:11 am
+Someone should pressure Intel and Nvidia to fix their drivers,-
+ATI can do it, it’s a few lines of code.
+
+Reply
+gcalzo
+September 25, 2015 at 2:39 am
+I do not think that it’s an option… it’s from “XP time” that Intel has removed the PAE support on their driver…
+Personally on my HP laptop I’m still running Seven (and I do not think I will upgrade to 10 anytime soon!!!!) with a modded XP driver.
+Details here http://wj32.org/wp/2011/02/23/pae-patch-updated-for-windows-7-sp1/#comment-434
+Solution here http://wj32.org/wp/2011/02/23/pae-patch-updated-for-windows-7-sp1/#comment-460 (this is the driver I’m using on Seven)
+
+Reply
+escape75
+September 25, 2015 at 2:44 am
+Well, nvidia 332.21 is the last one that works, from January 2014, so not really XP days …
+Basically Server 2008 Enterprise x86 would be affected by this, as it supports PAE 64GB,
+but I guess since nvidia doesn’t officially support 2008 any longer, they don’t care.
+
+Reply
+gcalzo
+September 26, 2015 at 12:24 am
+…as I wrote, I was talking about Intel and Intel’s latest 32bit driver supporting PAE was for XP… ??
+
+Reply
+escape75
+September 26, 2015 at 1:59 am
+Yeah, someone reported above that a new nvidia driver works again,
+but I haven’t tested it myself – in windows 10 x32. I wonder …
+
+Reply
+escape75
+September 26, 2015 at 4:52 am
+Tested now, didn’t work for me …
+
+Reply
+Irfan
+October 8, 2015 at 3:52 pm
+I have Windows 10 home limited to 2 GB
+I am looking for Windows 10 PAE Patch
+
+Reply
+evgeny
+October 9, 2015 at 4:13 pm
+You have hardware limit to 2 Gb (especially some intel atom, etc).
+Windows 10 home limited to 4Gb https://msdn.microsoft.com/ru-ru/library/windows/desktop/aa366778(v=vs.85).aspx#physical_memory_limits_windows_10
+You can google about your cpu, motherboard, chipset.
+
+Reply
+???????
+October 17, 2015 at 4:24 am
+????? ????? patchpae ??? windows 10&&&
+
+Reply
+escape75
+October 17, 2015 at 5:56 am
+Use this one I made, I use it myself:
+https://mega.nz/#!3tASjKpS!MyJfOB3v2lOTFx1nXHtKors2fpdHLJD_Ik_DfPidA3Q
+
+Reply
+test
+October 22, 2015 at 6:21 am
+Nikolai is not able to read a few posts earlier with reference to the new patch or press Ctrl-F. For him, it is too early to use as Windows 10, as the new patch.
+
+Reply
+test
+October 22, 2015 at 6:12 am
+???????????? ?????
+
+Reply
+test
+October 22, 2015 at 6:13 am
+?? ???, ???? ??????????? ? ???? ????????.
+
+Reply
+test
+October 22, 2015 at 6:22 am
+?????????? ????????
+Or perhaps it’s too humiliating for Him, especially to switch keyboard layout&&&
+
+Reply
+test
+October 22, 2015 at 6:23 am
+??, ????????, ? ??? ?????? – ???.
+
+Reply
+test
+October 22, 2015 at 6:24 am
+?????????? ????????
+Or perhaps it’s too humiliating for Him, especially to switch keyboard layout&&& ??? ???-??????
+
+test
+October 22, 2015 at 6:25 am
+Nikolai is not able to read a few posts earlier with reference to the new patch or press Ctrl-F. Or perhaps it’s too humiliating for Him, especially to switch keyboard layout&&& For him, it is too early to use as Windows 10, as the new patch.
+
+test
+October 22, 2015 at 6:26 am
+????????? ???????? ????????
+
+angelo
+November 15, 2015 at 2:32 am
+news for win 10 1511? the last patch doesn’t work.
+
+Reply
+Terry
+November 19, 2015 at 5:36 pm
+I also seem to have trouble with the Windows 10 version 1511 upgrade. Firstly the ‘old’ Nvidia driver from 2012 that I was using before the upgrade will now longer install.
+
+Then with this Windows version winload.exe will not patch, it gives a failed error message.
+
+Reply
+Escape75
+November 20, 2015 at 3:07 am
+Does that one not work on 1511 anymore?
+Probably needs a fix from evgeny …
+
+https://mega.nz/#!3tASjKpS!MyJfOB3v2lOTFx1nXHtKors2fpdHLJD_Ik_DfPidA3Q
+
+Reply
+Terry
+November 20, 2015 at 7:53 am
+Escape75.
+First I tried PatchPae2.exe from evgeny, and it patched the kernel with no error message, but it failed at patching winload.exe. It did however produce a winloadp.exe file, but I didn’t go any further, especially as I knew the nvidia driver that Win 10 installed would cause failure anyway.
+
+Then I tried your PAEPatch.rar file and it failed at trying to patch winload.exe.
+
+So I guess we hope evgeny may come up with another fix in due course.
+
+Reply
+Escape75
+November 20, 2015 at 7:58 am
+The link I posted uses PatchPae2 v040 RC0 so it should also fail.
+It’s nothing more than a self extracting file above plus script, and this
+line should make it abort and exit, if it succeeds it creates winloadx.exe:
+
+Patchpae -type loader -o “%systemroot%\system32\winloadx.exe” “%systemroot%\system32\winload.exe” >nul 2>&1
+if %errorlevel% neq 0 (echo -ERROR- Cannot Patch winload.exe!) & (goto end)
+
+Reply
+evgeny
+November 23, 2015 at 12:47 am
+PatchPAE v041 with Windows 10 version 1511 support.
+http://rghost.ru/77ltmxtlV
+
+Reply
+Phraedrus
+November 24, 2015 at 7:30 am
+But then Google will not let me download that – malicious file!!
+
+Reply
+Terry
+November 24, 2015 at 5:58 pm
+Your Google is obviously in error, there is nothing malicious in the file, but it does modify the kernel. I downloaded the file from evgeny’s link with no alarm bells from either Google or Windows Defender.
+
+Files like this that modify the system [i]can[/i] cause false positives in anti virus software, they have done so even back in MSDOS days.
+
+Reply
+Phraedrus
+November 26, 2015 at 1:46 am
+Thank you. I tried again in Google – but it is adamant – so I switched to Microsoft edge and it downloaded it straight away.
+Now to test it.
+Thanks again.
+??
+
+Reply
+evgeny
+November 24, 2015 at 8:59 pm
+And what?
+https://www.virustotal.com/ru/file/f6b4b3f05a02df80a24bb1b499b3bd5700a025e702077731a55fd4d850076daf/analysis/1448357583/
+0/55, Karl.
+It’s Gorgeous Google problem, not my. May be your browser was infected some malware and redirects you to another file?
+
+Reply
+Escape75
+November 25, 2015 at 2:32 am
+Chrome is crap lately, use Opera ??
+
+Reply
+Ander
+December 11, 2015 at 6:03 am
+the link is not work anymore please fix it ??
+
+Reply
+Ander
+December 11, 2015 at 10:54 am
+run the program and display the command line window appears and closes in seconds
+it doesn’t works
+
+Reply
+cyberghost1969CyberGhosT
+November 23, 2015 at 9:07 am
+Thank You evgeny ??
+I am running Win 10 pro x86 1151, and will try this. Is the NVidia issue fixed ?
+I am using nVidia driver: 359.00, can I use it or should I go with another driver.
+Thanks for your hard work, it is appreciated. PeAcE
+
+Reply
+Escape75
+November 23, 2015 at 11:32 am
+Updated my PAE Patch self extract .exe with the new patch from evgeny:
+
+https://mega.nz/#!f8wXzQwL
+
+Reply
+Escape75
+November 23, 2015 at 11:33 am
+Sorry wrong link above ??
+
+https://mega.nz/#!f8wXzQwL!qoytlGnjIlCLrRb2Sf8yeerb-wwB71lRDFb62bRPUFw
+
+Reply
+sark
+November 27, 2015 at 6:51 am
+Work this on WinVista Sp2?
+
+Reply
+Terry
+November 23, 2015 at 2:29 pm
+Evgeny and Escape75,
+
+Many thanks both. We are back in business again.
+
+I got fed up with problem Nvidia drivers and Win 10 over-riding me, so I bought an AMD Radeon card, same as I fitted to my Win 8.1 machine.
+
+Escape75, very impressed with your script file, it makes patching so much faster and easier.
+
+Thanks again
+
+Reply
+pstrejajo
+November 27, 2015 at 8:05 pm
+Hello,
+
+I am struggling to install XP driver on Vista. I have HP 6530b with Mobile 4 Series Express Chipset Family (GMA 4500MHD?) card but the Vista driver is buggy as well. Unfortunately the XP driver has no such section in INF file, like the one for HD driver, only
+[Manufacturer]
+%Intel% = Intel.Mfg
+
+[Intel.Mfg]
+
+%iCNTG0% = iCNT0, PCI\VEN_8086&DEV_2A42
+%iCNTG1% = iCNT1, PCI\VEN_8086&DEV_2A43
+%iEGLG0% = iEGL0, PCI\VEN_8086&DEV_2E02
+%iEGLG1% = iEGL1, PCI\VEN_8086&DEV_2E03
+%iEGLQ4G0% = iEGL0, PCI\VEN_8086&DEV_2E12
+%iEGLQ4G1% = iEGL1, PCI\VEN_8086&DEV_2E13
+%iEGLG4G0% = iEGL0, PCI\VEN_8086&DEV_2E22
+%iEGLG4G1% = iEGL1, PCI\VEN_8086&DEV_2E23
+%iEGLGVG0% = iEGL0, PCI\VEN_8086&DEV_2E32
+%iEGLGVG1% = iEGL1, PCI\VEN_8086&DEV_2E33
+%iEGLGB0% = iEGL0, PCI\VEN_8086&DEV_2E42
+%iEGLGB1% = iEGL1, PCI\VEN_8086&DEV_2E43
+%iEGLGBU0% = iEGL0, PCI\VEN_8086&DEV_2E92
+%iEGLGBU1% = iEGL1, PCI\VEN_8086&DEV_2E93
+
+Nothing related to Vista or XP, so cannot make any change in it. Setup ends with error that driver is not validated for this computer and I should use driver from computer manufacturer, but if I use the XP driver from HP I am getting just the same error.
+I tried to update the driver via device manager but Vista decides that it already has the newest driver. I tried to uninstall the driver but still I have some apparently pre-installed Intel driver 7.15.10.1488 and above actions end in the same way. Am I out of luck with this crap graphic card?
+Maybe it is because the drivers have different names? Vista has igdkmd32.sys and for XP it is igxpmp32.sys. I would appreciate your comments.
+
+Reply
+dj02
+December 9, 2015 at 8:12 pm
+this patch works on win 10 as well?
+
+Reply
+Xn
+December 29, 2015 at 1:21 am
+No, please don’t forget about your privacy. The “disable” options in this matter works wrongly in Windows 10. It is intentional. Please also read “more” in microsoft privacy policy (aka.ms/privacy). You also will never be true administrator of your computer using windows 10.
+Administrator of your computer with windows 10 is M$. All interference into system can be undo by system. This system is not stable without patching so…
+
+If you have Professional or Enterprise version of Win10, probably you can downgrade to windows 8.1 (read EULA) and patch it. Pay attention during use of Windows update on Win7 and Win8.1 (telemetry; auto-update to windows 10 aka GWX.exe).
+
+Reply
+Xn
+December 29, 2015 at 1:25 am
+But… Please see youtube. Maybe patch works. https://www.youtube.com/watch?v=fYyahhNYDt8
+
+Reply
+Xn
+December 29, 2015 at 1:06 am
+Thank you. The Patch works properly but please add comment for windows 8.1: After selection of non-default Windows 8.1 Patched the computer will show black screen during a few seconds and restart. After restart there will be loaded patched system. I have 4GB of RAM. Before patch: 1.97GB free, after: 3.20GB free.
+
+I switched default boot item after testing to patched version.
+
+Why M$ blocks the PAE function? There shall be possible to enable with warning “not all devices/drivers support it. You use this option at your own risk”.
+
+Reply
+David
+January 26, 2016 at 7:58 pm
+Hi, I am using intel i5 5300u with HD5500 graphic running win7 sp1 32bit. Is there still problem with this Intel HD graphic?
+THank you very much!
+
+Reply
+yvbprakash@yahoo.com
+April 18, 2016 at 1:36 pm
+Thanks for the patch, it worked for me, on dell PC windows10.
+
+Reply
+temuc0
+May 11, 2016 at 12:03 am
+PLS
+when i run into adm powershell or cmd of 8.1, gives an error that “unable to copy file:…”
+
+Reply
+Philip Thomas
+May 27, 2016 at 1:14 pm
+The second command to disable the digital signature verification is failing me
+
+Reply
+Philip Thomas
+May 27, 2016 at 1:15 pm
+By the way I have windows 7
+
+Reply
+Pingback: Windows Xp Live Cd Rutracker | I love You Zones
+Pingback: Windows Live Cd Rutracker | Minifind
+Cherry
+November 16, 2016 at 11:36 am
+patchpae2 is working great on my intel HD 4600 graphics with driver version 15.36.31.4414
+
+Reply
+Pingback: Windows 7 Live Cd Rutracker | cm
+Lea
+April 5, 2017 at 7:06 pm
+It seems that many people has a “failed”,just like me?So today,I use both PatchPae2 and PatchPae3.On mine,PatchPae2 for winload.exe failed,and PatchPae3 for ntkrnlpa.exe “failed”,that’s the reason why combine them.
+Sorry for my very low English skill level.
+
+Reply
+evgeny
+April 6, 2017 at 5:14 am
+Lea
+Can you upload problem files?
+
+Reply
+Laurent
+August 10, 2017 at 1:49 pm
+Thanks a lot. It solve my problem
+
+Reply
+ansari
+May 18, 2017 at 5:24 am
+Unable to copy file: Access is denied. … i keep on getting this in step 3 .. help pls
+
+Reply
+DROIDDRONE
+June 25, 2017 at 10:42 pm
+ow yeah ram upgrade
+
+Reply
+Kirill
+February 16, 2018 at 2:58 am
+Working OK for now (AMD user).
+
+Reply

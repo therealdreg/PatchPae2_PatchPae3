@@ -1,0 +1,2532 @@
+Pingback: PAE patch updated for Windows 7 « wblog3
+ruddj
+February 23, 2011 at 9:01 pm
+Great job and quick release. Will this version fix the Intel HD Graphics version?
+
+Reply
+wj32 
+February 23, 2011 at 9:30 pm
+I don’t know what the problem actually is or what’s causing it…
+
+Reply
+Big Boy
+September 12, 2011 at 8:38 pm
+You see, this is the reason why MS disabled more than 4GB on 32-bit systems. Because of fishy drivers that can’t handle memory above 4GB. The fault is Intel driver, not the PAE patch.
+
+Now, some versions of Windows Server do support more than 4GB on 32-bit. You may try Intel HD drivers for those versions of Windows. Note that I have NO IDEA if it will work or not! Basically you are at the mercy of the driver maker.
+
+Reply
+Marcos Jacoby
+May 2, 2013 at 8:39 am
+Well, I have dug deeply the internet and from what we have found the following problems:
+Microsoft has put a restriction of 4 Gb memory on all 32-bit versions of their operating systems from Vista, except for the Server versions (2003, 2008 and 2012). The reason is not known and there are several assumptions and rumors.
+Intel is a partner of Microsoft in many things and not offended things decided it will not fix the bug in their driver (HD 2000/3000 and 2500/4000) which gives a beautiful crash every time you use a PAE kernel versions in a 32-bit no Server Windows O. S.
+And these crashes doesn’t happen with Nvidia and AMD/ATI drivers.
+This is very clear because Intel has partnered with linux.org and is a partner in developing drivers for GNU / Linux systems that have 32-bit PAE kernel and there is no limitation in the intel graphic driver nor crashes.
+I also read that a user who probably did an upgrade from Windows XP to Seven, did a rollback of a Intel HD Windows 7 driver to a XP driver version and has worked fine (Windows PAE kernel driver Intel HD XP).
+Unfortunately if you try to install the XP driver ain the Windows Vista/7/8 the system informs that “the computer does not meet the requirements”.
+Then the bullet hole is there. Based on the Intel driver for Windows XP, or modify it to be accepted by Windows Vista/7/8 or modify the Intel driver for Vista/7/8.
+I believe even in not a bug, but a deliberate restriction.
+And so is this link (http://communities.intel.com/thread/32085) Forum Intel can sit and wait that Intel will fix this pseudo “bug”.
+The other options are:
+Use the Standard VGA Driver
+Buy a Graphic Card (not Intel) to user with Windows PAE kernel.
+Migrate to Windows 64 bit versions.
+Migrate to Linux.
+And f**k the consumer.
+
+Reply
+Andy
+May 7, 2013 at 4:32 am
+I can’t believe it, but I got Win7 to work on a Intel HD 3000 graphics (i3 Sandy Bridge) with this PAE patch.
+
+The solution was using an XP 32bit driver, which seemingly can do PAE. The only downside (?) is that it will NOT do Win7 Aero. But at least that’s better than the standard VGA driver, since it can do the full resolution of attached gig screens.
+
+Here we go:
+
+1) Patch Win7 for PAE
+
+2) Boot Win7 in unpatched mode
+
+3) Download the HD3000 Windows XP driver, I used this one: https://downloadcenter.intel.com/Detail_Desc.aspx?agr=Y&DwnldID=22643
+
+4) Unpack
+
+5) Edit the INF file in folder \Graphics\igxp32.inf by copying the WinXP section to the Vista/Win7 section:
+
+5a) before:
+
+[IntelGfx.NTx86.6.0]
+; no install on Vista/Win7
+
+[IntelGfx.NTx86.6.2]
+; no install on Win8
+
+5b) after:
+
+[IntelGfx.NTx86.6.0]
+; no install on Vista/Win7
+%iSNBGM1% = iSNBM0, PCI\VEN_8086&DEV_0106
+%iSNBGD1% = iSNBD0, PCI\VEN_8086&DEV_0102
+%iSNBGM2% = iSNBM0, PCI\VEN_8086&DEV_0116
+%iSNBGD2% = iSNBD0, PCI\VEN_8086&DEV_0112
+%iSNBGM2P% = iSNBM0, PCI\VEN_8086&DEV_0126
+%iSNBGD2P% = iSNBD0, PCI\VEN_8086&DEV_0122
+%iSNBGD3% = iSNBD0, PCI\VEN_8086&DEV_010A
+%iIVBGD0% = iIVBD0, PCI\VEN_8086&DEV_0162
+%iIVBGM0% = iIVBM0, PCI\VEN_8086&DEV_0166
+%iIVBGD0SRV% = iIVBD0, PCI\VEN_8086&DEV_016A
+%iIVBGD0GT1% = iIVBD0, PCI\VEN_8086&DEV_0152
+%iIVBGM0GT1% = iIVBM0, PCI\VEN_8086&DEV_0156
+%iIVBGD0SRVGT1% = iIVBD0, PCI\VEN_8086&DEV_015A
+
+[IntelGfx.NTx86.6.2]
+; no install on Win8
+
+6) Install the patched driver by
+Device Manager
+-> Your Graphics Chip
+-> Update Driver
+-> Browse my computer…
+-> Let me pick…
+-> Have disk
+-> Point it to the folder with the INF file
+
+You might have to agree to install unsigned drivers
+
+7) Change the Windows 7 theme to Windows 7 Basic
+
+8) Restart and enjoy 4+ GB RAM with HD graphics ??
+
+Reply
+Marcos Jacoby
+May 8, 2013 at 8:22 pm
+I did this in Sunday and have testing it before publish to avoid headache with lots of questions.
+Really works but the Aero don’t work and the speed it’s no to great compared with the Microsoft VGA Generic driver.
+But I do this in other machine that I have with the G41 chipset and have the same issue.
+Well, I prepared to install the VGA after uninstalled the intel HD driver but Windows 7 have installed a Microsoft HD driver instead.
+Well, I just try it and works with this driver that’s present in the Windows update on the G41 vdriver.
+But it works in the HD2000 chipset too?
+I don’t tested this too.
+Maybe this weekend.
+But if you can try this Andy and later report we appreciate.
+
+Reply
+Ksanderash
+August 28, 2013 at 6:47 am
+Thank you, Andy, it works! ) To help other users I’ve uploaded to Mediafire file host ready-to-use package of WinXP 32bit 14.56.0.5441 / 6.14.10.5441 driver, modified to use with Windows 7 SP1 (and maybe 8, not tried)
+
+http://www.mediafire.com/download/2hcj41xol8lxqfg/winxp_145441.7z
+
+Supported GPU:
+Intel(R) HD Graphics
+Intel(R) HD Graphics 3000
+Intel(R) HD Graphics Pxxxx
+Intel Haswell HD Graphics
+
+Install clicking on Setup, or via Device Manager, or New Hardware wizard. Do not forget that driver is functional with some limitations. Only 1 point in Windows Experience Index, so Aero expectedly don’t work, then I’ve noticed glitches in Rome Total War video scenes, and not all graphics details in game – driver doesn’t like different OS. But it’s completely playable, and also no problem with HD movies. Try on your own risk of course
+
+Reply
+tkfreeitune
+April 18, 2015 at 1:26 pm
+not working on Acer 5750G
+please help me! ??
+
+Ajay Parmar
+April 12, 2015 at 4:10 am
+Working very fine.
+Thank you very much.
+
+Reply
+tkfreeitune
+April 18, 2015 at 1:51 pm
+How to install drivers .. Win XP for the Win 7 ?
+
+Reply
+Sanjeev
+May 1, 2017 at 7:25 pm
+Can you send a video fr wht u have said above …..i have patched windows 10 n its successful but whenever i try to install intel hd graphics my screen goes black simply saying m facing prblm …….Is there any way to use window 10 pae with intel hd graphic …..pls try to reply wid working video how you do it i shall be grateful to you
+
+Mail me at = mr.sanjeevyadav1@gmail.com
+
+Reply
+mychal salvador
+December 10, 2013 at 9:37 pm
+how did u do that can u tell me plzz>??
+
+Reply
+R0man
+February 26, 2011 at 3:44 am
+The problem seems to be the driver of this Intel HD Graphics (Mobile Intel® 4 Series Express Chipset for me). Without it, I can go up to 1280×768 on my Dell Latitude E6400 using standard Windows VGA driver. As soon as the driver is installed, after Welcome Windows startup I have black screen and laptop freezes. But I can always enter within the Windows safe mode. Do you think that memory is shared differently with that kind of graphics adapters?
+
+Reply
+wj32 
+February 26, 2011 at 8:39 am
+It’s the driver’s problem. It probably uses 32-bit variables to store physical addresses which are actually 64-bit, truncating the addresses and reading/writing random memory.
+
+Reply
+Philippe ROSE
+August 1, 2012 at 9:27 am
+Just to be exact with PAE activated the addresses are not on 64 bits but on 36 bits.
+
+Reply
+ruddj
+February 26, 2011 at 10:32 am
+Appears Symantec are also having problems with the Intel driver taking up too much Kernel space:
+http://www.symantec.com/connect/forums/pgp-wde-blue-screen-after-kb2393802
+
+Reply
+comdevil
+April 5, 2011 at 5:23 am
+Me too.
+I’m using Lenovo ideapad U160 and having problem with Intel HD Graphic!
+
+Reply
+WiFi
+January 26, 2013 at 6:54 pm
+Same problem with Dell Inspiron 14R N4110 here. I only want to ask, if you have another graphic driver (mine is AMD Radeon HD 6630M), does disabling the Mobile Intel HD Graphics would solve the black screen problem?
+
+Reply
+Paul
+July 17, 2013 at 1:34 pm
+yes I was using pae hack with switchable card set to only radeon 6490m until my radeon chip died and it reverted back to intel only and then I got black screen. not sur eif I can fix radeon chip easily but I will try the driver hack next.. sucks intel havent paw support in their latest builds WTF.. i will prob end up installing windows 8 64bit since laptop can support it.. but much work reinstalling stuff which I wanted to avoid.
+
+Reply
+hamed
+August 31, 2013 at 9:09 pm
+I had this problem too with Mobile Intel® 4 Series Express Chipset.
+but I changed my graphics driver to XP driver, and now it’s working fine. except, I missed aero themes, but I’m using 4GB ram fine.
+
+Reply
+hamed
+September 1, 2013 at 9:58 pm
+ou god, it’s not just aero theme I miss, the graphic processing is so much lower now (let alone it was awful before…), can’t even play normal old games now.
+I’m switching back.
+
+Reply
+kDn
+February 27, 2011 at 9:37 pm
+Not working for me on Windows 7 SP1, causing BSOD 0x8E ??
+
+Reply
+kDn
+February 27, 2011 at 11:27 pm
+Sorry, I was wrong. All work fine ??
+I was get BSOD 8e becouse had overclocked memory 2*270*(5/3)=900MHz (5-5-5-15) for DDR2 800. Then I grow up timings to 6-6-6-18 and tested with MemTest86+. Currently memory is stable and Windows 7 with PAE patch stable also.
+
+Thank you).
+
+Reply
+Ivan
+February 28, 2011 at 11:37 pm
+Step 4 (C:WherePatchPaeIsPatchPae.exe -type loader -o winloadp.exe winload.exe) results in the message “failed”.
+
+Reply
+Ivan
+February 28, 2011 at 11:52 pm
+Apologies for my inferior reading and Googling skills, I used the old patch. However after finishing all steps successfully and rebooting to the new patched Windows, the usable RAM size was still only 3,46 GB.
+
+Reply
+luca62
+January 19, 2013 at 11:03 am
+patch is ok.
+move directory “PatchPae” in C:
+command is > C:\PatchPae\PatchPae.exe -etc etc
+
+Reply
+Jash
+February 28, 2016 at 3:36 pm
+how did you get that done coz im going through the same issue. there isnt any winload.exe file in the patch anyway. I followed step 4 exactly but i still got the error ‘ windows cannot find the path specified’
+
+Reply
+Pingback: Windows 7 Service Pack 1 Final
+Royce
+March 25, 2011 at 4:57 am
+Did not works on me, the windows always restart randomly, and there’s written memory crash dump ?
+
+Reply
+Royce
+March 25, 2011 at 5:04 am
+My pc didn’t overclocked at all, and the configuration are on normal setting… , but still BSOD, windows 7 sp1..
+
+Reply
+Rishi
+April 2, 2011 at 12:06 pm
+Dear Wj32,
+
+Thank you for this worderful patch. What I want to know is that, all the steps mentioned in the readme text I have to follow. If after patching the system with the patched pae and then I delete PAE folder will it still work.
+
+Reply
+Bow
+May 3, 2011 at 11:16 pm
+Hi Wj32,
+
+I can get into windows but not for a while BSOD. I’ve tried more than 5 times using the patch PAE (Win7SP1) but always BSOD with various kinds of error messages.
+
+Any suggestions?
+
+Reply
+chrisu3
+May 28, 2011 at 3:44 am
+Hi everyone. Can someone explain me how to completely uninstall this patch? I have used instruction attached to patch, but it didn’t worked for me Now Win7 see only 2 GB of ram in my computer :/. I removed patched entry from boot tab in ms config but issue is still the same. Also in the bottom right corner of my desktop appeared info witch says: “Test mode, Windows 7 Compilation 7601?.
+
+Reply
+mauro
+June 13, 2011 at 4:06 am
+and version for xp 32 ? are plan to build? using kernel 2003 or patch kernel to activate PAE
+
+Reply
+voorhees
+June 18, 2011 at 8:57 am
+work fine here, this is some picture without patched and patched PAE
+
+non-patched PAE
+http://img571.imageshack.us/img571/5829/sysinforam325.png
+http://img830.imageshack.us/img830/562/ram325gb.png
+patched PAE
+http://img94.imageshack.us/img94/4117/sysinforam8gb.png
+http://img13.imageshack.us/img13/1079/ram706gb.png
+
+there is some problem, but that must be becouse, like wj32 said, software/hardware issue, in my case i start alot application which use user-mode or kernel-mode drivers but for now i saw just apllications which use capture drivers not work on my system, specifically AverMedia Hybrid TV card and Logitech WebCam
+
+Reply
+voorhees
+June 18, 2011 at 9:13 am
+actually my mistake, just AverMedia capture device driver will cause application crash or system hang, depending which application will use that device driver.
+WebCam works fine
+
+Reply
+triplexxx
+June 19, 2011 at 6:40 pm
+thank you very much wj32 for this patch! it works pretty fine on windows 7 pro 32 bit. my kernel-version is: ntkrnlpa.exe 6.1.7601.17592.
+till now no problems with drivers …
+
+Reply
+Marcos Jacoby
+May 2, 2013 at 8:45 am
+And your mobo is?
+VGA driver?
+This issue affect’s only INtel HD (2000/3000 and 2500/4000).
+I tell you because I’m use this patch in a netbook with 945 chipset and has no problem with the Intel Graphic driver.
+
+Reply
+khangozzy
+June 22, 2011 at 10:51 pm
+Hi all,
+
+How to remove the water mark “Test mode, windows 7 compilation 7601”
+
+Tks
+
+Reply
+triplexxx
+June 23, 2011 at 1:54 am
+Did you do all steps like shown in the readme.txt-file?
+
+I have exactly followed the instructions in the readme.txt, there is no water mark at all at me PC…
+
+Reply
+triplexxx
+June 23, 2011 at 2:06 am
+I have tried the patch on another Notebook with an Mobile Intel X3100 Grafic-Adapter onboard. The patch does NOT work. It seems to be a problem with the Intel-driver, like people reportet above …
+
+Reply
+PA
+June 29, 2011 at 2:34 am
+nointegritychecks works only for the 1st boot, after that Windows Startup Repari will launch and complain about bad signature in either ntkrnlpx or winloadp.
+For the rest the patch works fine.
+
+Reply
+PA
+July 1, 2011 at 4:36 am
+Forget about last post, it works fine just now.
+I forgot my bcd entry has nx AlwaysOff and it seems that option also disables PAE.
+So if you want to have +4 Gb PAE kernel but dont want Microsoft DEP (Data Execution Prevention) on you you need to set:
+
+bcdedit /set {current} nx AlwaysOff
+bcdedit /set {current} pae ForceEnable
+
+Reply
+PA
+July 1, 2011 at 4:38 am
+Oh and another drivers that has problems with this memory seems to be MacDrive’s HFS driver, when the patched kernel is active the driver doesnt mount HFS partitions.
+
+Reply
+CA
+January 18, 2015 at 6:28 pm
+Are there any versions of the PAE patch that plays well with MacDrive?
+
+Reply
+bvdl
+July 1, 2011 at 6:45 am
+works fine without any problems,
+great work!
+
+Reply
+Luis Ibanez
+July 20, 2011 at 3:43 pm
+Hi, thanks for the post, this helped me a lot, i tried with different patches, but without success. I follow your instructions over Windows 7 Ultimate “Sp1” and it worked just FINE. For all of the guys that didn’t get it working, i would suggest PowerCmd , so you will be able to copy and paste the commands instead of typing everything manually. THANKS again, it works like a charm.
+
+Reply
+Previx64
+August 21, 2011 at 5:36 pm
+Those who are unable to run bcdedit for error “The boot configuration data store could not be opened”, this may be because your Boot files are on a recovery partition which is not attached by default to the windows. In that case you can press F8 at boot up and enter into repairmode. open a command prompt and do the procedure listed above. HTH
+
+Reply
+Previx64
+August 21, 2011 at 5:43 pm
+For those who got into a brick wall thanks to intel igdkmd32.sys and the like, they can verify whether this patch works by entering the safe mode.
+
+Reply
+kon
+August 24, 2011 at 12:29 pm
+Thanks for this great hack, my pc works fine with win7 sp1 and this patch and now I dont need move to an 64bit version anymore!
+
+Reply
+kon
+August 24, 2011 at 12:30 pm
+Also that powercmd program makes ur life easier, as it has to do with the progress of this patch. Just copy-pastes and finished ??
+Thanks again!
+
+Reply
+Pablo
+October 3, 2011 at 11:00 am
+Excellent patch…worked perfectly. Thank you!
+
+Reply
+sorin
+October 10, 2011 at 2:19 am
+Thank you! It worked … like a charm!
+
+Reply
+Novex
+October 12, 2011 at 5:21 pm
+Still can’t work on Intel HD Graphics (Thinkpad x220)
+In safe mode it totally works. When starting normally, black screen just like R0man says.
+
+So sad… My 6GB RAM…
+
+Reply
+moon
+November 7, 2011 at 7:52 pm
+I test on Lenovo G470 with Windows 7 Ultimate SP1(32bit)
+work on RAM 4G
+but can’t work on RAM 8G (4G x2)
+
+Reply
+Michel
+November 13, 2011 at 3:08 am
+I got the version before SP1 to work but this one does not.
+I get a Windows repair screen just like when you insert the repair CD.
+I used Powercmd as Administrator hoping that would be an elevated command prompt.
+Anyway.. How do I REMOVE this?
+
+Reply
+Michel
+November 13, 2011 at 6:43 am
+Seems I myself made a mistake.
+I could see what I did wrong in the powercmd history log.
+
+Anyway it works now.
+I will give a short tutorial how I did it, perhaps someone who is also not very technical will benefit from it.
+
+Download the patch zip file from this website.
+Unpack the zip file with Winrar to a folder named tinytim on your desktop.
+Download and install Powercmd.
+Run Powercmd as Administrator.
+Type: cd C:Windowssystem32
+Then just follow the steps from the read me which is also in the patch zip file.
+Where it says:C:WherePatchPaeIs
+remove that and put in: C:UsersusernameDesktoptinytim
+Where username is YOUR username.
+
+So for example this:
+3. C:WherePatchPaeIsPatchPae.exe -type kernel -o ntkrnlpx.exe ntkrnlpa.exe
+
+Would have to be this:
+3. C:UsersusernameDesktoptinytimPatchPae.exe -type kernel -o ntkrnlpx.exe ntkrnlpa.exe
+
+It’s great having bought 4 GB and actually USING 4 GB!
+
+Reply
+pool of ram
+November 26, 2011 at 9:41 pm
+not really working on cores which have memory sharing on built-in gpu’s (arrandale, sandybridge, new gen cores, nvidia’s optimus, other switching techs) unlike when you setup it on a machine with dedicated gpu it will run without any problems.
+
+Reply
+Julio Ariza
+December 14, 2011 at 1:46 pm
+I get the message: winloadp.exe
+
+The selected entry could not be loaded because the application is missing or corrupt. Any idea?
+
+Reply
+Ottorino
+January 3, 2012 at 5:04 pm
+I also have tried to patch the Win7 32bit on a nvidia optimus system. I get the same problems as decribed above. Everything works fine with standard vga driver. After install the Intel HD Graphics driver the system hangs close before welcome screen.
+
+Does anyone with lots of knowledge about memory sharing have an idea how to solve this Intel driver problem?
+
+Reply
+Paul
+July 17, 2013 at 1:38 pm
+if its switchable just use catalyst to use the 2nd card always. then should work fine. I think you open power save and select max performance.. by memory since my 2nd chip in laptop died.. I think HP poor heat venting cooks the video chip or maybe its a bad solder point.
+
+Reply
+Pizzetta
+January 3, 2012 at 9:18 pm
+Same problem also for me on HP EliteBook 8460p with Intel HD graphic driver.
+Installed this and other 4GB patch, but is always the same: BSOD after entered Seven password login account or the PC crash. If I execute the patched boot in safe mode than I don’t have problem.
+I investigate that the root cause is due to Intel HD graphics driver. In fact I’ll uninstall the driver and execute the patch it works correctly but I have the VGA mode.
+Any suggestion to fix this issue?
+
+Reply
+Marvin McInnis
+January 6, 2012 at 8:15 am
+Has anyone verified this patch against the latest release of ntkrnlpa.exe?
+
+File version: 6.1.7601.17713
+Date modified: 10/25/2011 11:47 p.m.
+MD5: F2368C2A4B126B2EAEF1985116B88A1D
+
+Thanks.
+
+Reply
+Marvin McInnis
+January 16, 2012 at 5:55 am
+After some extensive experimentation, I will respond to my own post. The short answer is, “Yes … the patch will work with 32-bit Windows 7 Professional SP1, from the bare SP1 installation all the way through the latest available updates as of 14 Jan 2012.”
+
+Environment:
+Intel S1200BTL server motherboard (Intel & Micro$oft drivers)
+Intel Xeon E3-1230 CPU
+Video – ATI 5450 GPU (AMD/ATI driver)
+Sound – Creative Audigy PCI (Creative driver)
+Disks – (2) Seagate 1TB disks configured as a RAID 1 mirror array using standard Micro$oft software RAID
+
+Kernel revisions:
+The PAE kernel file (ntkrnlpa.exe) on the original SP1 install disc was version 6.1.7601.17514 (20 Nov 1010). The kernel file was updated per KB2633171 to revision 6.1.7601.17713 (25 Oct 2011). PatchPAE works correctly with either kernel file.
+
+To repeat myself … If you install the PAE patch exactly in accordance with the instructions provided in the package it will work correctly with any 32-bit Win 7 Professional revision level from the M$ distribution discs through the latest updates as of 14 Jan 2012. It is still possible that the patch will fail to work correctly in some environments due to non-standards-compliant third-party drivers.
+
+I hope this helps.
+
+Reply
+Paul
+July 17, 2013 at 1:41 pm
+Theres a new autoit installer and new patched pae that works with all kernels win 7 and 8 as of apr 2013, floating on the p2p channels if have problems.. you just click its exe to install its so simple no manual stuff needed
+
+Reply
+Kostas
+January 11, 2012 at 4:02 am
+Win 7 SP1,
+8GB RAM,
+Intel Core i5 2500K + ATI 5850
+working fine until now…
+
+Reply
+pizzetta72
+January 12, 2012 at 11:45 pm
+Nothing to do. Installed last version 6.1.7601.17713 but hte problem is still present if I start Seven in Normal mode. In Safe mode or better removing the Graphic driver (Intel) the problem disappear and I have the 4Gb.
+The main problem is focused on the Intel Graphics drivers that probably are not compatible with PAE enabling ??
+
+Reply
+war10ck
+February 9, 2012 at 11:13 pm
+Windows 7 runs well with Intel Graphics driver for XP. You won’t get the AERO effects but the basic design. Still better than default VGA or blue screen.
+
+Reply
+R0man
+February 24, 2012 at 5:51 am
+Could you say more details about components of your box please?
+
+Reply
+MAto
+June 19, 2012 at 6:19 pm
+Have U any clue how to start aero in xp driver ???
+
+Reply
+arfer
+August 16, 2012 at 4:29 pm
+I can confirm that the Intel HD XP driver works fine on my Dell N5110 i7 8GB with Windows7 32bit, and I can use the full 8 gigs with the patch. But… the nVidia Geforce 525M with Optimus technology doesn’t work with this driver, so I am not able to use the nVidia card, just the HD graphics. Any suggestions? As a “workaround” I don’t use the patch, but I installed Gavotte Ramdisk which is able to use the memory above 4GB, and I put the pagefile there.
+
+Reply
+dumraja
+February 24, 2012 at 1:32 am
+HI all,
+
+did exactly as the instruction everything went great but on boot it still shows ” 4.00gb 3.25gb usable”
+have win 7 ultimate lic. copy and laptop XPS M1210 DEll can sone one help.
+
+I tried again and again have more than three entries in boot but none works.
+
+can some one help me and guide.
+
+Reply
+R0man
+February 24, 2012 at 5:49 am
+Seems your video card doesn’t have its own memory…
+
+Reply
+dumraja
+February 25, 2012 at 6:58 pm
+can you explain
+
+Reply
+mitko
+February 28, 2012 at 1:09 am
+i did that and just before the welcome screen where i should write my password for windows it only shows black screen without anything else… ?? it seems its not working for me i have windows 7 32-bit with 4bg, but it says 2,36 usable.
+
+Reply
+Stiopa
+March 13, 2012 at 7:26 pm
+After installing this patch on Windows 7 SP1 Eng i am getting only 847mb of usable memory.
+http://funkyimg.com/u2/1445/050/227550tuned_windows7.jpg
+
+Is there a way to uninstall this patch?
+PS: Using ATI Radeon 3650 GPU
+
+Reply
+User
+April 8, 2012 at 12:52 pm
+Exellent patch!
+
+Also, big thanks to PA for these 2 lines:
+
+bcdedit /set {current} nx AlwaysOff
+bcdedit /set {current} pae ForceEnable
+
+Did not work until after enetering them.
+
+Sidenote: if the patch did not work from first try, chances are, you booted using the other “Windows 7” boot entry. So to go into correct boot store, the lines above should look like this:
+
+bcdedit /set {default} nx AlwaysOff
+bcdedit /set {default} pae ForceEnable
+
+Using this on HP 8540p notebook.
+
+Reply
+Alexey
+September 28, 2014 at 10:09 am
+Please, move this information to the readme file!
+It works for me with these to lines only.
+Lenovo Thinkpad T530. Nvidia Graphics.
+
+Reply
+Anon
+April 11, 2012 at 5:52 pm
+I always get blue screen after installing this patch, any help?
+
+Reply
+robin2001
+April 13, 2012 at 2:35 am
+I installed the intel graphics hd driver for XP x86 in safe mode, rebooted and now…
+Working on my Dell Latitude E5420 (Core i3, 8GB RAM now on 7 32bit )
+http://downloadmirror.intel.com/20781/a08/winxp_14469.zip
+
+Thanks to war10ck for the recommendation. (as he said no aero effects, but no big deal here)
+
+Reply
+MAto
+June 19, 2012 at 6:12 pm
+Does anybody know how to run aero theme under xp intel driver ?? it would be great
+
+Reply
+eric
+April 19, 2012 at 11:30 pm
+try the uniwave patch..i have used it on several computers without any problems
+
+Reply
+Steve
+April 29, 2012 at 2:01 pm
+I tried the uniwave patch and it didn’t do anything. I have 4GB ram but still can only use 2.94GB even though it? said patch was successful and I got the watermark and dual boot screen. typing in bcdedit proved it did nothing and ntkrlICE.exe file was unchanged. I didn’t try this patch from here and after reading these comments I won’t try this one either. I’ll just install 64bit 7 Ultimate.
+
+Reply
+marcio
+April 20, 2012 at 5:47 am
+someone managed to solve the problem with the intel HD igdkmd32.sys error 0x00000116?
+
+Reply
+soshallitbe
+April 25, 2012 at 6:03 pm
+Fantastic! Just patched a Win7 SP1 32bit system (Intel i5 with Nvidia gfx) and it now shows the full 4GB that is installed. Mate you are a legend – put the donate button up now!
+
+Reply
+viltnieks
+April 26, 2012 at 5:18 pm
+hi
+I have a problem
+after the restart and start Windows 7 (PAE Patched). I have mesage “Your computer was unable to start” and starting startup repair.
+Startup repair is not corrected the problem.
+what am i doing wrong and what is the solution?
+
+Reply
+mixcomo
+June 25, 2012 at 9:32 am
+Same here, I try patch on my Windows 7 enterprise (legal trial). I do not try startup repair to correct the problem, but I will do it.
+
+Reply
+Larry
+April 4, 2013 at 12:04 pm
+I’ve been having the same problem. I’ve found that if you boot the normal windows first and do something for awhile and then restart and choose the PAE boot choice, the next few times or so you will be OK. Then it’ll do it again and you have repeat the process. It’s a little annoying, but not overly so. I’d still like a fix though.
+
+Reply
+Jonathan
+May 27, 2012 at 3:27 am
+Qual, é…?
+Cade os mano BRASILEIRO…?
+Háa, tenho o Windows Srever 2008 64 bits…Como resolvo problemas de incompatibilidade com programas (32bits)?
+
+Reply
+Master of Disaster
+June 1, 2012 at 8:38 pm
+grat Stuff !
+…it works good under Win7.
+How about Vista x86 ? someone tried it there ?
+
+Hint for Win7:
+if youre PC wont start after “correct” Patching, reboot again and press F8 in Bootmenu !
+Now select the Menu “disable Signature veryfing” and VIOLA youre System will Run after this with FULL Ram !
+
+Reply
+Master of Disaster
+June 2, 2012 at 10:48 pm
+its not “grat”… =D its GREAT
+NOBODY outa there who tryed this Patch under
+Vista 32bit
+Windows Home Server 2011 64bit
+???
+
+Reply
+Larry
+July 21, 2012 at 2:32 pm
+I ran this for over a year on vista 32, It was like magic. Every idiot out there says that the PAE patch, does not improve game performance. That’s horsesh** I got incredible performance increases from all my games.
+
+Reply
+jcm
+June 5, 2012 at 2:55 pm
+I got this to work as well using the intel HD 3000 windows XP driver on windows 7. I downloaded the window 7 SDK for makecert and signed the patched ntkrnlpa.exe based on the german website instructions. Like everybody else I could boot in to safe mode but was just getting a black screen on boot (no windows logo ever).
+
+We’ll see how we go but it looks like my dell vostro is kitted out with a new SSD and 8GB ram now. I like to run multiple virtual machines.
+
+Reply
+zam89
+June 11, 2012 at 6:45 pm
+does this work with macbook pro (via bootcamp)?
+
+Reply
+Anon
+June 16, 2012 at 5:13 am
+I don’t understand if PAE can be enabled via cmd console bcdedit then why the hell do we need this for?
+
+Reply
+Larry
+July 21, 2012 at 6:21 pm
+Come’on! It’s frustrating when someone who doesn’t know anything about something demands everyone else educate them on the subject. Just google PAE and the name of your windows version, and read the results that talk about PAE by itself. Enabling PAE in the BCD does NOT allow the use of more than 4 gbs. This patch fixes that.
+
+Reply
+Larry
+July 21, 2012 at 2:29 pm
+Help! I had windows vista 32 and 6gbs ram with the PAE patch installed worked great.
+
+Then I upgraded to windows 7 32 installed the PAE patch and now I have only 4 of 6 gbs usable.
+
+I made no hardware changes. Why isn’t the patch giving me all 6 gbs????
+
+Reply
+Sergio
+August 8, 2012 at 8:02 pm
+I does work!! Thank you!!!
+
+Reply
+Qwest
+August 26, 2012 at 9:38 am
+Patch appears to require the Microsoft .NET Framework to function.
+
+Reply
+jcm
+October 13, 2012 at 9:14 am
+I had about a half a dozen blue screens over the last 4 months using this patch with 8 GB ram, the windows XP intel HD 3000 driver, and a OCZ vertex 3 ssd. I got a lenovo T430s and put 16gb ram in that and went back to 3GB on this Dell, which has been relegated to secondary duties.
+
+Reply
+Atis
+October 19, 2012 at 5:42 pm
+I also have Intel HD graphics. Managed to run PAE Patch, a new boot entry has been created but I get BSOD too. Some of you guys say that installing the XP driver solves the BSOD. So how did you manage to install XP driver on Windows7? I downloaded both the zip and exe files from Intel’s website but I can not run any setup application because it complains that the installer cannot run on Windows7. I tried running it on Compatibility mode but still having that error. How did you guys install the XP Driver??
+
+Reply
+DoKs
+January 19, 2013 at 9:37 pm
+http://downloadmirror.intel.com/21828/a08/winxp144215.exe
+
+Reply
+saboly
+October 22, 2012 at 9:35 am
+Hello
+i did apply the patch before when had 4 GB only of ram , was working great and i was able to use all the ammount of ram
+NOW i added extra 4 GB of ram , it was very strange to see only 3.94 gb usable !!!!!
+i applied a MS update to update kernel to new version which is reported compatible with the pacth KB2633171-x86
+i deleted bcd entries and created clean one > applied patch > but still 4029 usable reported in task manager
+any suggestions would be appreciated
+thanks for this work
+
+Reply
+Brian
+November 30, 2012 at 8:13 pm
+Hi,
+
+I applied the patch and i’m getting the 4GB working on win7 starter. However my graphics driver now isn’t working! (it’s a samsung nc110-intel atom n2600 – intel gma3600).
+
+When i boot from the normal kernel the driver works fine but only 2GB of the 4GB is useable. When i boot from the PAE patched kernel i got the 4GB set as useable but the intel gma3600 driver has stopped working.
+
+Any suggestions? Should i try reinstalling the driver or is their something I need to configure?
+
+Thanks
+
+Reply
+Brian
+November 30, 2012 at 11:48 pm
+I got win7 starter on an atom n2600 to recongise 3.25GB of ram – it wouldn’t work with the full 4GB as i think the 64bit instruction set is disabled on the atom n2600.
+
+As above when I tried the full 4GB the GMA3600 graphics driver wouldn’t load (as i think it needed the address space over the 3.25GB hard limit on 32 bit).
+
+I did this by going to MSCONFIG -> BOOT -> select the patched boot option and click Advanced Options then m,anually set the maximum memory field to 3328MB.
+
+I’m happy enough with the 3.25GB as win7 starter is only supposed to have 2GB!
+
+Reply
+alex
+December 4, 2012 at 6:54 am
+Hello!
+Can you please help? When I try to install the patch I get stuck at the third step:
+C:UsersVIODesktoptinytimPatchPae.exe’ is not recognized as an internal or external command,
+operable program or batch file.
+Any ideas ?
+Thank you!
+
+Reply
+Thomas
+December 5, 2012 at 6:42 am
+Alex,
+
+The 1st thing I would do is move the PAE folder to the C drive so it reads: C:PAE
+Of course, you should have 5 files in this folder:
+PatchPae.exe
+PatchPae.sln
+ProcessHacker.Common.dll
+ProcessHacker.Native.dll
+readme.txt
+
+After this is done, your step 3 command should read:
+C:PAE\PatchPae.exe -type kernel -o ntkrnlpx.exe ntkrnlpa.exe
+
+Step 4 should read:
+C:PAEPatchPae.exe -type loader -o winloadp.exe winload.exe
+
+Hope this helps.
+
+Reply
+Thomas
+December 5, 2012 at 6:45 am
+*Note error, step 3 should read:
+
+C:PAEPatchPae.exe -type kernel -o ntkrnlpx.exe ntkrnlpa.exe
+
+Reply
+Thomas
+December 5, 2012 at 6:34 am
+Thank you, wj32. I have downloaded and installed the patch. I’ve tested just about everything I could before posting this message. All programs seem to be working appropriately. My only concern was the Adobe PageMaker program I have since it is THE most important application on the computer. But low and behold, it works too! Thanks for making the instructions so easy to follow.
+
+Reply
+Tommy
+December 5, 2012 at 2:02 pm
+I need help to remove this patch, installed it succesfully but with the result that I cant connect with my internet and my geforce 8600 wont work. Tryed to restore the sytem to an earlier config but it doesn’t help, the patch is still there… :/
+
+Reply
+Tommy
+December 5, 2012 at 2:41 pm
+Solved it…
+
+1. Open an elevated Command Prompt window.
+
+2. cd C:Windowssystem32.
+Make sure the current directory is in fact system32.
+
+3. bcdedit /enum
+
+4. Made sure that “Windows 7 (PAE Patched)” were listed as {deafault}
+
+5. bcdedit /delete {default}
+
+Done! Restart and my Windows 7 in original started. =)
+
+Reply
+Brian
+December 5, 2012 at 7:50 pm
+You can also do this by typing msconfig into the run prompt and deleting the boot entry in the boot tab.
+
+Reply
+Fung
+December 12, 2012 at 1:04 pm
+I got it working on my OptiPlex 380 at office. Both Resource Monitor and System Info show that I have 8GB installed and usable.
+
+Here are the screen dumps:
+http://i50.tinypic.com/5cgcrb.png
+http://i47.tinypic.com/33d81m0.jpg
+
+I also had the Intel driver issue. As told by comments above, I have to install the XP version of driver (no Areo, no big deal for me). My situation is I then encountered BSOD after XP driver was installed. It was due to Windows was trying to install another driver for Win7. So with two drivers, I got BSOD. I simply disable the Win7 one, and viola!
+
+@wj32 thank you so much for your work. I have no option for 64bit, but I have to run VMs for work. You saved my life.
+
+Reply
+GalaxyGalaxy
+December 15, 2012 at 3:57 am
+Hi, wj32. I really need a patch for Windows 8 as my old laptop has just 4GB memory. A 64bit version do takes more memory while I usually open quite a lot of tabs in Firefox.
+Also, many Chinese bank and the offical sites are still sticked to WinXP 32bit, and 64 bit softwares are often missing or cannot be setup directly due to the different path.
+
+Would you please update this patch ?
+
+Reply
+Pingback: PAE patch updated for Windows 7 | wj32
+Teeluck
+December 26, 2012 at 4:32 am
+Also interested with windows 8 patch. Please make it, i’m going to install windows 8 only if patch is released, thank you.
+Or somebody can give instructions how to manually modify files using hex editors.
+Currently with windows 7 sp1 32bit, 6gb ram, never had any problems.
+
+Reply
+Pingback: PAE patch updated for Windows 8 | wj32
+luca zapparoli
+January 19, 2013 at 9:01 am
+OK, install and work good on “HD western Digital sata 320 gb AV series BUDT” with Windows 7 on “Samsung R580 notebook” . PAE Patched > 3956 mb RAM disponible > OK
+
+But, NO BOOT (error of ntkrnlpx.exe no found…) on “SSD Samsung 120 gb 840 series” , system and the same machine….!
+
+repeated 3 times…NO BOOT (PAE Patched) — BOOT OK > Win32 (no pae patched)
+
+Help…Please
+
+Luca Zapparoli
+Gorgonzola (MI)
+ITALY
+
+thanks also.
+
+Reply
+luca zapparoli (IT)
+January 20, 2013 at 2:05 am
+sorry, solved
+
+the system on SSD had received two commands before starting the patch.
+1) bcdedit / set {current} nx AlwaysOff
+2) bcdedit / set {current) landscape ForceDisable
+Blocking the kernel patch. (!!!)
+Removed all.
+launched two commands:
+1) bcdedit / set {current} nx AlwaysOn
+2) bcdedit / set {current} pae ForceEnable
+3) patch as instructed
+4) re-started
+OK!!
+
+ok updates
+nvidia more ‘available RAM
+photoshop also
+RamDisk also
+
+perfect.
+
+Reply
+Prostoy
+January 23, 2013 at 1:04 am
+macbook pro 2011 early, bootcamp windows7, GJ! 2,5gb UP 8gb
+
+thx ;*
+
+Reply
+theblue
+February 24, 2013 at 10:07 am
+I was getting the crash with this in win 7 32-bit enterprise. I downgraded my video drivers to the win XP ones and now it’s working great!!!
+
+Reply
+theblue
+February 25, 2013 at 9:40 am
+I spoke a little too soon. It appears to crash (BSOD) when watching video for more than a few minutes. If I don’t watch video it’s stable.
+
+Reply
+Juri
+March 1, 2013 at 2:46 am
+I have successfully patched a current 32bit Windows 8 download upgrade. 8GB appear to be available. Unfortunately Adobe Creative Suite 6 programs don’t work. Does anyone has experienced this and maybe knows a solution?
+
+Thanks a lot
+
+Juri
+
+Reply
+MRT
+March 23, 2013 at 1:27 am
+HP ELiteBook 8470p With intel HD 4000 you have to install the latest XP drivers and change the .inf (copying from the Windows part of the INF to the part that says ;no install on Windows 7) and it works… If you try with the Windows 7 Drivers it boots and hangs.
+
+Just my 2 Cents…
+
+MRT
+
+Reply
+Didouc
+March 27, 2013 at 7:56 am
+Very good job, i’m a french user with Windows 7 sp1 32bit 12go ram
+
+Thanks
+
+Reply
+Serraxer
+March 30, 2013 at 3:35 am
+Very very thank you. Work great on win8x86pro on msi windpad 110w see 8gb.
+
+Reply
+Jean Hofsté
+April 9, 2013 at 8:23 am
+WJ32 I have another problem not yet mentioned hereabove:
+There is no winload.exe and no ntkrnl–.exe in my System32 folder, but in c:/Windows/Winsxs there are 4 winload.exe’s of even date and 4 ntkrnlpa.exe of even date.
+The full reference of one such ntkrnlpa = “C:\Windows\winsxs\x86_microsoft-windows-os-kernel_31bf3856ad364e35_6.1.7600.17207_none_6c5f1f0a15341779”.
+No. 2 finishes as: 18044_none_6e173b82127da724, / no.3: 21417_none_6cddedcf2e59d05b and no.4 as: 22210_none_6ebd48cf2b868ae6
+They are dated all 5 Jan 2013 and have the following time: 07:02/07:00/06:53/06:49
+
+I executed the remainder of the bcdedits hoping (in vain) that the boot-loader would search for the actual ntkrnlpa.exe’s.
+
+So now I have a double boot option of which the PAEpatch selection runs into the same problems a number of people have too: i.e. startup repair with no final solution.
+
+I run Win 7 Ultimate + SP1 – 4GB available (2.96 usable) – (done earlier with bcdedit /set increaseuserva 3072)
+
+Any suggestion to get the PAEpatch selection utilize the WINSXS folder entries, even with 4 different register entries for the even-dated ntkrnlpa.exe’s ?
+
+Reply
+Andreas
+April 25, 2013 at 5:38 am
+After having a patched Win7 Ultimate 32 on an MSI notebook, I ust tried to patch my Windows 7 Ultimate on a Atom D2700 driven machine.
+When I select the patched winloaid version system stops caused by an inaccessable device.
+
+I still have no idea where this comes from.
+
+I also set up Win7 Ultimate in a virtual machine, giving 6 GB of RAM to it. Patch worked fine on that virtual machine, so I do not think that it’s the patch itself.
+
+Reply
+Andreas
+April 27, 2013 at 6:43 am
+Update: I was too stupid this time, sim´ply forgot to switch off integrity check.
+Patch works fine but this time it could not help, because the display driver (Intel Atom D2700) crashes when additional ram is enabled.
+I found a beta state driver for Win7 x64, even this driver on Win7 x64 crashes. So my new Atom driven mini-pc will remain 32 bit having 3.25MB addressable.
+
+Reply
+chewy
+May 12, 2013 at 1:06 am
+Hi all, not working for Toshiba Satellite Pro A100. I went through all the steps but the system couldn’t start. Then I added also the “nx AlwaysOff, pae ForceEnable” to the bcd and the system starts correctly although still only 3.00 GB usable. Processor supports PAE (checked with sysinternals), Mobility Radeon x1600 graphics.
+
+Reply
+exequos
+May 20, 2013 at 2:37 am
+it is working for me with some differences
+instead of patch signature checking i use the signtool suggestion from this resource ( http://www.geoffchappell.com/viewer.htm?doc=notes/windows/license/memory.htm )
+because my gigabyte z77n-wifi have intel hd4000 graphics i had to downgrade the drivers to modified inf file as suggested above.
+
+Finally there is 16GB – gfx memory available
+the only minus is that the performance in graphics goes from 6 to 1
+the only question is why there is “test mode windows 7 kompilation 7601” in the right-down corner.
+
+Reply
+Marcos Jacoby
+June 4, 2013 at 11:17 am
+Can you explain how you do to generate the certificate etc, etc, etc, step by step?
+What softwares are used?
+I’m very interested on these!
+It’s better than the workaround trying to modificate the intel video driver.
+
+Reply
+exequos
+June 22, 2013 at 1:43 am
+i did exactly what was described in that link
+
+Reply
+fabiano
+May 22, 2013 at 4:32 am
+It worked for me. Thanks for this patch, buddy. Just one doubt. Is it better to use this patch with 32 bit windows version or install 64 bit? Nowadays processors are still 32 bit processing, just memory addresses got an update to 64 bit. I guess processing 64 bit is more expensive for the processor, once it will have to break 64 bit words in two 32 bit, processing and remount again. Or am I mistaken?
+
+Reply
+Don Williams
+May 24, 2013 at 5:32 pm
+I typed in the commands line by line. It appears to have partially worked for me. I built my PC via components, and the Motherboard/Processor supports 32 GB RAM.
+Upon using this, I now have 24 GB RAM available, but I still have 8 GB RAM that are not usable. How would I got about correcting this?
+
+Reply
+Paul
+July 17, 2013 at 1:44 pm
+i believe its not 64bit addresses is the reason.. but 36bit so I say thats why 8gb still not available.. I suspect if laptop can support win 7 or win 8 64bit go and install that.. as it will be better and still faster then patching win7 32 .. theres a new kernel patcher for pae on p2p netowrks if search for it.takes away manual steps mishaps.
+
+Reply
+Marcos de Songó
+July 17, 2013 at 3:52 pm
+Your problem it’s the same of a great number of persons that had patched their windows kernel and user a Intel Graphic Chipset. The problem iks the driver. Only that.
+
+Reply
+Sam
+July 24, 2013 at 8:06 am
+Hello!, it didn’t work for me, i tried with version 3000, 4000, P3000, P4000 and it only gives me a 1920×1280 resolution, and the optimal for me is 1920×1080 so, every time that i install the controller through the patch file, the system automatically updates it. I have 6Gb of Ram and my pc is a core 2 duo. The driver for my graphics card (the conflictive one) is INTEL (R) G41 express chipset and i need to use the 6 Gb of my RAM memory, what can i do now? i repeat: The configuration in the INF patch file is good, but i can’t have the optimal resolution and the system updates the driver automatically. Please help me.
+
+Reply
+Nancy
+August 4, 2013 at 3:21 am
+Hi, can you tell me which p2p channel that is? My kernel version is updated at mar 2013 so this patch doesn’t work for me. And I can’t find the new patched pae anywhere on torrent channels ??
+Thanks a lot.
+
+Reply
+Barton88
+August 23, 2013 at 11:08 pm
+Hi everybody!
+I made a driver for Intel HD gaphics, it’s works perfectly on Windows 7 Ultimate 32-bit with Ram Patch.. Here are the links:
+http://www.4shared.com/rar/xOgA7T5L/4GB_Ram_Patch.html
+http://www.4shared.com/rar/pTUP7N9f/Intel_4500MHD_x86.html
+
+Enjoy it:)
+
+Reply
+Sam
+August 26, 2013 at 10:52 am
+It works! i certify it!
+
+Reply
+Marcos de SongóJ. J. COB
+August 27, 2013 at 4:00 am
+And for Intel® HD Graphics 2000/3000?
+Can you tell us how you patch this driver?
+Or you patch the 4Gb patch?
+
+Reply
+Sam
+August 27, 2013 at 4:41 am
+Hey, it works, but occasionally the screen flashes and the system send a recuperation message and than it looks normal again. Barton88 can you fix that? and also thank you for do this ??
+
+Reply
+J. J. COB
+August 28, 2013 at 7:31 am
+Hello Barton88!
+How you patch this driver?
+Can you make the same for Intel® HD Graphics 2000/3000?
+Or can you explain howe to me and other make the same on Intel® HD Graphics 2000/3000?
+
+Reply
+Ksanderash
+August 31, 2013 at 11:20 am
+J. J. COB, it’s as simple as cut/paste in driver’ *.inf file )
+
+For HD 3000 driver (same as 2000, but more powerful) see my post at about 10% from the top of the page (or search the page for my nickname). But be ware that it isn’t flawless in 3D games – can be slower by 50%
+
+Reply
+Pzrnd
+September 30, 2013 at 10:09 am
+good awesome they work great!! can you make an updated version with 15.17.19.22869 (8.15.10.2869) driver?
+
+Reply
+Aussie
+October 3, 2013 at 12:22 pm
+Works! Fu*king thank you ??
+
+Reply
+Manfred
+November 17, 2014 at 11:03 pm
+Is the patched intel HD graphics driver still available? Best would be the newest for a Thinkpad X200 released version (8.15.10.2555). Or instructions how to patch. Thanks!
+
+Reply
+Pnzrd
+September 30, 2013 at 10:08 am
+good awesome they work great!! can you make an updated version with 15.17.19.22869 (8.15.10.2869) driver?
+
+Reply
+Sam
+September 30, 2013 at 10:22 am
+Hey, it works, but occasionally the screen flashes and the system send a recuperation message and than it looks normal again. Barton88 can you fix that? and also thank you for do this
+
+Reply
+Pingback: Gesucht Deutsche Version von Windows 7 Professional SP1 64bit - Seite 7
+James H.C Liu
+December 7, 2013 at 5:19 am
+Hi Barton88,
+Thanks for your fantastic jobs!~
+But, I still have one question about this, I got 6GB RAM installed, but after patch, there is only 4GB available.
+It seems to be M$ had another patch to get this limitation back, do you have this problem also?
+
+Cheers,
+
+Reply
+James H.C Liu
+December 10, 2013 at 3:52 am
+Update, I can saw my 6GB RAM at first when I applied this patch, but after few days latter with Windows update, my RAM got back to 4GB left.
+If I removed the patch, there will 3.05 GB left.
+
+Reply
+James H.C Liu
+December 10, 2013 at 10:28 pm
+I’m sorry wj32, I missed recognized Barton88 as developer…
+Deeply sorry for my mistake!
+
+And, thanks millions of your fantastic job of this path.
+
+Reply
+syg
+December 9, 2013 at 1:02 pm
+Just for info:
+You need to enable the NX bit in your BIOS or else it will BSoD
+
+Reply
+Bawar San
+January 12, 2014 at 10:41 pm
+Please can you help me, i can log on “Windows 7 (PAE Patched)” Only with Safemode !! ? ?
+
+Reply
+Mike
+January 30, 2014 at 8:26 am
+Worked like a charm! Thank you so much!
+
+Reply
+Achmed Lachned
+February 9, 2014 at 5:22 am
+After some doupts about the behaviour of windows 7 32bit after patching, I run some tests analysing the memory usage with resmon and Sysinternals rammap :
+
+Sysinternals testlimit.exe -d 512 in multiple instances (administrator shell) : process usage increased not limited by 2/4 GB up to my 8 GB, then I stopped the test and closed the process instances (command shells).
+Result: memory usage per process limited to 32bit, multiple process memory usage not limited.
+
+Then with Totalcommander, I did a search for the text “hello” over a big disk partition.
+Result: Win7 file cache increased up to my 8 GB (standby means “memory in use but can be release upon other requests). Then I stopped the search.
+
+This means: Windows 7 32bit is using the full 8 GB RAM without any tweaks or registry hacks for process or file cache.
+
+Reply
+Jaro
+February 22, 2014 at 6:38 am
+Great tool. I also found a YouTube teaching how to use this tool. Very informative in my opinion. http://www.youtube.com/watch?v=BkYRlFqFvNI
+
+Reply
+Maxerty
+February 28, 2014 at 7:52 pm
+Merci beaucoup, mon windows 7 32bit tourne maintenant avec les 8Gb de ram, Merci depuis la Belgique ??
+
+Reply
+Ben
+March 13, 2014 at 2:59 am
+barton88, links are dead.
+
+Reply
+Tecnicos Especialistas
+April 9, 2014 at 6:20 am
+tested with dell optiplex 780.. original oem win 7 SP1 the one that came with dell’s win 7 CD.. up to date (with all updates up to this date from microsoft)
+
+i had BSOD (windows did not even start after i restart).. but had to enter en safe mod..disabled integrated (intel) video installed drivers from device manager..actually it has Intel(R) Q45/Q43 Express Chipset i restart again then downloaded the driver for XP version(32bits) for same chipset..installed using original setup.. asked me to restart..restart it.. all iS OK and so far working.. i have 5.84 available ram of 6 GB.
+
+if someone interested, this is the original driver i downloaded and tested OK:
+http://downloadmirror.intel.com/21828/a08/winxp144215.exe
+
+Reply
+arjuna&krsna
+May 16, 2014 at 5:22 pm
+Primo RamDisk is good way to use more then 3.25 GB RAM on x86 systems. It’s complaint with any Intel onboard graphics because no kernel patch requested. It is possible to put pagefile to invisible (IMM) for OS memory. I use SSD and to keep it from unnecessary write operations move TEMP/TMP variable to RAM by using Primo Ramdisk 5.6 Server Edition.
+Primo Ramdisk works together with kernel patch on Windows 7 x86 SP1 Right Now, Samsung 530U3C with 12 GB of RAM. I wants so much memory as possible and cann’t install more.
+Thanks for the Good Patch Job.
+
+Reply
+Toan Ho
+June 11, 2014 at 1:47 pm
+I follow the instruction when I restart and choose Windows7 (PatchPea), the system always SHUTDOWN. Can you guy help me to find out the solution.
+Thanks
+
+Reply
+muaddib1984
+July 1, 2014 at 6:21 am
+Specyfication:
+Vista sp2 32bits
+Phenom x3
+6GB ram
+Nvidia 8600gts (337.88 driver)
+After patching had all time BSOD and restarting, I just downgraid Nvidia graphic driver to 320.18 for Vista 32bits. And now work fine, GREAT JOB THANKS.
+To rest people who have problems with patch check also this link http://www.remkoweijnen.nl/blog/2009/06/23/patch-vistas-kernel-to-address-more-than-4-gb-of-memory/
+Regards ??
+
+Reply
+Hakaan256
+July 16, 2014 at 6:41 am
+Thankyouthankyouthankyouthankyou. Thank you. I spent at least 3 hours on trying to make this work and all I had to do was downgrade Nvidia drivers to 320.18.
+
+Reply
+Eumel1974
+August 18, 2014 at 11:56 pm
+it works all fine incl. the driver from NVIDIA 332.21 … i ´ve installed newer … and my system crashed ??
+(WIN 7 32bit geforce nvidia 9600gt)
+have a nice day ??
+
+Reply
+leoleo12321
+August 24, 2014 at 12:24 pm
+someone came to test which the latest forceware that the patch works without crashing?
+
+Reply
+Tpfumefx
+August 15, 2014 at 12:07 pm
+Does this patch work only for ms windows, or along with practical apps like 3dsmax photoshop etc… I mean can other applications other than windows make the use of more than 4gb Like computer graphics apps for exemple?
+
+Reply
+Gabriel
+August 25, 2014 at 4:18 am
+I have applied the patch on a Windows 7 Ultimate SP1, but I cannot find a “PAE compatible” nVidia driver (I have a Quadro FX 580). Lots of artifacts and after a while BSODs appear (when using modified kernel), related to graphics drivers. I have read some were lucky with older nVidia drivers…so I would like to know which driver versions are confirmed to work perfectly while in PAE-enabled kernel mode. Thank you very much in advance, GABRIEL.
+
+Reply
+Condor
+September 9, 2014 at 1:49 am
+Hmm, so far it has been 2 days and I have not had any problems like BSOD or anything. I have Windows 7 Ultimate SP1 and the patch worked just fine. I am worried though about what I should do when a Windows Update occurs and the whole process is reseted. Do I use the patch again from the patched OS or I go back to the default OS and use from there again?
+
+Reply
+Luk
+October 16, 2014 at 6:16 am
+I installed this two years ago in my windows starter system, and had only had driver issues (resolved at the time). But today August 15, 2014, provided several updates windows update; of which one is incompatible with PAE patch.
+After a few hours, I have the list of suspicious updates (all of them are windows security updates):
+
+KB2949927
+KB2977292
+KB2984972
+KB2984976
+KB3000061
+KB3000869
+
+Meanwhile, I will avoid installing security updates for windows on my system.
+In short, beware of windows security updates from KB2949927
+
+Reply
+Giangi
+October 16, 2014 at 8:05 pm
+I had the same today after appling them… I have noticed that both ntkrnlpa.exe and winload.exe have been updated (mine are 6.1.7601.22736).
+The first was patched correctly but winload not; the PatchPae2 output is “Failed.”
+Me too I think the offending one is http://support.microsoft.com/kb/2949927 (Availability of SHA-2 hashing algorithm) because it updates both files! I’ll remove it asap…
+
+Reply
+Condor
+October 16, 2014 at 6:23 am
+You too huh? I will try installing all the other updates except the security ones. Well, I also have some updates for Microsoft .NET Framework so I wonder if I should exclude them as well.
+
+Reply
+Condor
+October 16, 2014 at 7:27 am
+Then again you can see which updates affect the PC negatively by checking the update history. I assume all those that Failed to be installed are the cause.
+
+Reply
+cvxmelody
+October 16, 2014 at 11:25 am
+This patch works great but be aware that it breaks the Intel USB 3.0 driver for Windows 7 32-bit that comes with the new X99 motherboards. You get an exclamation mark in Device Manager. However, if you de-install the Intel driver the USB ports do operate just fine with the generic Windows MS drivers, but only at USB 2.0 speeds. (NB: the Intel X99 chipset drivers do get on fine with PAE, the conflict is only with the Intel USB 3.0 driver). The driver I tested was 3.0.0.34 downloaded from Gigabyte’s website – http://www.gigabyte.com/products/product-page.aspx?pid=5124#driver – “Intel(R) USB 3.0 eXtensible Host Controller”
+The package includes the equivalent driver for Windows Server 2008 R2 and Windows Small Business Server 2008 and perhaps this can be modified to install under Win 7, maybe it works better for PAE? If anyone succeeds with this please post the detailed procedure here.
+Also, has anyone gotten Intel USB 3.0 driver to work on other Intel 9 or 8 series chipset motherboards under PAE?
+
+Reply
+cvxmelody
+October 16, 2014 at 11:36 am
+Just realized that Win Server 2008R2 & Win Small Business Server 2008 are 64-bit only so I guess there is is no way to get those drivers to work…
+
+Reply
+leo
+January 2, 2015 at 11:06 am
+Gigabyte Specs say you have an Renesas uPD720210 USB 3.0 Controller, may you should try: https://downloadcenter.intel.com/Detail_Desc.aspx?DwnldID=19880&lang=deu&ProdId=3411
+
+Reply
+leo
+January 2, 2015 at 11:15 am
+The Gigabyte-Driver is for the Intel C220-Series, so the new one should be here: https://downloadcenter.intel.com/Detail_Desc.aspx?DwnldID=22824&lang=deu&ProdId=3467
+
+Reply
+cvxmelody
+January 21, 2015 at 10:11 am
+Thanks for info, I downloaded this newer Intel USB 3.0 driver but decided not to install it for now. Since I acquired a Renesas uPD720201 PCIe USB 3.0 card from ebay and this gives me 4 native USB 3.0 ports (two via the back, two via internal 19-pin header) – this is the exact one: http://tinyurl.com/lr9w2ml
+My Device Manager config now looks like this:-
+http://tinyurl.com/o2vfv2t
+The Renesas USB 3.0 drivers are very stable and mature and work perfectly with PAE Patch. I find this to be the best workaround in this situation. 4 ports (plus an external USB 3.0 hub) give me sufficient USB 3.0 options. As for the integrated Intel USB 3.0 ports of the X99 motherboard, I don’t mind if they are stuck at USB 2.0 speeds using generic Win 7 driver, since the attached peripherals like keyboard, mouse, scanner, printer, etc. are all USB 1.0/2.0 devices anyhow. (I also have VMWare Player v.6.0.3-1895310 with a Win 8.1 x64 virtual machine and this does detect all Intel ports as USB 3.0 with standard MS drivers as you’d expect…)
+
+Reply
+Giangi
+October 16, 2014 at 8:37 pm
+http://wj32.org/wp/2011/02/23/pae-patch-updated-for-windows-7-sp1/#comment-3294
+
+I confirm that removing KB2949927 has solved the booting problem on my Seven! I guess we have to wait for an updated patcher…
+
+ntkrnlpa.exe v6.1.7601.22616
+winload.exe v6.1.7601.17514
+
+Reply
+Condor
+October 16, 2014 at 8:54 pm
+You mean that only KB2949927 the cause and if I install the others there will not be problems?
+
+Reply
+gcalzo
+October 16, 2014 at 10:45 pm
+Yes, at least on my Seven!
+This morning I have installed all the pending ones, then I have removed only KB2949927 and here I am again with patched kernel!! ??
+
+Reply
+Condor
+October 16, 2014 at 10:48 pm
+Hmm, well… worst case I will have to wait again 30+ minutes or so for the Startup Repair again ??
+
+Reply
+gcalzo
+October 16, 2014 at 10:53 pm
+I didn’t do any repair, I have just booted with the unpatched kernel and then Google brought me here…
+
+Condor
+October 16, 2014 at 10:56 pm
+Well, yea. You can start the default OS as well. It won’t have the updates though. Currently I have marked the latest updates as Hidden.
+
+gcalzo
+October 24, 2014 at 6:35 pm
+MS has officially removed the KB2949927!!!
+
+https://technet.microsoft.com/en-us/library/security/2949927.aspx
+Revisions
+•V1.0 (October 14, 2014): Advisory published.
+•V2.0 (October 17, 2014): Removed Download Center links for Microsoft security update 2949927. Microsoft recommends that customers experiencing issues uninstall this update. Microsoft is investigating behavior associated with this update, and will update the advisory when more information becomes available.
+
+Reply
+Condor
+October 25, 2014 at 1:24 am
+Hmm, it seems the particular update is no longer in my hidden updates. Perhaps MS removed it automatically or something. I will try installing the rest of the updates to see if I get a problem again.
+
+Reply
+leo
+January 2, 2015 at 11:08 am
+Works this patch with Win Server 2008 R2 STD x64 (32GB Limit)?
+
+Reply
+gcalzo
+January 14, 2015 at 7:34 pm
+Does anybody tried the latest http://support.microsoft.com/kb/3023266 which contains both an updated kernel and winload?
+
+Reply
+gcalzo
+January 22, 2015 at 7:39 pm
+It worked on both my laptop, but on one I had to search for a “not public” hotfix that put the pc on the LDR branch!! kb3023266 contains an LDR winloader that patchpae2 can’t process! ??
+The hotfix I had to remove is
+http://support.microsoft.com/kb/2775511 “An enterprise hotfix rollup is available for Windows 7 SP1”
+
+I was lucky to find it quite quickly ??
+
+Reply
+Achmed
+March 11, 2015 at 9:17 am
+KB3035131 and KB3033929 -> ntkrnlpa patched, winload failed.
+I don’t know which of the both brought the unpatchable winload.exe, maybe both because both renew ntkrnlpa.exe and winload.exe.
+So I uninstalled them and patching worked again.
+
+Reply
+Condor
+March 11, 2015 at 1:17 pm
+Really? In that case I will remove tham as well, I mean, who cares about only 2 updates. Its better than wasting time rebooting over and over again.
+
+Reply
+Condor
+March 11, 2015 at 2:37 pm
+Actually, it seems the culprit is KB3033929 so those who can’t load their patched Windows just need to load the Default OS, go to Windows Updates to find KB3033929 and right click on it to Uninstall it. After uninstalling it it will ask you to restart. Do so and then choose your patched OS this time, it will load. Well, mine did.
+
+Reply
+Luk
+March 12, 2015 at 6:35 pm
+Thanks, the missing step after the unisntall of KB3033929 is go to windows update, manually seach updates, and hide KB3033929 in windows update
+
+Ivan Ferrer
+March 12, 2015 at 9:31 pm
+thanks!
+My list of ‘Microsoft Windows’ updates is mysteriously missing in the Installed Updates list. Then I had to use
+wusa /uninstall /kb:3033929
+from elevated cmd. I had to hard reset because it was 10 minutes stuck in a “Windows updating…” screen with no HD activity.
+Rebooted to not-patched OS, patched both files again, rebooted, and the trick works again in all its glory. 7,67Gb usable out of 8Gb installed.
+Hurrah!
+This issue served me to remember how slow was my W7 with only 2~3GB usable RAM!
+Thank you wj32!!
+
+vkyJackie
+March 14, 2015 at 1:18 am
+I’ve been a PAE evangelist ever since finding out about it a couple years ago. I have experienced issues after previous updates but have just re-patched and every worked fine again. That was not the case after the big MS Update a couple days ago and I was starting to panic when I had to revert to the non-patched boot and realized how much slower my computer was without three times the useable memory. Luckily, I stumbled across this thread and specifically the updates by Achmed and Condor. Big big thanks for figuring out which patch caused the problem. Saved me loads of time and frustration, I’m sure.
+
+MoJo
+April 6, 2015 at 6:21 pm
+thanks so much ! removing KB3033929 (only) worked for me, too.
+how does one hide it from updates as suggested by Luk ?
+what should we pay attention to when installing future security updates ?
+
+Condor
+April 7, 2015 at 1:36 am
+To hide an update you click on the f.e. 1 Important Update or 1 Optional Update left of the Install Updates button. It will lead you to all the available updates to install. The re you can right-click on an update and choose to hide it preventing it from trying to install again.
+
+Achmed
+March 12, 2015 at 3:55 am
+Patches can be mostly analyzed in advance by selecting patch details. It leads to the corresponding microsoft patch page or directly browsing
+http://support.microsoft.com/kb/
+If it shows a section “file information”, one can search for winload.exe or ntkrnlpa.exe – I didn’t, so I had to uninstall the mentioned patches.
+Anyway, as a wise man said: “To fall is not to fail, unless you fail to get your backup again”
+
+Reply
+Achmed
+March 12, 2015 at 3:56 am
+Sorry, meant http://support.microsoft.com/kb/@patchnumber@
+
+Condor
+March 12, 2015 at 4:17 am
+Hmm, I see. SO if I search there and find anywhere mentioning winload.exe or ntkrnlpa.exe I should skip that update, right?
+
+Achmed
+March 12, 2015 at 5:30 am
+..or just backup windows (Ghost, Acronis or even Windows 7 system image backup http://www.howtogeek.com/howto/4241/how-to-create-a-system-image-in-windows-7/ ). It simplifies live and can save hours of work.
+
+CA
+January 18, 2015 at 6:42 pm
+Is there anyway to get MacDrive to work with this PAE patch? It needs to initially mount the drives.
+
+Reply
+Chris
+January 19, 2015 at 3:02 pm
+I can´t make it work.
+I got a corrupted kernel message with a Status 0xc000007b code.
+
+Reply
+Ady Davis
+February 13, 2015 at 9:20 am
+Hi all,
+
+I’ve gave it a try on my Windows 7 x86 and it worked as a charm. But…it lasts only until the next reboot. I can reapply the “fix” and again it works. I’ve deleted the original files (ntkrnlpa.exe, winload.exe) leaving only the patched ones. I’ve removed the original boot entry leaving only the PAE version as the only boot option. I ran out of ideas…
+Any suggestions will be appreciated.
+
+Thank you !
+Adrian
+
+Reply
+Condor
+February 13, 2015 at 9:36 am
+Yea, I have a suggestion as to why this happens to you. Its because you delete those 2 files from “C:Windows/system32”. You must leave them be as soon as you install the patch. The only reaseon to delete those files is if you want remove the patch.
+
+Reply
+Ady Davis
+February 13, 2015 at 9:50 am
+@Condor
+It was doing the exact thing after the first patch without me deleting anything. I think the files I’ve deleted are the original, unpatched ones, right?
+
+Reply
+Condor
+February 13, 2015 at 9:54 am
+Hmm, like I said do not delete anything. I have both the original and the patched files in my windows folder.
+
+Reply
+Ady Davis
+February 13, 2015 at 11:06 am
+It makes no difference like I said if the files are there or not. I’ve deleted the originals after I tried about 3-4 times without deleting anything. This is the problem, not me deleting the files.
+
+The steps were:
+1. New Windows 7 clean install
+2. Applied the patch
+3. Rebooted selecting PAE option – the patch works 4GB available
+4. Reboot – select PAE option – back to normal 3GB available
+5. Repeated 2 to 4 with the same result
+6. Deleted the original files and the boot entry to see if it makes any difference – 3GB available.
+
+I hope it’s more clear now.
+
+Thanks.
+
+Reply
+Condor
+February 13, 2015 at 11:13 am
+Hmm, just in case, have you checked in the boot options if perhaps the memory limit is set to 3 GB or something? Just saying it might be the case. Go to Start -> type “msconfig”(without quotes) click on the Boot tab and then click on the Advanced options. There if where it says Maximum Memory the box underneath it is checked and it has a value inputed just uncheck the box.
+
+Reply
+Ady Davis
+February 13, 2015 at 11:50 am
+Both number of processors and Max memory are unchecked. I’ve checked them both and still shows 3Gb
+
+Condor
+February 13, 2015 at 11:57 am
+Hmm, weird. What graphics do you use? AMD? Nvidia? If it was Intel HD you would have gotten a BSOD so it shouldnt be the case.
+
+Ady Davis
+February 13, 2015 at 12:07 pm
+It’s an older laptop with Intel GM965 graphics and no BSOD.
+
+Condor
+February 13, 2015 at 12:38 pm
+I see. Even if you do not get a BSOD it is known that the PAE patch is a bad match for Intel Graphics which may be the reason why it only works temporarily. I also remember reading that the patch may not work on most laptops which might a reason as well.
+
+Jonathan
+March 23, 2015 at 4:54 am
+4. C:\WherePatchPaeIs\PatchPae.exe -type loader -o winloadp.exe winload.exe
+This will patch the loader to disable signature verification.
+
+if bootleg enter when says failed just move on, bootleg windows already have hacked loaders but will still create winload files for u to use when going through instructions
+
+Reply
+Jonathan
+March 23, 2015 at 5:01 am
+It also seems I did something wrong or due to using a bootleg windows and the loader not patching correctly, windows 7 under PAE patched will boot into windows repair. So if you on a bootleg windows I do not believe this will work for you (but also if your on a bootleg windows you might as well just use a flashdrive to reinstall windows to 64bit.)
+
+Reply
+yann
+March 27, 2015 at 12:25 am
+Hi
+In my window 7SP1 after 4. C:\WherePatchPaeIs\PatchPae.exe -type loader -o winloadp.exe winload.exe >>This will patch the loader to disable signature verification.
+Result Failed:
+
+So even if I move on , and follow the next instruction, after reboot Ive still kernel error unsigned.. error
+Any clue ?
+
+Reply
+yann
+March 27, 2015 at 12:34 am
+From other answer
+Here the reason
+
+KB2949927
+KB2977292
+KB2984972
+KB2984976
+KB3000061
+KB3000869
+
+Meanwhile, I will avoid installing security updates for windows on my system.
+In short, beware of windows security updates from KB2949927
+”
+
+I can attest that uninstalling these updates, removing the current PAE patch, and re-patching works.
+
+Reply
+timm
+March 27, 2015 at 8:51 pm
+Hi Yann,
+
+Can you please tell me the version of ntkrnlpa.exe and winload.exe you’re currently using?
+
+My versions are as follow:
+ntkrnlpa.exe – 6.1.7601.18741
+winload.exe – 6.1.7601.18649
+
+Thanks and regards,
+
+Timmoty
+
+Reply
+Condor
+April 15, 2015 at 7:52 am
+Yet another pack of updates were released today. I personally got 22 updates and as usual I was weary of them. And I was right. After installing them, when I tried entering the patched OS I always got a BSOD, so I started uninstalling security updates one by one till I find the one responsible. And I did find it (after an hour), its the security update KB3045999. So, those who have to install their updates should hide this update and those like me who suffered from it should just enter the default OS and remove it from there, then re-enter your patched OS.
+
+Reply
+MoJo
+April 16, 2015 at 5:52 am
+thanks for sharing this, and your explanation earlier on how to hide a proposed update!
+
+Reply
+foobar
+April 17, 2015 at 9:14 pm
+You don’t have to remove the update. Boot into the non-patched kernel and reapply the patch. Removing that update is not safe because it leaves you vulnerable to the security flaw that the update fixes. The reason the update breaks the patched Windows version is because it updates winload.exe (you can see “winload.exe” under the file information section at https://support.microsoft.com/en-us/kb/3045999). Update 3045999 probably changes the way winload.exe interacts with some other Windows components that are also updated by 3045999. However your patched Windows version uses a patched winload.exe (winloadp.exe) which isn’t updated by 3045999, so when the Windows components updated by 3045999 expect winload to behave like the winload.exe as updated by 3045999 they get to deal with a non-updated winloadp.exe and this causes the BSOD.So install the update, which updates winload.exe, then patch it again to make an updated + pae-patched winloadp.exe.
+
+Reply
+Condor
+April 17, 2015 at 10:40 pm
+So, long story short, I should re-install that update and then enter the default OS and re-apply the patch?
+
+Reply
+JD
+April 17, 2015 at 10:50 pm
+That is fine, if the patch works with the new component installed by the update. The last time there was an update like this the patch would not work. Thus the uninstall solution.
+
+Reply
+j
+April 15, 2015 at 4:25 pm
+thanks Condor. keep posting these when you find an update that gives BSOD. you saved me a lot of time and frustration.
+
+Reply
+maxdm
+April 16, 2015 at 9:34 am
+I have modified original patcher for latest windows 7 SP1 updates support: http://rghost.ru/7rLgsYqYq
+
+Reply
+Condor
+April 16, 2015 at 7:58 pm
+What does it actually do?
+
+Reply
+maxdm
+April 16, 2015 at 8:09 pm
+It does the same, I have modified only pattern of function call.
+
+Reply
+martin
+April 17, 2015 at 1:30 am
+hi, how do I replace or use as i already am using the old one?
+thanks
+
+Reply
+gcalzo
+April 24, 2015 at 10:38 pm
+This morning I have checked/installed all the fixes from January (I had time… ?? and tested this new patcher.
+It worked perfectly up to http://support.microsoft.com/kb/3033929 (SHA-2 code signing support) which contains ntkrnlpa 6.1.7601.18741 and winload 6.1.7601.18649 (winload is the one not supported by the original PatchPAE2!!)
+Great!!
+I’m still missing the latest one http://support.microsoft.com/kb/3045999 which contains ntkrnlpa 6.1.7601.18798, I’ll leave it for later…
+
+Reply
+BySakaL
+October 29, 2015 at 12:35 am
+If you have failed error on winload patch, use maxdm’s file. I have all updates and it worked for me! Thanks mate, thank you all guys.
+
+Reply
+Chris
+March 4, 2016 at 1:01 am
+Hi maxdm,
+could you please reupload the modified PAE patch that you created,…..cause the link that you originally pprovided does not work anymore!
+
+Thanks in advance!
+
+Reply
+JD
+April 17, 2015 at 9:38 am
+Has anyone tried the link from maxdm? Seems a little fishy to me.
+
+Reply
+geo
+April 17, 2015 at 10:46 pm
+maxdm
+April 16, 2015 at 9:34 am
+
+I have modified original patcher for latest windows 7 SP1 updates support: http://rghost.ru/7rLgsYqYq
+
+Yes, I have tried it succesfully, maxdm kindly included the source also, not spam nor fishing
+
+https://www.virustotal.com
+File analysed
+
+This file was last analysed by VirusTotal on 2015-04-16 16:59:58 UTC (18 hodin, 42 minut ago) it was first analysed by VirusTotal on 2015-04-16 16:59:58 UTC.
+
+Detection ratio: 0/56
+
+SHA256: 79dd09b79817a4fb701a3d96cb8bd9670e3f73e773fc02fbd35226af52c456c1
+File name: PatchPae2.exe
+Detection ratio: 0 / 56
+Analysis date: 2015-04-16 16:59:58 UTC ( 18 hodin, 43 minut ago )
+
+Reply
+Achmed
+May 2, 2015 at 6:09 am
+Today I did Windows update, security fixes only, after that, patched ntkrnlpa.exe and winload.exe with your modified patcher – everything ok, 8GB usable.
+
+Reply
+Alvin
+May 22, 2015 at 1:05 am
+I must have been an idiot to try the modified patchpae2.exe from above poster. Norton is having a field day getting rid of the virus now.
+
+Reply
+maxdm
+May 22, 2015 at 1:30 am
+I think you are. So you can compile this patch yourself. And it does not contain any viruses:
+https://www.virustotal.com/ru/file/79dd09b79817a4fb701a3d96cb8bd9670e3f73e773fc02fbd35226af52c456c1/analysis/1432218474/
+
+Reply
+zahrasaadati1985
+September 13, 2017 at 5:01 pm
+Thank you so much this file worked for me. ?? :*
+
+Reply
+Olimpiu Cristian Mihai
+April 25, 2015 at 1:31 am
+I can confirm maxdm modified patcher works on 24.04 all updates installed! Thank you!
+
+Reply
+Matt
+May 1, 2015 at 5:38 am
+The patching process goes through but eventually it does not work for me. I get a BSOD following the display of the windows logo at startup with the following indications:
+
+STOP: 0x00000116 (0x8C629510, 0x97B38CB4, 0x00000000, 0x00000002)
+nvlddmkm.sys – Address 97B38CB4 base at 97A26000, DateStamp 54d160… [I missed the final figures]
+
+By the way, I have an NVIDIA graphic card running the recently aupdated GeForce 341.44 Driver.
+
+Thank you in advance for your kind help!
+
+Reply
+Matt
+May 1, 2015 at 6:57 pm
+FYI, the problem was indeed the NVIDIA GeForce 341.44 Driver.
+At the moment, the easiest solution seems to be downgrading to the GeForce 332.21 Driver.
+It worked well for me.
+
+Reply
+Condor
+May 13, 2015 at 2:38 pm
+sigh~ Another batch of updates were released again and there problems this time as well. So far whenever there was a problem with an update either the Windows Startup Repair would start or I would get a BSOD, but this time I got a forced restart lol. Anyway, again I figured which update is the cause and that is KB3022345 so if you have installed it uninstall it and if you are lucky and read my message right now you will just need to uncheck the update preventing it from being installed. I had my suspicion about this update from the beginning as when I read the update’s information it mentioned that it needs a previously bad update, KB3045999 which I/we hid but I thought of installing it anyway as it might have worked.
+
+Reply
+George
+May 14, 2015 at 4:49 am
+nice finding and it saves us a lot of time, thanks! : )
+
+Reply
+J
+May 21, 2015 at 1:15 am
+Condor or anyone have any tips about new updates KB3035583 and KB3054476? thanks!
+
+Reply
+Condor
+May 21, 2015 at 1:37 am
+No, those two updates are safe but there is no need to become paranoid about updates. When new updates are available you have the option if clicking on the More Information of each update and see if it might be bad to install it or not. If for example you read in the prerequisites that in order for the new update to work one of the already bad/hidden updates is/are needed then you should not install that update.
+
+Reply
+Jan (H.)
+June 9, 2015 at 9:50 pm
+Hello, thanks for the effort.
+
+Unfortunately, patching of my loader fails. Which also revealed a flaw in the patcher — such an error (detected deep in the Patch() code) is not propagated to the exit status of the tool thus making its checking a bit useless (I made a batch script to “harden” the process against my mistakes — commands are cut&paste-d :)).
+
+Freshly installed & fully patched Windows 7 Pro/CZ
+winload.exe: Version 6.1.7601.18649, Build date: 2014/10/31 23:22, Language: Anglictina (i.e. English/US ?? even in my Czech Windows)
+
+Any idea? TIA,
+H.
+
+Reply
+Jan (H.)
+June 9, 2015 at 9:53 pm
+Oh, the angle backets and its text were striped off :-(… Please, read the Patch() function name something like
+Patch{Image}{Version}()
+
+Reply
+Jan (H.)
+June 10, 2015 at 1:54 am
+I checked the suspicious KB list from this thread one more time and found KB3033929 still sitting among my installed updates; removing it has helped. Ie. the primary issue has been solved. I’m sorry, that’s my fault.
+
+Nevertheless the error information propagation issue (easy to fix) persists, as well as the incompatibility of winloader patch with updated Win7/SP1. The latter seems rather serious as the first question of a support personel is usually “Have you installed all updates from MS?”
+
+Dear Wj32, do you plan to update the PatchPae2 to resemble new environment(s)?
+
+TIA,
+H.
+
+Reply
+gcalzo
+June 10, 2015 at 2:16 am
+Try this version here: http://wj32.org/wp/2011/02/23/pae-patch-updated-for-windows-7-sp1/#comment-9334
+
+Reply
+Jan (H.)
+June 10, 2015 at 3:57 am
+Yippee! A few restarts including a forced one (re-applied updates locked in “Don’t turn your computer off” screen — what else one can expect from MS X-() and voilà, I’ve almost 8gigs and no pending updates ??
+
+Many thanks to you for pointing this hack and maxdm for the update (sounds like a neigbour according to the virusscan reports).
+
+It must be a nightmare to have to analyze disassembly/trace(/source?) of those modules and fit a patch…great job.
+
+H.
+
+Reply
+j
+June 11, 2015 at 9:18 pm
+hi, anyone else besides me having trouble after installing the wonderful new MS updates?
+
+Reply
+Jan (H.)
+June 11, 2015 at 11:47 pm
+I installed a bunch of updates yesterday, after my success with pathcing the loader. It seems none of them touched those key modules (loader and kernel). I decided to keep date-stamped copies for future reference…
+HTH.
+
+Reply
+bluescreen
+June 22, 2015 at 5:43 pm
+kb3057839 caused random bluescreens with 0xcf and 0x50 on Terminaservers.
+after removal anything is fine again.
+
+Reply
+j
+June 11, 2015 at 11:53 pm
+https://support.microsoft.com/en-us/kb/3063858
+https://support.microsoft.com/en-us/kb/3057839
+both seem to be related to the kernel, 3063858 seems really suspicious. could this be the update that causes a freeze up on startup?
+
+Reply
+Jan (H.)
+June 12, 2015 at 12:10 am
+These were installed yesterday w/o issues (and no need to re-patch) at my side:
+# KB3059317, KB3063858, KB3033890, KB3058515, KB3057839, KB2952664
+# KB890830
+
+Reply
+j
+June 12, 2015 at 6:59 pm
+I found the culprit of the latest BSOD: https://support.microsoft.com/en-us/kb/3068708
+This was a ‘recommended’ update not an ‘important’ update. I’m changing my MS update settings to install only ‘important’ updates…
+
+Reply
+gcalzo
+June 12, 2015 at 11:16 pm
+Thank you!
+I “left alone” that KB for deeper check because it doesn’t contain the file included list but it does reference kb 3045999 that DO contains a kernel update!
+After I’ve read the detail “The diagnostics tracking service collects diagnostics about functional issues on Windows systems that participate in the Customer Experience Improvement Program (CEIP)” I’ve simply hided it because I do not care about CEIP… ??
+
+Reply
+Wolle
+June 13, 2015 at 12:23 pm
+hi there,
+
+I got a little problem. I tried to patch as it shown in the readme file, but I cant disable the integrity check. there is always an error, bad command bcdedit /set…
+if I reboot wirhout the integrity command I will get the repair center. any help?
+
+I also uninstalled all mentioned security updates and downgrade nvidia to 320.18
+
+Reply
+gcalzo
+June 14, 2015 at 12:11 am
+Just follow Step-by-Step in the readme replacing the xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx with the actual entry created!!
+For me (i have saved the output at first run) was:
+
+readme (stripped to leave Win7 only!!)
+1. Open an elevated Command Prompt window.
+2. cd C:\Windows\system32.
+3. C:\WherePatchPaeIs\PatchPae2.exe -type kernel -o ntkrnlpx.exe ntkrnlpa.exe
+4. C:\WherePatchPaeIs\PatchPae2.exe -type loader -o winloadp.exe winload.exe
+5. bcdedit /copy {current} /d “Windows (PAE Patched)”
+6. bcdedit /set {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx} kernel ntkrnlpx.exe
+7. bcdedit /set {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx} path \Windows\system32\winloadp.exe
+8. bcdedit /set {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx} nointegritychecks 1
+9. bcdedit /set {bootmgr} default {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}
+10. bcdedit /set {bootmgr} timeout 2
+11. Restart the computer and enjoy.
+
+I have copied the steps to a new text file and replaced all the “xxx” with the actual output from step 5 (i have just changed the timeout from 2 to 10):
+
+bcdedit /copy {current} /d “Windows (PAE Patched)”
+{99e2cc75-08bd-11e0-8109-a1433afa9d1d}
+
+bcdedit /set {99e2cc75-08bd-11e0-8109-a1433afa9d1d} kernel ntkrnlpx.exe
+bcdedit /set {99e2cc75-08bd-11e0-8109-a1433afa9d1d} path \Windows\system32\winloadp.exe
+bcdedit /set {99e2cc75-08bd-11e0-8109-a1433afa9d1d} nointegritychecks 1
+bcdedit /set {99e2cc75-08bd-11e0-8109-a1433afa9d1d} pae ForceEnable
+bcdedit /set {bootmgr} default {99e2cc75-08bd-11e0-8109-a1433afa9d1d}
+bcdedit /set {bootmgr} timeout 10
+
+Reply
+edmond
+March 10, 2016 at 6:43 pm
+If my drive is not C instead of G, can I just replace all command from C : to G:? Does it workable? Please let me know, thank you very much.
+
+Reply
+Pedro Lucas
+July 8, 2015 at 5:39 am
+I had the same problem as ppl that come here, my kid has Windows 7-32 installed with 4GB RAM but only 3GB usable (Toshiba Satellite A300).
+
+I tried a few automated solutions, including this one from WJ32.
+
+It didn’t work for me because the step
+C:\WherePatchPaeIs\PatchPae2.exe -type loader -o winloadp.exe winload.exe
+kept giving me “Failed.” instead of “Sucess”.
+I’m sure it has something to do with some installed KB from M$, (Achmed above talks about KB3035131 and KB3033929).
+
+So, I went and did all the steps manually, patching my ntkrnlpa.exe, using an Hex editor, replacing the (8B 45 FC 85 C0 74 0A) and (8B 45 85 C0 74 FC 09) sequences for (B8 00 00 02 00 90 90), using the tools makecert.exe and signtool.exe from the Platform SDK and the same bcdedit commands as ppl stated here for the boot menu (+ Pae ForceEnable and the testsigning setting).
+
+Result = Success. 4GB usable in Windows.
+
+IMPORTANT tip: If you fiddled with the msconfig – Boot menu – Advanced Options, MAKE SURE the “Maximum Memory” is unchecked. My patched kernel changes wouldn’t make a difference until I unchecked it. I had it checked with 0/4096/other values, and the usable memory was always stuck at 3GB. The moment I unchecked it and rebooted, I finally got 4GB usable.
+
+Thanx for all the tips in these posts. Helped a bunch.
+
+Reply
+PCDocNY
+August 29, 2015 at 8:38 am
+I uninstalled KB3033929 and C:\WherePatchPaeIs\PatchPae2.exe -type loader -o winloadp.exe winload.exe command was successful.
+
+Apparently, it’s a known issue with KB3033929 – https://support.microsoft.com/en-us/kb/3033929
+
+Reply
+heckishfire
+August 5, 2015 at 12:29 am
+More MS updates have broken the patch — any idea which ones? I last updated in May 2015, so something between then and now doesn’t agree with the kernel hack ?? Le Sigh. Our clinic is moving to x64 in January but until then we have to use this patch (or else lose 5-6GB of usable memory). Thanks everyone
+
+Reply
+maxdm
+August 5, 2015 at 1:00 am
+My modified patch is still working.
+
+Reply
+Matt
+August 5, 2015 at 1:21 am
+Mine too. I noticed that NVIDIA released a new driver lately. That might be the problem.
+
+Reply
+heckishfire
+August 6, 2015 at 2:17 am
+The Nvidia drivers are still from late 2012, so that wasn’t the issue (we have a GPO that stops auto update so this is on a test computer). After several hours of uninstalling patches one by one, I found that KB3067904 was the culprit. I’ll install the other ones I uninstalled during testing one at a time and ping back if anymore cause issues.
+
+Reply
+heckishfire
+August 6, 2015 at 4:46 am
+looks like KB3068708 is causing issues too
+
+Reply
+Achmed
+August 15, 2015 at 10:45 pm
+What I have done today to check updates for PAE compatibility:
+
+After Windows Update showed new updates, I right-clicked on the KB… entries to check for modification of winload.exe or ntkrnlpa.exe
+
+Then, I downloaded these fixes that modify them.
+
+Then, I unpacked the kb…msu to a previous created unpack dir named “expdir” (expand kb…msu -F:* .\expdir).
+
+From expdir, I unpacked the unpacked kb…cab to a previous created unpack dir named “unpk” (cd expdir ; expand kb…cab -F:* .\unpk).
+
+Then, I searched in unpk any occurences of ntkrnlpa.exe and winload.exe and copied them to a third temporary directory – windows copy gave them a number with space and bracket, but I changed the name, so it has only the number, no space, no bracket.
+
+Then I run PatchPAE2 on any one of these winload…exe / ntkrnlpa…exe to see if it fails
+If it worked (“patched”), I installed the downloaded patch.
+
+May this description help somebody…
+
+Reply
+NW
+August 29, 2015 at 2:15 am
+I’m having a little trouble too. Some windows updates causes windows to fail startup and goes into startup repair. What updates should I avoid? (I have avoided the KB3033929 update as that gives your system an infinite startup loop.)
+
+Reply
+Larry
+September 1, 2015 at 9:21 pm
+Thank you so much for this patch.
+
+I’m now able to use all of the 6 GB of RAM my aging PC has got rather than just the little over 3 GB I was able to use previously.
+
+Reply
+NW
+September 2, 2015 at 2:46 am
+Can anyone help me with this? I have a ton of windows updates to install, but the problem is, that some windows updates just don’t work with paepatch. Any ideas which ones are not cooperating with the patch? Help!
+
+Reply
+maxdm
+September 2, 2015 at 3:06 am
+I have posted new patch early
+
+Reply
+NW
+September 10, 2015 at 7:17 am
+Do i require to remove the old patch to patch the new one?
+
+Reply
+NW
+September 10, 2015 at 7:19 am
+also, all you have to do is run the .exe to install the patch?
+
+Reply
+Christian
+October 8, 2015 at 6:38 pm
+I have succesfully patched my x86 windows 7 professional.
+I use NVIDIA GeForce GTX650, however when my vga driver was loaded the windows can not startup (always black screen after windows logo).
+Otherwise, when i dissable my vga driver, it startup succesfully and read my 8GB RAM.
+
+Please help me, it’s just a little bit to complete.
+
+Reply
+Albert
+October 10, 2015 at 11:36 pm
+Avoid installing these Updates:
+
+KB303 39 29
+
+KB306 07 16
+KB306 87 08
+
+KB307 17 56
+
+KB308 01 49
+KB308 39 92
+
+Reply
+evgeny
+October 12, 2015 at 5:12 am
+You can use PAE patch for 8.1 modified for windows xp/2003/vista/2008/7/8/8.1/10 since KB3033929+
+You find it in PAE patch updated for Windows 8.1 thread, see escape75 comments.
+
+Reply
+Jonathan
+November 12, 2015 at 6:19 am
+I’ve been following this thread for some months and am grateful for information you have offered. Now it’s my turn. Recent WU KB I have found to be 32-bit W7 Greater-than-3GB-RAM-PAE-Patch-preventing culprits are: KB3097966 and KB3083992. Best wishes!
+
+Reply
+antonio
+November 19, 2015 at 4:55 am
+Hi! What kind of text did i replace in the -type loader command line? where i can find my “loader”? for the kernel version i used “ver” command in cmd, but for this i don’t know what to do!
+
+Reply
+dwaltz
+January 28, 2016 at 7:10 pm
+Hi folks: I’m writing to report that finally with the newset driver (win32_153342.exe) I was able to have a native Windows 7 driver working with the kernel PAE patched with no blue screens!
+Kudos to Intel for fixing it.
+
+The driver is signed as version: 10.18.10.4358 date: 21/12/2015.
+My hardware is a Dell Laptop with an i5 3210M and an HD4000 Intel graphics card.
+
+Reply
+gcalzo
+January 29, 2016 at 2:52 am
+WOW! That’s could be “the news of the year 2016”!!!!!!
+I’ll give it a try in a few days!
+Thank you for letting us know!!
+
+Reply
+gcalzo
+February 1, 2016 at 3:39 am
+Unfortunately that is not true on my Seven SP1 with Intel HD 2500… ?? I get a BSOD 0xBE that means “An attempt was made to write to read-only memory”
+
+Current driver was release on 13 jan 2016
+Here you are the Intel report:
+
+Intel(R) HD Graphics 2500
+Report Date: Sunday, January 31, 2016
+Report Time [hh:mm:ss]: 4:49:39 PM
+Driver Version: 10.18.10.4358
+Operating System: Windows* 7 Enterprise (6.1.7601)
+Default Language: Italian (Italy)
+Installed DirectX* Version: 11.0
+Supported DirectX* Version: 11.0
+Shader Version: 5.0
+OpenGL* Version: 4.0
+OpenCL* Version: 1.2
+Physical Memory: 3283 MB
+Processor: Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
+Processor Speed: 3200 MHz
+Vendor ID: 8086
+Device ID: 0152
+Device Revision: 09
+
+Reply
+Faire
+February 17, 2016 at 5:01 pm
+I got some problem on shutting down.
+my laptop just stock on shutting down screen and not shutdown at all, except pressing power button.
+
+Please help.
+
+Reply
+jose
+February 20, 2016 at 12:24 pm
+Hey guys,
+Everything works fine BUT the command “C:\PatchPae.exe -type loader -o winloadp.exe winload.exe”
+which says failed, and as a result (I am guessing) it does not work on my computer. Could this be related to having a SSD by any chance? I see that for most of you it has worked well actually. I have a Toshiba Satellite A205 running windows 7 SP1 with 4gb RAM Thanks!!!!!!!!
+
+Reply
+jose
+February 21, 2016 at 12:14 pm
+Update…. I did a fresh install of windows 7 pre activated in my SSD and then, before applying the patch, I run what luca zapparoli (IT) suggested, it worked like a charm! Grazie mille Luca, bravo!
+
+Reply
+Troy
+February 23, 2016 at 8:30 am
+Hello all. I started with a clean install of Windows 7 x86 SP1 and the patch appears to have worked with no changes, but I still only see 3GB usable instead of 4GB. If the patch had failed would I still be able to boot successfully into the modified kernel? Has anyone else seen this issue?
+
+Reply
+Chris
+March 4, 2016 at 1:03 am
+Hi maxdm,
+could you please reupload the modified PAE patch that you created,…..cause the link that you originally pprovided does not work anymore!
+
+Thanks in advance!
+
+Reply
+Pingback: How To Enable Pae In Windows 7 | People Life
+John Doee
+June 2, 2016 at 4:27 pm
+I used this and it worked and I could boot into windows but….when i tried playing games it would load them but before entering to play it would bsod and at times when idling or playing media it bsod’s as well..
+
+Reply
+Pingback: How To Activate Pae In Windows Xp | Razeeti4
+JStaton
+June 23, 2016 at 1:24 am
+Umm a quick dumb question guys …does this patch formats my pc…do I need to backup?
+
+Reply
+Liam
+June 23, 2016 at 3:42 am
+You should always create a backup, even if you’re not applying patches.
+Please make sure you uninstall the KB’s listed above before proceeding.
+
+Reply
+Liam
+June 23, 2016 at 11:10 pm
+Let me add the following KB’s to this as well, that seem to be malfunctioning for the patch:
+KB3153171
+KB3146706
+KB3140410
+KB3126587
+KB3126593
+KB3004375
+KB3121212
+KB3147071
+
+Reply
+Seriously?
+July 1, 2016 at 7:32 am
+How is there not like…. a list of these KBs to uninstall? I’m basically uinstalling half of my security updates just to patch it. I can’t re-install them? Aren’t they supposed to keep my computer secure. So in order to have more than 4 GB of ram, I gotta deal with security vulnerabilities in my system? -_-
+
+Reply
+Liam
+July 5, 2016 at 9:34 pm
+I’ve done further testing, you would need to uninstall only the following three: KB3153171, KB3146706 and KB3147071. The others work fine as long as you use the latest patch.
+
+The reason these 3 don’t work (I think) is that they seem to update the files patched. Maybe an updated version of the patch would be able to solve it.
+
+Reply
+Shaya
+July 6, 2016 at 9:53 pm
+Lol thank you for the response Liam but I am just going to install a 64 Bit version of Windows. This is way too much effort plus I have 12GB of ram and an i7. I need a system arch that can handle all that I throw at it. Most things are compatible with 64 Bit today anyways because everything basically is 64 Bit.
+
+Reply
+Achmed
+July 8, 2016 at 5:43 am
+What a nonsense reply.
+The reason to use 32bit Win results from older, expensive hardware without 64bit drivers.
+If you install 32bit Win just for fun, thats your problem.
+But don’t tell us, that we need 32bit Win further, such a fuzz.
+
+Jonathan
+July 8, 2016 at 11:50 am
+I don’t want to have to re-purchase a particular program which runs acceptably on Windows 7 32-bit but not 64-bit.
+
+dwaltz
+July 21, 2016 at 2:04 am
+In my case I had to repeat the patching after the kernel was updated. I got a bunch of updates and I dont know which, but one installed a new ntkrnlpa.exe with version 6.1.7601.19135 and dated 22/1/2016.
+Regenerating the ntkrnlpx.exe file worked
+
+Christian
+June 23, 2016 at 11:33 pm
+can anyone help me.
+i’ve succesfully patched my windows 7, but it only works when i boot with safe mode (it reads 8 GB RAM)
+if i boot windows on regular basis, it always stuck on black screen after windows logo (i supposed it’s because of the VGA drivers)
+
+I’m using NVIDIA GeForce GTX 650 and processor Core i5 – 3330
+
+please help me…
+
+Reply
+Erick Cedillos
+August 11, 2016 at 5:21 pm
+the same is happening to me…my laptop has an nvidia quadro and it blue screens on the nvidia kernel driver. at this point, i would have to have a driver compatible with the patch.
+
+Reply
+FloWolf
+August 23, 2016 at 9:27 pm
+Hi there, finally managed to get it working for Intel HD5xxx series (HD5500 in my case), it should also work for HD6xxx as the driver states it supports it.
+
+I patched my kernel as described here, I didn’t patch the winloader because of security fixes, but used this method instead (loader only)
+http://www.geoffchappell.com/notes/windows/license/memory.htm
+
+When booting patched kernel windows normaIly had the BSOD because of Intel graphic driver (igdkmd32.sys)
+When booting in safe mode the patched kernel, my memory was recognized, I knew I had to poke around the Intel graphic driver.
+
+I tried to install the driver from the links provided in the comments but it didn’t work, my graphic adapter was too recent apparently.
+After a bit of research I finally found this one
+https://downloadcenter.intel.com/download/22875/Intel-HD-Graphics-driver-for-Windows-XP32-Embedded?product=81503
+to support my graphic adapter and for XP 32 bits
+
+I installed normally the XP driver from the link when I was in safe mode
+I rebooted my patched kernel Windows normally
+It worked ??
+
+Thanks wj32 for all the work, and to all people that commented about solving the driver issues, it helped me to get it working ??
+
+Reply
+Cuqerr
+August 25, 2016 at 8:29 am
+Hello Wen Jia, i am using Patch Pae on my windows 7 for 3 years.
+
+In 3 years, when my computer try to update windows7, Pae is not working.
+
+Well, i don’t rememember what is happening when we update the windows 7(its probably adds 2GB RAM limit again and don’t lets Pae work)
+
+Im using windows 7 starter pack 32 bit.
+
+I can install SP1 update. But i dont know which update is disabling the Pae.
+
+The update, which disabling Pae is probably a firewall update. But i don’t know anything about codding.
+
+So, i need to install windows updates for using Visual Studio 2015. But i cant install any updates because i need Pae. I have 3 GB RAM and Pae removes the 2GB RAM limit for my PC.
+
+I don’t know which update is causing it. But if you going to solve it, i can try all of the updates manually to tell you which update causing the Pae disable.
+
+Sorry for my bad English.
+
+-Thanks
+
+Reply
+r
+September 3, 2016 at 1:21 am
+Do u have the WIndows 10 PRO N version 10240?
+
+Reply
+Jonathan
+September 16, 2016 at 8:59 am
+Windows Update KB3175024 had to be uninstalled for my PAE Patch to work. It was published on Sep. 13, 2016. I hope this helps someone.
+
+Reply
+Dwaltz
+December 1, 2016 at 7:29 pm
+Same here, thanks for the KB number.
+
+Reply
+Jasa Pembuatan Aplikasi
+October 11, 2016 at 12:38 am
+Never update Win7 if you are using this patch.
+Awesome patch!
+
+Reply
+Pingback: windows7 PAE HD4000 | njoy.pl
+dwaltz
+December 6, 2016 at 7:34 pm
+The cumulative patch KB3197868 brings it back. I think at this point it would be better to fix the PatchPae2.
+
+Reply
+Dominik
+April 20, 2017 at 3:46 am
+I was unable to patch 4. C:\WherePatchPaeIs\PatchPae2.exe -type loader -o winloadp.exe winload.exe
+everytime Failed
+
+Reply
+Maria Steyn
+April 24, 2017 at 10:33 am
+Same problem here: all command lines work fine but this single line 4, aiming to disable signature verification, will persistently result in FAILED
+
+When Rebooting it invokes BOOT RECOVERY going for 6-7 times, killing many System Restore Points as well!
+
+Anyone have a good suggestion how to successfully proceed?
+
+Reply
+Andy
+July 13, 2017 at 12:18 am
+win 7 right ?
+I found this frustrating too but its a pretty good feeling when it works!
+The boot loader is failing- so the error recovery starts immediately, The error recovery is a sure sign that PAE patched kernel you’ve created is not connected to the boot option.
+I tried this 7 times untill i used copy and paste instead of typing – then it worked.
+
+You get nice feedback for the first few commands saying patched successfully etc however the bcdedit commands say operation completed but really they dont do much checking so they can be wrong and you wont notice- until you see windows recovery AGAIN..
+So:
+save the Win 10,8 ,7 patch from this site. extract zip files contents to the C drive (not in a folder or anywhere else). (This works on win 7)
+
+– insert the id you get into the {} using copy paste.. (right click top left of cmd- edit-paste)
+Other than that change NOTHING at ALL.
+
+C:\PatchPae2.exe -type kernel -o ntkrnlpx.exe ntkrnlpa.exe
+C:\PatchPae2.exe -type loader -o winloadp.exe winload.exe
+bcdedit /copy {current} /d “Windows (PAE Patched)”
+
+bcdedit /set {} kernel ntkrnlpx.exe
+
+bcdedit /set {} path \Windows\system32\winloadp.exe
+
+bcdedit /set {} nointegritychecks 1
+
+Reply
+MOHAMMED THARIK KADER MAIDEEN
+May 2, 2017 at 11:50 pm
+I GOT ERROR IN THIRD STEP, IT SHOWS FAILED
+
+Reply
+Manfred
+May 27, 2017 at 7:28 pm
+Hi, I run my W7 SP1 with 12GB with “pae = ForceEnable” and “increaseuserva = 3072” without any problems or stability issues.
+
+Many comments in the internet says that “increaseuserva = 3072” reduces the available kernel memory to 1GB. Is this true only in 4GB environments or also in my 12GB environment?
+
+Reply
+Bernhard82
+August 1, 2017 at 12:09 am
+Do this patch not work with my Windows7 (without SP1) ?
+It want not work for me.
+
+Reply
+rasterdigit
+December 28, 2017 at 8:18 am
+When i apply step 4 in the readme instructions i get failed. I am using win7 sp1. Any suggestions to get this working
+
+Reply
+Vox Humana
+December 31, 2017 at 7:36 am
+The patch works flawlessly (great job, wj32!); not so the OS, due to a sort of “conflict” between the video card driver and the kernel memory manager.
+This is an intentional situation, I suspect; in fact, such an incompatibility appeared just after the discover of the crippled kernel on the workstation systems. At the same time, any support for the server version ceased. Any attempt to install the video card driver on a server system is frustrated by a BSOD.
+
+Strangely enough, the “conflict” is resolved by activating the “Desktop Experience”; it would be interesting to take a look to the real composition of the package.
+
+Since I currently have no access to the “Desktop Experience” files, I put the problem right as follows:
+
+I bought an old, cheap Radeon card and I installed it beside a newer Geforce card.
+
+I downloaded Microsoft “DEVCON”; then I wrote two small batch files:
+
+@echo off
+
+devcon disable “@YYY\YYY_YYYYYYYY_YYYYYYYYYYY_YYYYYYYYYYYYYYY\YYYYYYYYYYYYYYYYY”
+
+devcon enable “@XXX\XXX_XXXXXXX_XXXXXXXXXXX_XXXXXXXXXXXXXX\XXXXXXXXXXXXXXXXXX”
+
+bcdedit /set {bootmgr} default {nnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnnn}
+
+shutdown.exe /s /t 00
+
+@echo off
+
+devcon disable “@YYY\YYY_YYYYYYYY_YYYYYYYYYYY_YYYYYYYYYYYYYYY\YYYYYYYYYYYYYYYYY”
+
+devcon enable “@XXX\XXX_XXXXXXX_XXXXXXXXXXX_XXXXXXXXXXXXXX\XXXXXXXXXXXXXXXXXX”
+
+bcdedit /set {bootmgr} default {nnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnnn}
+
+shutdown.exe /s /t 00
+
+where XXX\XXX_XXXXXXX_XXXXXXXXXXX_XXXXXXXXXXXXXX\XXXXXXXXXXXXXXXXXX is the ID of the Geforce new card
+
+YYY\YYY_YYYYYYYY_YYYYYYYYYYY_YYYYYYYYYYYYYYY\YYYYYYYYYYYYYYYYY is the ID of the Radeon old card
+
+zzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz is the identifier of the “PAE Patched” boot entry
+
+nnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnnn is the identifier of the original “Windows 7” boot entry
+
+By executing the first batch file, the Geforce is disabled, the Radeon is enabled, “PAE Patched” becomes the default boot entry, then the system is shutted down. The second batch file reverts the process (Radeon disabled, Geforce enabled, “Windows 7” default boot entry).
+
+By using the switch “/r” in place of “/s” the system is rebooted instead of shut down; I use the /r switch because I have to disconnect the monitor from one card reconnecting it to the other one.
+
+Doing so I can have an 8 GB RAM system with a graphic accelerator, even if not so “sparkling”, or a “usual” Windows 7 system but provided with a decent GPU.
+
+Hope it helps
+
+Reply
+Ivan
+February 3, 2018 at 12:58 am
+Hi,
+
+How to correct this error?
+
+C:\Users\Ivan3>bcdedit /set {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx} kernel ntkrnl
+px.exe
+O tipo de dados do elemento especificado não é reconhecido, ou não se aplica
+à entrada especificada.
+Execute “bcdedit /?” para obter assistência da linha de comando.
+Elemento não encontrado.
+
+Reply
+Terry
+February 3, 2018 at 7:52 am
+Hi Ivan, you are using the wrong path, which is why there is an error.
+
+You should be in C:\Windows\system32 directory to issue the commands, as explained in wj32’s readme.txt file.
+
+It is also much easier to put the patchpae.exe in system32, so that paths do not have to be specified in the commands.
+
+Reply
+Cary VanDerMeulen
+April 19, 2018 at 4:52 pm
+The people who have left comments concerning the inability of “PatchPAE” to properly work with winload.exe prove that this is not an isolated case…
+I love the comment about “either you can’t follow directions” or “system won’t allow use of more than 4GB”.
+How about “If the code worked, we wouldn’t be having these problems.”
+I really don’t care that “support” isn’t provided for ‘freeware’, but if you’re going to post code for people to use on their systems, for heaven’s sake PRODUCE FUNCTIONAL CODE!
+Here’s the proof:
+
+Ran PatchPAE2.exe (beyond Windows 7 SP1)
+
+Patched Kernel
+FAILED to patch Winload
+
+Ran PatchPae (Windows 7 SP1, specifically)
+
+Program ‘stops’ working – doesn’t do a thing; except generate an error –
+
+“Application has generated an exception that cannot be handled.”
+Process ID=0x17dc (6108), Thread ID=0x113c (4412)
+
+Command Prompt Window contents:
+
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32>PatchPae2.exe -type loader -o winloadp.exe winload.exe
+Failed.
+
+C:\Windows\system32>PatchPae.exe -type loader -o winloadp.exe winload.exe
+
+Unhandled Exception: System.IO.FileNotFoundException: Could not load file or ass
+embly ‘ProcessHacker.Common, Version=1.12.0.0, Culture=neutral, PublicKeyToken=n
+ull’ or one of its dependencies. The system cannot find the file specified.
+File name: ‘ProcessHacker.Common, Version=1.12.0.0, Culture=neutral, PublicKeyTo
+ken=null’
+at PatchPae.Program.Main(String[] originalArgs)
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\M
+icrosoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure lo
+gging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fus
+ion!EnableLog].
+
+Something is obviously amiss… Any answers?
+
+Reply
+Devito
+April 19, 2018 at 11:14 pm
+Guys, I found this driver from Dell. Maybe this is our solution for 32-bit driver?
+
+http://www.dell.com/support/home/ee/en/eebsdt1/Drivers/DriversDetails?driverId=DCP6V
+
+Intel HD Graphics Driver
+
+This package provides Intel HD Graphics Driver and is supported on Enterprise Servers T20 running the following Operating Systems: Windows Server 2008 R2.
+Fixes & Enhancements – Initial Release.
+Version – Version 10.18.10.3308, A00
+Category – Video
+Release date – 26 May 2015
+Last Updated – 27 May 2015
+
+File Name: T20_Video_Driver_DCP6V_WN32_10.18.10.3308_A00.EXE
+
+Reply
+Cary VanDerMeulen
+April 23, 2018 at 4:04 am
+Well, it appears that no one has an answer as yet as to why the “winload patch” fails to apply…
+
+For those of you who are experiencing this issue, there is a resolve that will allow the system to load with the PAE patch – it is outlined very well here:
+
+http://translate.google.com/translate?u=http%3A%2F%2Fwww.unawave.de%2Fwindows-7-tipps%2F4-gb-patch-selber-machen.html&langpair=de%7Cen
+
+Yes, it has to be translated from German. It can be reached directly at http://www.unawave.de
+They also had an ‘automated’ method of applying the PAE patch. It has been taken down, but they have provided instructions to manually apply the patch.
+(Which very nicely shows precisely what is being done.)
+
+Yea, there is a ‘watermark’ in Windows afterwards, but that may be the least of the issues encountered by applying the patch.
+
+Be aware that there is no guarantee the patch will work…
+
+I myself had issues with the nVidia display driver (who said nVidia drivers worked?) and had to replace it.
+The patch otherwise proved to be incredibly unstable – three BSOD’s within 30 minutes, all related to the patch, either directly or indirectly (i.e. was listed in the stack trace for the fault, either in conjuction with other drivers, or in and of itself in a memory management error – no kidding, since EVERYTHING in the enviroment was designed for 4GB).
+(And yes, the system is compatible – No issue with the hardware itself.)
+
+Good luck – if there’s need for access to more memory than 4GB, this MAY solve it; if not, having to spend the rest of our lives to reload EVERYTHING in a [new] 64-bit environment sure makes it an alternative worth investigating.
+However, an unviable environment that is continually going ‘belly-up’ is no solution at all;
+particularly if the entire reason for access to more memory doesn’t work – yes, the patch provided more ‘available’ memory as far as Windows was concerned…
+But the entire reason for this ‘exercise’, the ability to open a graphics image that would not due to lack of available memory which WAS NOT RESOLVED by making more memory available in Windows. If your applications can’t access and/or utilize the additional memory, the whole process is essentially as stated, an ‘exercise’, and a useless one at that.
+
+Reply
+engine
+August 2, 2018 at 9:17 am
+Core i3 3220 w/Intel HD 2500
+all works fine with patched xp driver except Chrome & JxBrowser based on chromium.
+yes, I’m understand it’s because chromium use hardware accel ??
+But FireFox works fine.
+
+any ideas how to fix JxBrowser ?
+
+Reply
+engine
+August 2, 2018 at 9:21 am
+chrome.exe –disable-gpu
+
+Reply
+David Donovan
+August 22, 2018 at 2:21 pm
+Newest Patch Tuesday monthly rollup security release for August 2018 breaks PAE.
+
+Reply

@@ -1,0 +1,3128 @@
+419 Comments
+eu
+February 2, 2016 at 1:19 pm
+not working with win10 1511 and NVidia driver ?? error in video driver
+
+Reply
+pied-piper
+February 7, 2016 at 12:36 pm
+Unfortunately not working…
+
+Reply
+Aether
+April 13, 2017 at 2:17 am
+Windows 10 1151 known as windows 10 threshold 2, although this windows same built 10586
+
+Reply
+Don Williams
+February 3, 2016 at 8:11 am
+Unsupported kernel, was the message that I got.
+
+Reply
+Aether
+February 5, 2016 at 1:08 am
+Unsupported kernel version: 10240
+
+Reply
+jcguzman
+May 4, 2016 at 9:57 am
+I have the same problem. Any solution??
+
+Reply
+Terry
+February 5, 2016 at 1:59 pm
+I removed the Evgeny\Escape75 patch for Win 10 (see:https://wj32.org/wp/2013/10/25/pae-patch-updated-for-windows-8-1/ around November 2015), and applied this one by wj32 to check it out.
+
+Works fine foe me on Windows 10 Home with all latest updates. No problems or error messages.
+
+Reply
+Concerned
+February 13, 2016 at 7:52 am
+Download PatchPae2.zip contains a Trojan.Gen.2 virus. Download size with virus is 69.5 Kb. Download size without should be 51 Kb.
+
+Reply
+wj32 
+February 13, 2016 at 2:45 pm
+There is no virus.
+
+Reply
+viktor
+August 25, 2016 at 10:56 am
+HI wj32 Whether they will be made to the newer version of the Patch for Windows 10 kernel versions?
+
+Reply
+ravikwow
+February 14, 2016 at 12:19 am
+Don’t work with intel graphics driver
+http://i67.tinypic.com/2cxur8w.jpg
+If intel driver remove and install standart vga driver then system work fine but resolution screen low.
+
+Reply
+Terry
+February 14, 2016 at 8:06 am
+Intel HD and Nvidia graphics are known issues. If you have either of these in a PC and you want to use the patch, then it is best to use another video card with different chipsets, eg ATI Radeon.
+
+Reply
+Dr. Michael König
+March 2, 2017 at 9:46 pm
+See my posts of Feb.2017: You can try old drivers. I had success with the NVidia- Win7-driver of 12-9-2013.
+
+Reply
+chris
+February 15, 2016 at 6:41 am
+I cannot get the loader to update, states Failed every time in windows 7. I tried the patchpae and patchpae2 and both fail patching the loader, kernel seems ok.
+
+Reply
+Saied
+October 10, 2016 at 4:07 am
+I have same issue
+
+Reply
+kitt
+February 16, 2016 at 8:55 am
+I’ve tried to install this patch numerous times and using the latest 3 updates. I have nvidia card, and with the patch booted in screen froze with ‘windows shutting down’, yet when I start the parch in safe mode, it boots fine, and shows all my 8 gb ram. in task manager. It appears to be a video card issue as I know it works with the default vga driver in safe mode.
+
+Is there going to be any more work on this? Thank you.
+
+Reply
+Terry
+February 18, 2016 at 1:01 pm
+The only way you will get the patch to work is to replace your video card with one having other than Nvidia chipsets, eg ATI Radeon , as already mentioned.
+
+Reply
+Dr. Michael König
+March 2, 2017 at 9:48 pm
+Or testing old NVidia-drivers, see my posts of Feb.2017
+
+Reply
+kitt
+February 18, 2016 at 4:47 am
+Still trying. I’ll try the very newest patch today or tomorrow. On the patch boot, after the normal animated windows loading screen I get half a correct windows ‘welcome’ screen and jagged half white image with little diamonds and weird patterns and no movement. Must hit reset button. Again, in safe mode, I see all 8 gigs and runs fine. Misconfig has memory unchecked as well. Maybe I could try going back 2 years in nvidia graphics drivers… they only have been adding support for 3d and physics, both of which I don’t use…Worth a try maybe.
+Any thoughts?
+
+Reply
+VeganChocolate
+February 18, 2016 at 7:12 am
+WARNING!!
+
+There’s fair chance this site has been compromised to some extent.
+
+This new Windows 10 version of the patch is seen as heavily infected by anti-malware scanners.
+
+If you use the Internet Archive Wayback Machine you can download the older versions of the patch (before someone replaced the link URL’s to direct people to the new infected patch).
+
+Those older versions scan completely clean.
+
+The original author of the patch spoke perfect English but the guy claiming to the be author and defending the infected patch in the comment section (using the name evgeny) speaks English poorly.
+
+I looks like he may have the ability to upload infected files but not the ability to disable or remove negative/revealing comments.
+
+It’s also possible that, in the process of making the patch work with Windows 10, legitimate changes needed to be made that trigger heuristics flags in anti-malware scanners. It’s also possible that the older versions also used to trigger those flags but have since been cleared as producers of false positives in the anti-malware databases.
+
+In conclusion, if this new patch it legitimate and not actually infected, I apologize, but there are too many red flags here and I don’t have the C knowledge to check the source code, or the tools to recompile it for comparison. So, I’ll be sticking with the older versions accessible via the Wayback Machine.
+
+Reply
+Terry
+February 18, 2016 at 1:16 pm
+VeganChocolate
+
+You are getting confused. The (unofficial) Win 10 pae patch by evgeny who AFAIK is Russian, has nothing to do whatsoever with this site owner’s (wj32) patch. The patches are completely separate and independent of one another. The evgeny patch for Win 10 was posted before the latest wj32 Win 10 patch became available.
+
+However I have used both with no problems and with no virus’s showing up in either.
+
+The file link posted by escape75 back in November is an executable program that uses the evegeny patch for win 10 and installs it automatically, no manual input is required except to run the program.
+
+Reply
+wj32 
+February 18, 2016 at 5:14 pm
+evgeny (who I do not have any affiliation with) does not have the ability to upload files to my website. I have not deleted negative comments such as yours because doing so serves no purpose to me.
+
+Once again, there is no virus in the file. AV heuristics naturally come up with false positives. This is one of them.
+
+Reply
+Silver
+February 20, 2016 at 2:31 pm
+Unfortunately it crushes into BSOD “SYSTEM_THREAD_EXCEPTION_NOT_HANDLED” on start, so Windows can’t even dumb anything.
+
+If you are having the same issue, uninstall physical RAM — then you will be able to boot and disable this modification.
+
+Reply
+Kitt
+February 21, 2016 at 7:26 am
+Okay, First, this wj32 and patch has been around quite some time and appears to be the most dependable, robust and actively updated one.
+There are no viruses in any of this code, but due to how it’s accessing kernals (with your permission) a decent virus/malware should detect something. This is normal, but it’s actually good people pay attention to this sort of thing.
+From all my reading and experimenting, I will submit there’s a nvidia and other graphic driver problems.
+I’m going to try loading some legacy win XP graphic drivers and test if there’s a different screen upon booting the pae boot option.
+
+I am going this route before screwing around with microsoft updates and such. I believe it’s entirely possible that microsoft has put in code to distrupt this patch from working as they want people to buy another OS like the 64 bit. It’s all marketing as far as I’m concerned. Why else would larger memory work on win 2000 and some other older win OS’s natively and not the newer ones. I feel just reloading graphic drivers has much less potential for problems.
+
+I will report when I’ve got something concrete to say.
+
+Reply
+kitt
+February 25, 2016 at 11:02 am
+I had to use a restore point after messing with too many graphic drivers and created another unrelated issue to the patch.. after fixing my created problem, I read to check for any ram type 3rd party or memory managers running at the same time as pae. I forgot I had a ram drive program resident from before. I disabled that and when I did second paepatch boot option I saw a lower res windows screen and it comes up ‘windows doing repair’ and it attempts to repair. I cancel and reboot with same thing in loop.
+This is different than when the ram program was running so maybe I’m getting somewhere.
+I will try the nvidia drivers from 2012 or so for win 7, this time with a restore point…
+will update results. Always ALWAYS make sure to install this as a second boot option.
+
+wj32 clearly designed an excellent almost fool proof program by giving you the dual boot option…USE IT!!!
+
+Reply
+Eric
+February 27, 2016 at 2:11 am
+hi? does the zip really contains virus? when i downloaded it, my antivirus always blocking it due to malware. Can someone give me an assurance that this has no virus included at all??
+
+TIA..
+
+Reply
+Saied
+October 10, 2016 at 4:07 am
+I have same issue
+
+Reply
+akapuma
+February 29, 2016 at 7:11 am
+Works very fine on 2 PC with W10 build 10586.
+Both PC are with AMD/ATI graphics.
+According to Bitdefender, no virus inside.
+Thank you very much!
+BR
+akapuma
+
+Reply
+KJT
+March 6, 2016 at 6:18 am
+Working fine for me. Winload patch doesn’t work: But signing the patched kernel as explained at unawave.de & bootmenu as explained there fixed all. Remove watermark with watermark-remover.
+
+BTW: For my Nvidia Grafic card I use driver version 332.21. The newer ones don’t know about PAE.
+
+All is running fine like a charm now. 8 Gbyte used by W7/32
+
+KJT
+
+Reply
+Escape75
+March 15, 2016 at 1:38 pm
+Just a quick update to my Patch PAE, now using fix128 0.42 …
+Using simple script, should work on Windows 7, 8, 8.1 and 10
+
+https://mega.nz/#!D5QyUbZL!i68O6nw6o6zKiA68IZbDJsDfzGuzRoyfXs5eCQak-zo
+
+Reply
+Possessed
+May 3, 2016 at 11:48 am
+Hello, I tried wj32 patch early and could not get it to work, tried it again today and it failed to patch winload.exe, so i gave up.
+i saw your comment and tried your tool, worked flawless, gj.(win 7 sp1, AMD vga)
+I’m thankfully to both wj32 and you for the nice work.
+
+Reply
+Meow Meow
+October 5, 2016 at 5:42 pm
+Sir, your patch saved the day. It works flawlessly (so far) for Windows 7 SP1 Professional in a vmware box.
+
+Reply
+jackd
+March 17, 2017 at 2:29 pm
+I tried this twice on my windows home 10.. and it just does not work. I get the “something broken” result each time. I followed the instructions for Pae2, but used the pae3 exe to execute them. The files were created, I checked that after running the commands. But upon restart, it won’t boot into this. My windows is 14393. is there some kind of log or something I can check to figure out what the problem might be?
+
+Reply
+jackd
+March 17, 2017 at 2:41 pm
+Sorry, it’s windows 10 pro 32 bit version and specifically 14393.693
+
+Reply
+asdfr
+March 30, 2016 at 2:55 pm
+hello
+patch no work win v1511 Build 10586 auto reboot
+
+Reply
+Dean
+March 31, 2016 at 7:38 am
+Works 100% perfect! Many, many, but many thanks. No problems at all, patch installation perfect, no virus (I have Bitdefender), no nothing. Less than 5 minutes. Fantastic! Thanks again! PS: I also use EmptyStandbyList (works perfectly) in a batch file. Please, I would like to ask if besides EmptyStandbyList, I need other cmd command or program in order to clean my RAM. Thanks!
+
+Reply
+Dean
+March 31, 2016 at 7:41 am
+PS2: I installed PAE patch on Windows 10 version 1511 build 10586.164 with 4GB RAM.
+
+Reply
+asdfr
+April 1, 2016 at 12:14 am
+patch no work win v1511 Build 10586 boot menu and press f8 auto reboot
+
+windows isnot boot
+
+Reply
+asdfr
+April 1, 2016 at 12:31 am
+patch does not work
+the patch remove ss2 pae nx and winloadgurd
+Like patch windows 8(bypass PAE/NX/SSE2 check )
+http://forums.mydigitallife.info/threads/37517-Q-Win-8-bypass-PAE-NX-SSE2-check
+
+tankyuo
+
+Reply
+Igor
+April 1, 2016 at 7:43 pm
+PatchPae2.exe -type loader -o winloadp.exe winload.exe
+Failed.
+
+Reply
+Saied
+October 10, 2016 at 4:04 am
+I have same problem
+
+Reply
+asdfr
+April 3, 2016 at 4:51 am
+hello
+bypass PAE/NX/SSE2 check
+
+Reply
+asdfr
+April 11, 2016 at 4:47 am
+load windows 10 from old pc pentium 3 and 4
+
+Reply
+asdfr
+April 11, 2016 at 4:54 am
+help me
+boot Windows 10 Pro Insider Preview 14295 from old pc pentium 4
+
+Reply
+Matheus
+April 11, 2016 at 2:37 pm
+After some unsuccessful attempts, I downgrade the intel chipset g45 drivers from windows 7 to windows xp, Then I reinstalled PatchPae2 and now works. Thank you!
+
+Reply
+laroditelf
+April 12, 2016 at 1:08 am
+Installed okay, but doesnt seem to work on Win7 Home on old HP 6715s (AMD Turion X2 processor). I believe the install went okay, here’s bcdedit /enum output
+
+Windows Boot Loader
+——————-
+identifier {current}
+device partition=C:
+path \Windows\System32\winloadp.exe
+description Windows (PAE Patched)
+locale en-US
+inherit {bootloadersettings}
+recoverysequence {d7f21e6c-f69c-11e5-82e3-8f7716722112}
+truncatememory 0x100000000
+recoveryenabled Yes
+nointegritychecks Yes
+testsigning No
+allowedinmemorysettings 0x15000075
+osdevice partition=C:
+systemroot \WINDOWS
+kernel ntoskrnx.exe
+resumeobject {68de8738-f69c-11e5-82e3-8f7716722112}
+nx OptIn
+numproc 2
+bootmenupolicy Standard
+usefirmwarepcisettings No
+sos Yes
+
+Reply
+Pablo
+April 14, 2016 at 2:50 pm
+I followed instructions and it failed to patch the Windows Loader on Windows 7 Professional 32 bit with SP1 (4GB RAM). I just get the Failed message after trying to patch the loader but patching the kernel is fine. I looked in the source code and I guess some hex codes weren’t lining up which is why it didn’t patch properly? Any way we can resolve this issue?
+
+Reply
+Saied
+October 10, 2016 at 4:08 am
+I have same issue
+
+Reply
+Senan Kannangara
+April 21, 2016 at 9:30 pm
+Please don’t use this patch. It is very hard to get rid of it & to boot to the original Windows 10 profile. (After Installing.)
+
+Reply
+christian
+May 22, 2016 at 8:04 am
+why should you get rid of it…I’ve been using it for ages and worked wonderfully
+
+Reply
+safdf
+April 23, 2016 at 4:28 am
+patch oder version win 10 pro and enterprize all builld
+
+Reply
+Amos Simangunsong
+April 25, 2016 at 1:32 pm
+how to fully remove pae patch for WIN.81 ? I had BSOD ??
+
+Reply
+christian
+May 22, 2016 at 8:05 am
+you better off a clean install mate….
+
+Reply
+Khalil Manoun
+May 15, 2016 at 5:30 pm
+Hi. Thanks for everything. I have a problem in executing the instructions: you said “make sure the directory is in fact system 32”. Then C:\WherePatchPaeis etc.. , Do you mean I have to change directory from System32 back to C:? Also and since I am not a computer wiz, do I copy the whole command line “PatchPae2.exe -type kernel -o ntoskrnx.exe ntoskrnl.exe ” as is after changing to the patch directory?
+I have Windows 10 pro, and the message I am getting is: “unable to copy file: The system cannot find the file specified.” Can you please help? I need specific instructions step by step please. Thanks a million
+
+Reply
+christian
+May 22, 2016 at 8:03 am
+No, check and make sure it is c:/system32 means that inside command prompt window you will actually read the line displaying: “C:/system32>” at this point you indeed copy/paste the whole line exactly as you wrote and press “Enter”.
+Remember the command prompt must be with admin rights (right-click the cmd icon and choose “execute as admin”) and remember to substitute the path where you actually have your patchpae2 folder.
+Hope it helped…sorry for bad english ??
+
+Reply
+Darkscepter
+June 1, 2016 at 11:28 am
+windows 10 cant find the file path hellp
+
+Reply
+Escape75
+June 17, 2016 at 6:10 am
+Just a quick update to my PatchPAE, now using fix128 0.43
+PureBasic used to encapsulate the .cmd (source included)
+
+Should work on Windows 7, 8, 8.1 and 10 (x86 & ATI card required)
+
+https://filescdn.com/mkic9tcyrfsp
+
+Reply
+Al
+June 19, 2016 at 12:25 am
+Your patch works only for ATI card? I’ve a Intel chipset and nVidia card.
+
+Reply
+Escape75
+July 1, 2016 at 8:40 am
+Well it works with anything, but on nvidia and intel you need old drivers ??
+
+Reply
+Al
+July 1, 2016 at 2:23 pm
+Thanks, just as I thought ?? will be there any patch for new or recent drivers?
+
+Reply
+Max999
+July 14, 2016 at 5:12 am
+Escape75, the file is no more available!
+
+Please, can you re-upload it on some site?!?
+
+Thank you!
+
+Reply
+Max999
+July 13, 2016 at 8:33 am
+The link is dead! Please, can you re-upload it? also to another site.. THanks
+
+Reply
+Christian
+June 23, 2016 at 11:39 pm
+can anyone help me.
+i’ve succesfully patched my windows 7, but it only works when i boot with safe mode (it reads 8 GB RAM)
+if i boot windows on regular basis, it always stuck on black screen after windows logo (i supposed it’s because of the VGA drivers)
+
+I’m using NVIDIA GeForce GTX 650 and processor Core i5 – 3330
+
+please help me…
+
+Reply
+Al
+June 24, 2016 at 1:19 am
+I think that the problem is always the same. nvidia driver.
+
+Reply
+Liam
+June 24, 2016 at 3:31 am
+You should uninstall the following patch on Windows7: KB3153171, KB3146706, KB3147071
+@wj32, is it possible to update the patch so it works with the new patches?
+
+Reply
+Lucas
+July 9, 2016 at 12:36 pm
+This patch did not work for me, seems to be just a skin, space engineers for example need 8GB of RAM to run, I can not even load a world, the game closes before for lack of memory, when I have 8GB on my pc and not can not install 64-bit due to driver incompatibility (gives BSOD) so I’m using this patch, but appears to be a skin as it did no good to me, it is the same thing as being with 4GB of RAM.
+
+Reply
+Terry
+July 10, 2016 at 10:20 am
+Whilst the patch enables access to more than 4GB of RAM, AFAIK any single 32 bit application can only use up to 4GB.
+https://en.wikipedia.org/wiki/Physical_Address_Extension
+
+Reply
+Liam
+July 12, 2016 at 12:19 am
+Correct, any single application won’t be able to use more then 4GB of RAM.
+
+Reply
+Avg
+July 13, 2016 at 3:21 pm
+I have the current build 14366. On reboot it takes windows into auto restore and fails in doing so. Is there a new patch coming ? Would be great help
+
+Reply
+Liam
+August 3, 2016 at 12:42 am
+This means that any of the following patches: KB3153171, KB3146706, KB3147071 or any other new patches that adjust the kernel in such a way that it won’t boot.
+
+Reply
+twinkles740
+July 14, 2016 at 6:17 am
+You can try Long Path Took, it helped me with the same issues.
+
+Reply
+Liam
+August 3, 2016 at 12:40 am
+Can you explain how to use this and what it is?
+
+Reply
+Boogie
+August 4, 2016 at 8:05 am
+Can we get a new update for the latest windows 10 release? Official build 14393, anniversary update
+
+Reply
+MtnCowboy
+August 23, 2016 at 6:00 am
+I second this motion. Works fabulous with win 7 -win 10 1511…. But I haven’t been able to get it to work with the new 1607 build…..
+
+Reply
+Janik
+August 4, 2016 at 4:04 pm
+Updated Windows 10 yesterday.
+The Patch is gone and I get “unsupported kernel version 14393” error when I try to patch again…
+
+Reply
+Nur
+August 4, 2016 at 9:47 pm
+it’s not work in windows 10.0.14393 Build 14393
+
+Reply
+ichbins
+August 11, 2016 at 9:50 pm
+Windows 10 Build 14393:
+By patching I get the “unsupported kernel version 14393” error too.
+
+Reply
+antscmat
+August 12, 2016 at 5:40 pm
+Windows 10 Build 14393:
+By patching I get the “unsupported kernel version 14393” error
+
+Reply
+anana
+August 15, 2016 at 7:46 pm
+will you support win10 14393 please? thank you
+
+Reply
+evgeny
+August 16, 2016 at 8:56 am
+http://www.mediafire.com/download/75cl6cckllcubv9/PatchPAE3_2016_08_15.zip
+– added support for Vista SP0, 7 SP1 with KB3033929+,
+– Windows XP SP2/SP3,
+– Windows 10 (10240/10586/14393)
+– Server 2003 SP1/SP2/SP2R2, Server 2008 SP1
+– Server/Windows 2000 SP4 and 2000 SP4 with KernelEx by blackwingcat
+– Windows Longhorn (4093 stable), Visual C++ 2010 Redistributable required
+
+Reply
+Suni
+August 22, 2016 at 9:11 pm
+after applying this patch. When started Win 10 it says error in starting windows and tries to repair itself. Which it is not able to do. It then gives various boot options . So started in safe mode, carried out system restore and deleted the patch install leftovers.
+
+Reply
+Suni
+August 22, 2016 at 9:15 pm
+Applied patch. Started Win 10 X86 version. Start-up says error in starting up and goes into repair mode.
+Unable to repair it gives various start up options like re booting , system restore etc.
+Carried out system restore and deleted residual patch files.
+Additional information my OS build is WIN 10 X86 Build 14393.51
+
+Reply
+Sunil
+August 22, 2016 at 9:16 pm
+Applied patch. Started Win 10 X86 version. Start-up says error in starting up and goes into repair mode.
+Unable to repair it gives various start up options like re booting , system restore etc.
+Carried out system restore and deleted residual patch files.
+Additional information my OS build is WIN 10 X86 Build 14393.51
+
+Reply
+zaza
+August 24, 2016 at 9:06 pm
+i`ve the same problem
+
+Reply
+Sunil
+August 24, 2016 at 9:28 pm
+Re applied patch.
+Now win 10 working with 6.5 GB Total Physical Memory.
+Many Thanks.
+
+Reply
+Brian
+September 1, 2016 at 10:02 pm
+Are there any step by syep instructions please, or are they the same as PatchPae2?
+Thanks
+
+Reply
+j212
+March 15, 2017 at 1:27 pm
+can you check the latest windows 10 build14393.693 …It’s not working for me on this particular build.
+
+Reply
+Tomkan
+April 27, 2017 at 1:48 am
+Evgeny, your PatchPae3 doesn’t support patching Windows 10 Creators Update (fiel ver. 15063) winload.exe. Could you either update your patchpae or publish source to experienced programmers?
+
+Reply
+akapuma
+April 27, 2017 at 5:35 am
+Works fine with 15063. Had you used the correct patch?
+
+evgeny
+April 6, 2017 at 5:07 am
+
+http://www.mediafire.com/file/ffjim5111corkcf/PatchPAE3_2017_03_28.zip
+win10 build 15063 added.
+
+Best regards
+
+akapuma
+
+Reply
+Tomkan
+May 2, 2017 at 8:46 pm
+Thx, now I can confirm it really works with Creators update (15063). I didn’t know about this new version you’ve provided.
+
+Reply
+Kabawe
+November 7, 2018 at 7:25 am
+Thank you Soooooooooo Muchyour patch working perfect!
+http://i67.tinypic.com/2dqel2.jpg
+
+Reply
+Terry
+August 16, 2016 at 10:48 am
+Many thanks evgeny. Works well with Windows 10 14393, no problems.
+
+Reply
+ichbins
+August 18, 2016 at 6:51 pm
+Windows 10 Build 14393:
+Everything is working fine.
+Thanks.
+
+Reply
+Al
+August 18, 2016 at 8:25 pm
+no hope for nvidia cards?
+
+Reply
+Yuri Banderas
+August 20, 2016 at 2:54 am
+Very Happy work fine in Windows 10 Build 14393, tank you evgeny, step by step.
+
+Reply
+Escorpiom
+August 20, 2016 at 3:27 pm
+I just found out that this doesn’t work for Windows 10 LTSB build 14393. The kernel and winload are different in size, as compared to CB kernels. So in fact the patch only copies the two files without any changes being made to the files itself.
+I guess the patch checks the checksum, if it doesn’t match no patching is done.
+The patcher however says “patched”, incorrectly so.
+Evgeny, can you add support for LTSB builds?
+
+Cheers.
+
+Reply
+evgeny
+August 20, 2016 at 6:43 pm
+Patch prints “Fail” and exitcode != 0 in this case exactly as wj32.
+Checksum never checked.
+Can you upload your winload and ntoskrnl?
+
+Reply
+evgeny
+August 20, 2016 at 7:37 pm
+I just install LTSB 14393 and patch works fine.
+Escorpiom, please upload winload and ntoskrnl.
+
+Reply
+Zzzz
+August 24, 2016 at 10:02 pm
+What i did wrong? I follow strictly the list and in the end of process i get the repair mode when try to load patched boot, and attempts to fix the boot doesnt help. I running win 10 14393.82
+
+Reply
+korg
+August 21, 2016 at 12:52 am
+Working fine on my Windows 10 Build 14393. Thank you evegeny !
+
+Reply
+viktor
+August 25, 2016 at 11:24 am
+Hi korg for me not work on Windows 10 Build 14393 32 bit where is my fault ? Thanks Advance.
+the screenshot is here:
+imgur.com/a/eoUkx
+
+Reply
+Terry
+August 25, 2016 at 4:31 pm
+Viktor, you are using patchpae2.exe, this does not work with build 14393.
+
+Use patchpae3.exe downloadable from the evgeny post dated 16 August,
+Cheers
+
+Reply
+jack
+August 21, 2016 at 10:23 am
+pls tutorial how to install pae patch windows 10
+
+Reply
+akapuma
+August 21, 2016 at 7:42 pm
+Execute the exe-file from evgeny in a window. It will print a long and good help.
+br
+akapuma
+
+Reply
+Sunil
+August 22, 2016 at 9:17 pm
+Applied patch. Started Win 10 X86 version. Start-up says error in starting up and goes into repair mode.
+Unable to repair it gives various start up options like re booting , system restore etc.
+Carried out system restore and deleted residual patch files.
+Additional information my OS build is WIN 10 X86 Build 14393.51
+
+Reply
+Sunil
+August 23, 2016 at 12:04 am
+Applied patch. Started Win 10 X86 version. Start-up says error in starting up and goes into repair mode.
+Unable to repair it gives various start up options like re booting , system restore etc.
+Carried out system restore and deleted residual patch files.
+Additional information my OS build is WIN 10 X86 Build 14393.51
+
+Yvgeny can you please help.
+
+MY PC is Dell Vostro 3560- Processor	Intel(R) Core(TM) i7-3612QM CPU @ 2.10GHz, 2101 Mhz, 4 Core(s), 8 Logical Processor(s)
+Installed Physical Memory (RAM)	8.00 GB
+Total Physical Memory	2.39 GB
+Available Physical Memory	418 MB
+Total Virtual Memory	6.01 GB
+Available Virtual Memory	2.48 GB
+Page File Space	3.63 GB
+
+Reply
+Sunil
+August 23, 2016 at 3:36 pm
+Re applied patch.
+Now win 10 working with 6.5 GB Total Physical Memory.
+Many Thanks.
+
+Reply
+Zzzz
+August 24, 2016 at 9:53 pm
+How did you deal with it? What you do? I follow the list but in the end i get into repair mode as you
+
+Reply
+Zzzz
+August 24, 2016 at 10:33 pm
+In my case the problem was in missing winloadp.exe file, i just copied winload file and add p to the name. After that i done the list steps, and got it working.
+
+Reply
+Janik
+September 4, 2016 at 7:47 pm
+wj32 are you working on a 14393-patch?
+I am still waiting for your version ??
+
+Reply
+akapuma
+September 4, 2016 at 8:53 pm
+Why you are not using patch from evgeny? Works fine with 14393.
+
+Reply
+Janik
+September 5, 2016 at 2:48 am
+Because I do not like what evgeny is doing here…
+This ist wj32.org so why does evgeny publish his version here at all???
+
+Reply
+Brian Brackley
+September 5, 2016 at 1:16 am
+Yes I am on the very latest version
+
+Reply
+Brian
+September 6, 2016 at 4:51 am
+I am running Windows 10 Pro version 14393 with the evgeny patch V3. All i am asking for is a step by step guide please to insatll it should it be different than the set up for V2 as it is not working and I must have done something wrong.
+
+Reply
+daniel
+September 13, 2016 at 7:29 pm
+windows10 10586, bootloader , error, can not continue to boot
+
+Reply
+Terry
+September 14, 2016 at 9:20 am
+With the latest batch of Windows 10 updates, people may find they have to run “step 3” again to ensure the latest version of the kernel is installed. You will probably have to run unpatched windows in order to get Windows to load.
+
+Reply
+akapuma
+September 15, 2016 at 6:58 am
+I started the last windows update. The kernel was updated from 14393.103 to 14393.187. After this, I got a reboot loop. I solved the problem as follows:
+– Boot without PAE patch.
+– Patch the new kernel 14393.187
+– Reboot with PAE patch.
+After this, everything works fine.
+Best regards
+akapuma
+
+Reply
+Yuri
+September 16, 2016 at 10:42 pm
+After updating Windows 10 Pro to Version 10.0.14393 Build 14393 (anniversary update), PAE patch can no longer be applied: Access denied and invitattion for new version is displayed: http://i.imgur.com/itmp7Pq.png
+
+Any help from developer please?
+
+I have to remove the patch when Win was updating or else experiencing never ending cycle of rebooting and/or recovering previous OS version.
+
+Kind regards
+
+Reply
+Yuri
+September 16, 2016 at 10:48 pm
+When moving PatchPae exe to c: drive: Unsupported kernel version: 14393
+
+Reply
+akapuma
+September 16, 2016 at 11:23 pm
+For 14393, use PatchPae3, not PatchPae2.
+
+BR
+
+akapuma
+
+Reply
+Yuri
+September 16, 2016 at 11:27 pm
+I would love too ?? Please where can I download?
+
+Reply
+akapuma
+September 16, 2016 at 11:35 pm
+See post from evgeny, August 16, 2016 at 8:56 am, in this thread.
+
+BR akapuma
+
+Reply
+Yuri
+September 17, 2016 at 12:05 am
+You are very kind, thank you!
+I have tried it. No success.
+Unable to copy file: Access is denied.
+Here is my screenshot: http://i.imgur.com/HmawomF.png
+
+I’ve ran my command prompt as administrator.
+
+Any hint how to resolve please?
+
+Reply
+evgeny
+September 17, 2016 at 4:58 am
+the patch tells You “i can’t copy new patced kernel, becouse file already exist”
+delete previous copy of “ntoskrnx.exe” and try again.
+
+Yuri
+September 17, 2016 at 5:41 am
+Thank you evgeny.. This was true. I have deleted it, double check where my 3 is, tried again like this:
+
+C:\Windows\System32>C:\PatchPae2\PatchPAE3.exe -type kernel -o ntkrnlpx.exe ntkrnlpa.exe
+
+… and get this below:
+
+PatchPAE by wj32:
+– support for Windows Vista SP1/SP2, 7, 7 SP1, 8, 8.1
+– Server 2008 SP2
+evgen_b MOD:
+– added support for Vista SP0, 7 SP1 with KB3033929+,
+– Windows XP SP2/SP3,
+– Windows 10 (10240/10586/14393)
+– Server 2003 SP1/SP2/SP2R2, Server 2008 SP1
+– Server/Windows 2000 SP4 and 2000 SP4 with KernelEx by blackwingcat
+– Windows Longhorn (4093 stable), Visual C++ 2010 Redistributable required
+Version: 0.0.0.45
+
+Unable to copy file: The system cannot find the file specified.
+
+Any more hints available please?
+
+Reply
+evgeny
+September 17, 2016 at 6:05 am
+in Windows 8…10 kernel file name is “ntoskrnl.exe” instead “ntkrnlpa.exe”
+run patchpae3.exe without arguments and You will see step-3 from help
+
+Reply
+Yuri
+September 17, 2016 at 7:08 am
+Wohoo… Thank you very much! Patched ?? ??
+http://i.imgur.com/V92tVMQ.png
+
+Reply
+berrycomms
+September 25, 2016 at 4:13 am
+Have run V3 on W10 14393. Everything gives the correct responses in bdcedit etc, but it doesn’t appear to work, I still have less that 3G usable of the 8G installed. It worked fine on the previous build.
+
+Reply
+berrycommsIan Berry
+September 25, 2016 at 8:49 pm
+Fixed it! Had to run “bcdedit /set {id} kernel ntknew.exe”. That put a specific kernel entry in the Boot Loader and that appears to have done the trick.
+
+Reply
+B-Lex
+October 1, 2016 at 2:40 am
+Tested it today with Build 14393.222, works fine.
+
+Reply
+Donald Novak
+October 1, 2016 at 4:21 am
+I installed this patch after upgrading to Win 10. At the “Anniversary Update” (1607) the computer crashed and I reinstalled everything. With today’s update I again got the BSOD, but this time (after enduring all of MS’s attempts to recover the PC) I chose the non-patched Win 10 and it booted up (without full use of 8 GB of RAM). The update knocked out ntoskrnx.exe, but left winloadapp and the boot option. I followed directions to remove the patch leftovers and now will reinstall it (with thanks to B-Lex for assurance that this version of the patch works with the new update). SO: apparently any update that modifies the kernel will require (1)booting to Win 10 plain, and (2) reinstalling the PAE3 patch. The BSOD will let you know.
+
+Reply
+Don N.
+October 1, 2016 at 5:14 am
+…However, it didn’t work. Got an error message on the last entry, tried berrycommsIan Berry’s suggestion above, and it brought an error message too. Is that {id} the boot id?
+
+Reply
+Don N.
+October 1, 2016 at 5:32 am
+–And this time it did work!–I had entered “[boot id}” instead of the boot id NUMBER in brackets in the last step. Also, I did not need berrcommIan Berry’s additional entry. Some do, some don’t …. Thanks to all!
+
+Reply
+Peterd51
+October 21, 2016 at 7:57 pm
+Hi Don, where would I find this boot id number please? I tried to set this up yesterday but it failed. I’m on Win 10 build 14393.0. If it’s possible to ‘read’ the bootloader in something like notepad could you tell me how to do it please?
+
+Reply
+Terry
+October 1, 2016 at 9:30 am
+After Win10 build 222 I had to restart without the patch using Windows Automatic Repair-Advanced options-Choose another operating system. Msconfig was used to remove the patch.
+
+After re-patching the computer booted ok using the patched OS.
+
+Reply
+akapuma
+October 1, 2016 at 9:25 pm
+If somebody have problems (reboot loop) after the last update, here is the solution:
+– Boot without PAE patch.
+– Patch the new kernel (step 3 of help)
+– Patch winload (step 4 of help)!!!
+– Reboot with PAE patch.
+After this, everything works fine.
+Best regards
+akapuma
+
+Reply
+forbidden 404
+October 19, 2016 at 11:15 pm
+My PC was bootloop,, don’t try this programs :'(
+
+Reply
+boogie
+October 22, 2016 at 12:26 am
+I applied the patch and booted in with 4gb of Ram, it sees 4 gb, it recognizes 4 gb, but it won’t go past 3.2gb when I try to fill up the ram on Windows 10 14393. Can anybody else confirm this? Can you use more than 3.2gb of ram even if it shows you have Xamount-3.2gb ?
+
+Reply
+Terry
+October 22, 2016 at 1:37 pm
+boogie,
+You need to check whether the patch has actually been applied.
+Either right click ‘This PC’ icon on desktop and then Properties, or Settings-System-about and check installed RAM. It should say 4GB.
+
+If it says some something like 4GB installed, 3.2GB useable, then the patch has not been correctly applied.
+
+You can’t actually use all of the 4GB of RAM installed because Windows requires some for overheads, and if you have onboard video, then some more of that 4GB will be used for video memory.
+
+The other thing to realise is that only 4GB of ram will be used by any one program, even though there may be say, 8 or more GB installed
+
+Reply
+Terry
+October 22, 2016 at 1:41 pm
+….boogie,
+I should have said only a maximum of 4GB is able to be used by any one program
+
+Reply
+boogie
+October 23, 2016 at 12:47 am
+Nah it’s my bad. It’s just that windows 32bit actually doesn’t let me use over 2.2gb actually which is very weird for me and it leaves 1 gb available and after applying the patch it uses that extra 800 mb to get 3.2 but once again 900 mb available. So the patch works but Windows is acting weird because on my 64bit version I can fill up the ram until I have 200mb left
+
+Reply
+Tsoe
+October 27, 2016 at 2:28 pm
+I have updated to Windows 10.0.14393. The current patch is for Windows 10.0.10586. Is there a way to update the current PAEpatch2 for Windows 10. Thank you. I’m getting an unsupported kernel when I try to Patch my current Windows version.
+
+Reply
+akapuma
+October 27, 2016 at 3:17 pm
+No, there is no way to update PatchPae2. Please use PatchPae3. See post August 16, 2016 at 8:56 am from evgeny in this thread.
+
+BR
+
+akapuma
+
+Reply
+Dario Romagnoli
+October 28, 2016 at 7:11 am
+Nave windows 10 kernel 14393.321 patchpae3 got blue screen band lock system. Anybody could help?
+
+Reply
+akapuma
+October 28, 2016 at 7:57 am
+Here, 14393.321 works fine.
+Have you used the patch first time?
+If not, have you re-patched kernel and winload?
+
+BR
+
+akapuma
+
+Reply
+akapuma
+October 28, 2016 at 8:19 am
+I just updated Windows. New kernel is 14393.351. Works fine, too.
+
+BR
+
+akapuma
+
+Reply
+Yuri
+October 30, 2016 at 9:31 pm
+It works with kernel 14393.351
+Screenshot here: http://i.imgur.com/QBZJ7ne.png
+
+Reply
+Duy Khánh
+November 10, 2016 at 8:17 pm
+How did u do it? Mine it said kernel not supported :~
+
+Reply
+Decopi
+December 2, 2016 at 7:54 am
+Hi!
+I used PAEPATCH for a long time, in several Windows versions, without problem.
+Today I updated to Windows 10 1607 (kernel 14393.447). However couldn’t install PAEPATCH again (Error message: Unsupported kernel version: 14393).
+Please, can you help me?
+Thanks!
+
+Reply
+Decopi
+December 2, 2016 at 8:50 am
+Solved by using PaePatch3… works perfectly on 14393.447!
+
+Reply
+B-Lex
+November 10, 2016 at 12:01 am
+Update: works fine with kernel 14393.447. Happy updating!
+
+Reply
+Decopi
+December 2, 2016 at 7:50 am
+Hi!
+I used PAEPATCH for a long time, in several Windows versions, without problem.
+Today I updated to Windows 10 1607 (kernel 14393.447). However couldn’t install PAEPATCH again (Error message: Unsupported kernel version: 14393).
+Please, can you help me?
+Thanks!
+
+Reply
+Decopi
+December 2, 2016 at 8:48 am
+Solved by using PaePatch3… works perfectly on 14393.447!
+
+Reply
+Duy Khánh
+November 10, 2016 at 8:00 pm
+Working great on my device running win 10 build 10586. At first i forgot to turn on DEP and got error but it work when i turn DEP on again. So for some1 get error at first check ur win ver if it s supported, and DEP must be on.
+
+Reply
+Yuri
+November 30, 2016 at 6:59 pm
+Hey community,
+what is your experience when you use USB devices on PAE patched OS?
+
+I found out, that for me connecting USB devices fails every time I boot PC with PAE.
+PC note that device is attached, but init of driver fails. In settings, under devices, I found note: Driver error.
+
+When I boot PC without PAE, USB devices works.
+My kernel 14393.351.
+
+Dear developer(s), it is possible to resolve this issue?
+
+Reply
+Terry
+December 2, 2016 at 8:57 am
+Yuri, Re your posting on 30 November, Indeed you are correct, I hadn’t noticed before since I use mainly Win 8.1, but USB memory sticks do not install correctly and do not show up in ‘This PC’.
+Trying to update driver is not successful as it is already the most up to date.
+
+I am using Evengy’s patchpae3 downloaded from his posting of 16 August
+
+Reply
+Q
+December 3, 2016 at 1:07 pm
+Also having this problem. Help please!
+
+Reply
+Decopi
+December 2, 2016 at 7:52 am
+PLEASE, HELP:
+
+Hi!
+I used PAEPATCH for a long time, in several Windows versions, without problem.
+Today I updated to Windows 10 1607 (kernel 14393.447). However couldn’t install PAEPATCH again (Error message: Unsupported kernel version: 14393).
+Please, help me.
+Thanks!
+
+Reply
+Decopi
+December 2, 2016 at 8:46 am
+Solved by using PaePatch3… works perfectly on 14393.447!
+
+Reply
+Gstone
+December 8, 2016 at 12:56 pm
+Solved it? can send me PaePatch3, please?
+gstonek@gmail.com
+
+Reply
+akapuma
+December 8, 2016 at 4:27 pm
+@Gstone:.
+
+Yo can find PaePatch3 at post from evgeny, August 16, 2016 at 8:56 am, in this thread.
+
+BR
+
+akapuma
+
+Reply
+ROBOCOP
+December 12, 2016 at 8:32 am
+I ask for help.. After performing all the steps using paeparch3 I still have no available 4gb I only have 3gb available, is this the latest version for my specification? :
+
+Windows 10 HOME
+VERSION 1607
+COMPILACION DE SISTEMA OPERATIVO -14393.479
+
+Reply
+ROBOCOP
+December 27, 2016 at 1:54 am
+My problem continues. I ask for help.. After performing all the steps using paeparch3 I still have no available 4gb I only have 3gb available, is this the latest version for my specification? :
+
+Windows 10 HOME
+VERSION 1607
+COMPILACION DE SISTEMA OPERATIVO -14393.576
+SISTEMA OPERATIVO de 32 bits
+
+At the windows boot menu, i have 2 choices:
+– “Windows”
+– “Windows (PAE Patched)”
+
+In both environments the system shows 4.00 gb (3.00 gb usable)
+
+Reply
+akapuma
+December 12, 2016 at 9:07 am
+@Robocop:
+
+At the windows boot menu, you should have 2 choices:
+– “Windows”
+– “Windows (PAE Patched)”
+
+Try both and compare the available RAM. Is there a difference?
+
+BR
+
+akapuma
+
+Reply
+ROBOCOP
+December 12, 2016 at 10:10 am
+In both environments the system shows 4.00 gb (3.00 gb usable)
+
+Reply
+Sergio Ferreira
+December 23, 2016 at 2:34 am
+I’m running kind of a complex setup. A little background, my motivation stems from ACT! 2008 not being installable on 64-bit OSs. So, I loaded it on a Windows 10 Enterprise x86 Hyper-V VM along with RDP Wrap, RemoteApp Tool, and PatchPAE3. All successful. I published the app with RemoteApp, the system shows that it has 8GB of RAM and I have 6 users using it simultaneously from their PCs.
+
+The problem is, once the system hits between 3.0 and 3.2 GB of RAM used (the system, as a whole, has never gone past 3.2 GB used), new connections start bombing out with an RDP protocol error of 0x112f. Looking it up seems to point to memory restrictions on the host PC. So, I don’t know if PatchPAE3 isn’t working or if a Windows behavior regarding memory allocation to a single exe even if there are multiple instances of it (so, like a shared pool per exe even if there are six of them running, they all pull from a fixed amount…maybe?). Does anyone know or can point me in the right direction?
+
+Reply
+Terry
+December 24, 2016 at 8:06 am
+Just a guess, but the problem may well be a limitation of PAE in a 32 bit system. Even though more than 4GB RAM is recognised as installed, only up to 4GB per program can be used.
+
+So if you have multiple instances of the same program running, then problems may arise if more than 4GB
+is tried to be accessed. I guess multiple instances of a program is not the same as running different programs.
+
+Hopefully someone more knowledgeable will be able to comment better than me !
+
+Reply
+grml4d
+December 24, 2016 at 11:26 pm
+can you do a patch like that for win7 x64 home ? because it allows only 8 or 16 Go of ram
+may be you can it to x86 release ?
+have a good xmas day
+
+Reply
+Pixelboy
+January 1, 2017 at 5:35 am
+Good day all ??
+Please you can write at which hardware of the patch works!.
+Much users then do not need to have a try at all first .
+Thanks you.
+
+Reply
+unclem
+January 6, 2017 at 8:25 pm
+Hi!
+The file cannot be downloaded,maybe the link is dead .Could you send me a copy,please. Thanks a lot!
+unclem@hotmail.com
+
+Reply
+Pixelboy
+January 6, 2017 at 9:28 pm
+Hi !
+unclem look back to
+
+evgeny
+August 16, 2016 at 8:56 am
+
+http://www.mediafire.com/download/75cl6cckllcubv9/PatchPAE3_2016_08_15.zip
+– added support for Vista SP0, 7 SP1 with KB3033929+,
+
+Good luck, and answers whether it please has worked !
+Pixelboy
+
+Reply
+unclem
+January 8, 2017 at 1:33 pm
+@Pixelboy
+Hi !
+Pixelboy,I’v tried so many times,but still cannot download it from the link “http://www.mediafire.com/download/75cl6cckllcubv9/PatchPAE3_2016_08_15.zip”.Could you send me a copy,please(unclem@hotmail.com).Or maybe you would share it with another link.Thanks!
+
+Reply
+Urs Ledermann
+January 23, 2017 at 9:36 am
+Hi Wen Jia,
+Thank you very much for your work. I didn’t use my laptop for some time and therefore the Win10 Anniversary update hadn’t been installed until now. After updating it, the patch doesn’t work no more. I get the error “Unsupported kernel version: 14393”
+It would be very kind if you could create an updated version of your patch. Thank you very much!
+
+Reply
+dwaltz
+January 25, 2017 at 2:15 am
+same here, I also would appreciate an update
+
+Reply
+akapuma
+January 25, 2017 at 5:30 pm
+@ urs, @dwalzz:
+
+For 14393, use paepatch3, not paepatch2.
+
+BR
+
+akapuma
+
+Reply
+Urs Ledermann
+January 31, 2017 at 9:57 am
+akapuma, thank you very much for your reply
+
+Reply
+j212
+February 5, 2017 at 4:47 pm
+Can I do this on a windows 10-PE(x86) image .wim file, like the gandalf (win32) 11-07-2016 redstone
+
+Reply
+Michael
+February 18, 2017 at 11:03 am
+Just tested with HP p6029de, 6GB RAM, BIOS 5.43 and Win10Pro 1511 build 10586.545 – and it works. SYSTEm shows full 6GB RAM.
+
+Reply
+Michael
+February 18, 2017 at 11:12 am
+Ahh – sorry, I forgot: I have used patchpae2. What is the difference to the later patchpae3 in regard of Win10?
+
+Reply
+Michael
+February 18, 2017 at 12:01 pm
+Because Win10 only installed the driver for MS Basic Display Adapter for the pre-installed old NVidia GeForce GT120 I tried the latest NVIDIA-Win10-driver 21.21.13.4201 of 11-14-2016: Win10 w/o 4GB-patch booted but Win10 with 4GB-patch did not boot to the end.
+The same effect was with 4GB-patched Win7 and the latest NVIDIA-Win7-driver (same version). I tested all available old Win7-driver from newest to oldest and at last 4GB-patched-Win7 started with the older NVIDIA-Win7-driver 9.18.13.3221 of 12-19-2013.
+Because the oldest Win10-driver is of 07-29-15 (and so not old enough) I tried this Win7-version-9.18.13.3221 also with the 4GB-patched Win10 – and it worked. Surprise, surprise.
+
+Reply
+akapuma
+February 19, 2017 at 8:00 am
+Hello Michael,
+
+you asked for the difference between patchpae2 and 3.
+
+Patchpae2 does not work on current win10. For current win10, patchpae3 is required.
+
+If you can use patchpae2 without error message, your win10 is old.
+
+Best regards
+
+akapuma
+
+Reply
+Michael
+February 19, 2017 at 1:30 pm
+Yes, it is Win10Pro 1511 build 10586.545.
+But what is the substantial difference between the both programs? I know that patchpae2 modifies some byte in the kernel-file, changes the memory-limit. Does patchpae3 does the same, only at other places due to a updated and so different kernel-file?
+
+Reply
+Wu Sheng
+February 24, 2017 at 3:19 pm
+It works! I used Evengy’s PatchPae3.
+My setup:
+– Windows 10 Pro (32bit) 10240 Build
+– Intel HD Graphics 530
+– Gigabyte mobo (GA-H170-HD3)
+
+I able to use all my 8GB DDR4 RAM, don’t need change display adapter driver, no issue about USB devices, no BSOD, thanks!.
+
+Reply
+Dian Translation.com
+February 27, 2017 at 4:03 pm
+can anyone upload a new link for patchpae3? The Evengy’s link does not work.
+
+Reply
+Pixelboy
+February 27, 2017 at 9:55 pm
+Hi !
+look back to
+
+evgeny
+August 16, 2016 at 8:56 am
+
+http://www.mediafire.com/download/75cl6cckllcubv9/PatchPAE3_2016_08_15.zip
+– added support for Vista SP0, 7 SP1 with KB3033929+,
+
+Good luck, and answers whether it please has worked !
+Please write which hardware you use if the patch works.
+Pixelboy
+
+Reply
+Valt
+February 28, 2017 at 10:55 pm
+Hi
+@evgeny
+I’m trying to run your PatchPAE3 on Windows 10 Pro \ Version 1607 \ OS Build 14393.693, but get nothing, no even an error notification.
+
+Reply
+j212
+March 1, 2017 at 9:15 am
+same here…does not work on OS Build 14393.693
+
+Reply
+Michael
+March 2, 2017 at 5:09 am
+Now I have updated to Win10-32 v.1607, built 14393.693, and done the modification again with patchpae3 (the same hardware, HP p6029de, 6GB RAM, BIOS 5.43) and it works as with patchpae2 and v.1511.W/o the patch system reports 6GB RAM and useable 3,35GB RAM, with the patch it reports 6GB RAM.
+I am not very surprised because patchpae3 modifies the same byte-sequences in the kernel-file as patchpae2 and in the same way and so the result should be the same.
+
+But of course the problem with the NVidia-driver for GT 120 is the same – I have to use the old Win7-driver 332.21 (9.18.13.3221 of 12-19-2013). This is an origin problem of the driver, not an origin problem of the 4GB-kernel-patch, although this “bug” of the driver only appears with the 4GB-kernel-patch.
+
+I have also tested it in an old Medion-PC with a MCI-7204-Motherboard, which can take 4GB RAM only. Surprisingly with and w/o the patch system reports only 3,35GB RAM. Seems as if some some-devices makes Windows to see only 3,35GB and not the actual 4GB. Strange. I hoped getting usage of the full 4GB RAM.
+
+Reply
+Daniele Di Stefano
+September 14, 2017 at 9:16 pm
+Thank you very much for this your comment, it was really crucial. Any other driver (327, 341 and 384) did not work.
+
+Reply
+Valt
+March 2, 2017 at 7:42 am
+Hello @Michael
+Could you write down steps that you performed when patching you Windows 10 built 14393.693?
+I really appreciate it.
+Thanks in advance
+
+Reply
+Dr. Michael König
+March 2, 2017 at 9:43 pm
+I have done the modifications exactly as described in the patchpae2-“manual”, with both PC (of course path and filename changed to patchpae3-location and -name) by copy&paste the commands to the elevated-command-window.
+Additional I have also checked that the modifications of the kernel- and winload-file were done by comparing the original and modified files (I have used the “universal”-tool Total Commander for this).
+When all the step are performed and the answers of the programs/Windows to each command are correct then Windows boots with the modified files.
+I would suggest also compare the files and if the files are different (and so modifications are done) checking the new boot-entry with bcdedit or with EasyBCD (which is also helpful in many other cases).
+
+Reply
+akapuma
+March 2, 2017 at 8:03 am
+For me, 14393.693 works fine with patchpae3. Installed RAM is 4GB.
+With patch; 3,46GB usable.
+Without patch: 2,47GB usable.
+
+Using AMD A10-5700 with integrated ATI graphics.
+
+Best regards
+
+akapuma
+
+Reply
+Dr. Michael König
+March 2, 2017 at 9:32 pm
+Absolutely strange that
+– you have this large difference between with and w/o patch AND even with patch not the complete 4GB RAM
+– my old MCI-7204-MB shows 3,35GB with AND w/o patch.
+
+Reply
+Terry
+March 3, 2017 at 6:07 pm
+You will never get 4GB of usable RAM with a 32 bit Windows OS even with PAE. Firstly an integrated graphics video adapter will take up whatever has been allocated in the BIOS, and then there is the RAM used for overheads.
+With a separate graphics card up to around 3.5GB will be usable, maybe a little less depending on motherboard and the hardware you have. PAE may only give an extra 200+MB or less depending on hardware.
+
+So, it is a moot point as to whether the PAE is worthwhile if only 4GB is installed.
+
+Interestingly with 8GB installed on a patched win 10 machine and also on a patched win 8.1 machine, both with separate AMD Radeon (ATI) graphics cards, both report in ‘Properties’ that 8GB is installed, there is no statement of ‘usable ‘ memory.
+
+Reply
+Michael
+March 3, 2017 at 8:35 pm
+This is not so easy, sorry.
+
+With the MSI-7204-Motherboard and 4GB RAM System reports only 3.35GB RAM w/o message about availabe or useable RAM and doesn´t matter whether w/ or w/o the patch. And this although the MSI-7204 does NOT has Video onboard.
+
+With the above reported HP p6029de (Motherboard Pegatron Benicia) and 4GB RAM (I have removed one 2GB-module) System reports w/o patch 4GB and useable 3.25GB RAM (Benicia has Video onboard, but disabled due to the used GeForce GT120). And with patch System reports the complete 4GB w/o any limitation to a smaller available/useable RAM.
+It is the same bevaiour as with 6GB RAM: W/o patch System reports 6GB RAM existing and 3.25GB RAM useable, w/ patch 6GB existing.
+
+So with the HP p6029de (Motherboard Pegatron Benicia) the patch really gives access to the “missing” 0.75GB RAM and so to the complete 4GB (if “only” 4 GB is installed).
+
+I have another PC available for tests, a HP dc7900. I will test it this evening.
+
+Reply
+j212
+March 4, 2017 at 5:40 am
+I’ve tested it on another 32 bit system by installing 14393.693 and it just does not work with PatchPAE3_2016_08_15.zip…absolutely nothing changes if i boot from the original vs. the modded boot option.There’s not even a byte changed in the executables if you compare it with windiff.
+can someone upload some files…I would love to see the diff…ntknew.exe,winldnew.exe
+
+Reply
+j212
+March 4, 2017 at 8:22 am
+Actually there is a change..I used a different tool…
+
+Reply
+Oytun
+March 13, 2017 at 2:21 pm
+Can you share which tool you used?
+
+Reply
+j212
+March 15, 2017 at 1:15 pm
+compare it
+http://www.grigsoft.com/wincmp3.htm
+
+I also tested it with notepad++ with the hex plug-in
+
+Reply
+Oytun
+March 15, 2017 at 12:00 pm
+would you reply me my friend?
+
+Reply
+j212
+March 15, 2017 at 1:20 pm
+even thought there is a 2 byte change on the executable, I still can only use 3gb…..I have a discrete gpu and ram is not shared.
+
+Reply
+Oytun
+March 27, 2017 at 5:18 am
+I didn’t understand what this programme is for. But I thank you for sharing anyway. ??
+
+Terry
+March 4, 2017 at 8:28 am
+Hello Michael, well OK you are quite right, I had forgotten or got mixed up, a problem with 80 year old memory! With 4GB and system patched, 4.00GB is reported as installed with no mention of usable memory.
+
+As regards the MSI motherboard, that is odd. Maybe run a memory test program like Memtest to see if it is all working OK ?
+
+Reply
+Michael
+March 4, 2017 at 10:57 pm
+The BIOS-test shows complete 4GB w/o problems. But “missing” 0.65 GB is not really disadvantegous. The PC/MB is old, is not really fast using Win7 or Win10 (when bought with WinXP nearly 13 years ago it was the highlight in our house, even with 512kB – tempus fugit), it´s o.k for emailing, writing and a little bit surfing, looking some vids on youtube etc., so far even the 3.35GB are not needed and used complete.
+
+Reply
+Michael
+March 14, 2017 at 2:40 am
+In the manual of the MSI-7204-MB I found the explanation, that due to the limitiations of the chipset not more than 3GB could be used. The truth seems to be that this chipset does not has the feature of “switching” the adresses of the RAM-area used by other devices (videocard etc.) into the area above the physical memory resp. the regular 4GB-adress-area. So is is a matter of the MB and it´s chipset how much of the 4GB can be used.
+
+Reply
+Frank Shashaty
+March 4, 2017 at 9:06 am
+Where can I download patchpae3 ?
+
+Reply
+Pixelboy
+March 4, 2017 at 12:12 pm
+Hi Frank :-))
+
+Look and klick:
+
+http://www.mediafire.com/download/75cl6cckllcubv9/PatchPAE3_2016_08_15.zip
+– added support for Vista SP0, 7 SP1 with KB3033929+,
+
+Pixelboy
+
+Reply
+Frank Shashaty
+March 9, 2017 at 1:37 am
+MANY MANY Thanks !!!!
+
+Reply
+Frank Shashaty
+April 13, 2017 at 6:17 am
+Hello: My system updated today to windows 10 “creators update” and the patch no longer works. Any thoughts?
+
+Reply
+Adi Patria
+May 12, 2017 at 3:15 pm
+Crazy!!!!
+problem in winloadp.exe winload.exe fixed with this ..
+
+Reply
+Rui
+March 18, 2017 at 10:47 pm
+How to roll back from this?
+Tried on Windows 10 32bit, pc restarted and never start again. Now corrupted the HDD (which is a flash MLC 32GB). Show 12.5GB free space, can´t format it, can´t delete partition… tried as external hdd on other pc, tried with aomei partition assistant, tried with easeus partition master, tried on the original pc starting with usb Windows 10 install, can´t repair, can´t reinstall, with CMD can´t format it, even with diskpart can´t do anything. How to solve this?
+Thank you
+
+Reply
+Pixelboy
+March 19, 2017 at 12:27 am
+Hi Rui ??
+
+MLC 32GB >> SSD ?
+Format the SSD-Partion new with the original SSD software and install WIN 10 new, Please !
+
+Good luck !
+
+Pixelboy
+
+Reply
+Rui
+March 19, 2017 at 2:25 am
+Yes, MLC 32GB SSD, unfortunetly this came without original software… Tried many softwares, and until now, nothing solved it. ??
+
+Reply
+pixelboy
+March 19, 2017 at 2:49 am
+Sorry Rui,
+unfortunately, I then cannot help you further, too : -(
+
+ANOTHER USER IN THIS FORUM PERHAPS !?
+
+H E L P him !!
+
+Pixelboy
+
+Reply
+Pixelboy
+March 19, 2017 at 12:04 am
+@ all other userer !!! PLEASE CONFIRMING !!
+
+I THINK >
+
+This patch from wj32 works together in all probability only with AMD Graphic Cards and original INTEL internal graphic cards. NOT with Nvidia – GrCa. and Driver from
+year 2013 – up today.
+
+Pixelboy
+
+Reply
+Lewdsnow
+March 19, 2017 at 12:28 am
+@pixelboy
+
+It’s true.
+All AMD Graphic Cards works with this patch (for me).
+Intel Graphic Cards might work with new version driver (My HD4600 PCs work with 20.19.15.4404 driver now).
+Nvidia Graphic Cards only works with 331.82 and earlier version driver.
+
+Leadsnow.
+
+Reply
+DuyK
+March 22, 2017 at 4:32 am
+Working on my pc Intel 7700HQ, card HD Graphic 630 and GTX 1050Ti
+
+Reply
+evgeny
+March 22, 2017 at 6:25 pm
+DuyK
+What nvidia driver version you are using?
+
+Reply
+richr410
+March 29, 2017 at 4:32 am
+I have NVidia Geforce 8400M GT (in laptop) (and latest Win 10 Build 14393) and got the “VIDEO TDR” blue screen using Patchpae3. Based on others having same NVidia issues with patch as well – I installed the oldest one I could find for Win 7 (as post suggested) – which was 8400M GT driver (10/23/2013 – 9.18.13.3165)
+Win 10 will update that driver to the latest that doesnt work with patch. You have reboot without patched kernel then “roll back” via device managler.
+This works most of the time about 90% – but still occasionally crashes and luckily reboots instead of those couple different blue screens.
+
+Reply
+richr410
+March 29, 2017 at 4:36 am
+that driver version also known as 331.65
+
+Reply
+evgeny
+March 29, 2017 at 7:58 am
+howto: install old driver version and prevent installation of newer version of driver
+
+https://wj32.org/wp/2013/10/25/pae-patch-updated-for-windows-8-1/#comment-12116
+
+Reply
+gb
+April 3, 2017 at 7:26 pm
+Does this patch work with the new AMD Ryzen platform ( especially the drivers )? Using Windows 7 SP1.
+
+Will gladly switch to AMD if it does.
+
+Reply
+Terry
+April 4, 2017 at 4:57 pm
+Apparently you can’t run Win7 on the Ryzen platform because there is no driver support.
+https://www.pcgamesn.com/amd/ryzen-windows-7-drivers
+
+I’d have thought if you go to a new PC build then you’d get Win 10 64 bit OS, and hence no need for this patch ?
+I don’t think the patch is hardware dependent………..AFAIK………….
+
+Reply
+evgeny
+April 4, 2017 at 5:30 pm
+driver for CPU? marketing’s bullshit.
+You are right. The patch is hardware independent.
+
+Reply
+gb
+April 5, 2017 at 6:01 pm
+No, I was wondering about this patch affecting the AMD drivers for display, network, etc.
+Intel drivers are not compatible with this patch. I just wanted to confirm that the same problem does not exist for AMD drivers.
+afaik, only Windows 7 update may not work with Ryzen.
+
+I use this patch to boot Win7 32-bit from memory (using firadisk driver + grub4dos). It works well with my old AMD system – poor man’s SSD ??
+
+Reply
+zaza
+April 6, 2017 at 4:31 am
+Have any body tested paepatch3 with win10 build 15063?
+
+Reply
+evgeny
+April 6, 2017 at 5:07 am
+http://www.mediafire.com/file/ffjim5111corkcf/PatchPAE3_2017_03_28.zip
+win10 build 15063 added.
+
+Reply
+Terry
+April 7, 2017 at 11:01 am
+Just confirming your latest patch works OK with OS Build 15063.13, thanks evgeny
+
+Reply
+Th3_uN1Qu3
+March 14, 2018 at 10:56 pm
+THANK YOU EVGENY!
+
+I have a computer running a PC3000 UDMA card for data recovery. It is an older card no longer supported by ACE Lab. There is no way in hell that will ever get a 64-bit driver. And i really needed more than 4GB RAM to be able to run another logical data recovery program at the same time with the PC3000 application, if i tried to run both one of them crashed after a few hours. The computer is running licensed Windows 7 Professional SP1 32-bit. Windows asked for reactivation after i changed the graphics card, but it verified the license no problem with just a couple clicks. So this patch can be run on a legitimate business copy of Windows.
+
+I was able to patch the kernel and loader using your patch, and successfully installed another 4GB DDR3 memory stick and have 8GB RAM recognized and usable. There was a nVidia 8400GS Rev 3 graphics card in this PC, it started showing artifacts on the shutdown screen with 4GB after applying the patch, and completely crashed when i installed 8GB. I have removed the nVidia card and replaced it with an ATI Radeon HD5450. Installed the last driver version provided by AMD in 2016, the graphics card is fully functional without any issues. The computer behaves well now, and so far the data recovery applications have not crashed again.
+
+Many many thanks, you have saved me a lot of frustration (and saved our clients time). I would like to donate a few bucks for your efforts. Do you have Paypal?
+
+Reply
+mstech75Escape75
+April 7, 2017 at 7:45 am
+Any chance of releasing the source code for this 15063 updated version?
+
+Reply
+evgeny
+April 7, 2017 at 9:01 pm
+later, with updated fix128, as usual.
+
+Reply
+Escape75
+April 8, 2017 at 12:01 pm
+One click solution (PAE Patch 2.1) based on above PatchPAE3,
+now supports Windows 10 build 15063 and everything else.
+
+https://mega.nz/#!2kYzCJTa!tXOE1U5-jOmmWrKB8wNqnaXcJ_RALKmDUIHrYjvqewo
+
+Reply
+Escape75
+April 8, 2017 at 1:42 pm
+Updated, new link:
+
+https://mega.nz/#!m55DgRha!lGhagmzgcaGMV0ixbPTB2q4VGdEwEir19FnK0zwo1Eo
+
+Reply
+Michael
+April 9, 2017 at 8:52 pm
+The new one is a complete different file … whta´s the difference?
+
+Reply
+Michael
+April 9, 2017 at 8:56 pm
+Oops, sorry, mixed up with PatchPAE3_2017_03_28.zip. Please delete.
+
+Reply
+Michael
+April 9, 2017 at 9:05 pm
+Win10-Defender says that there is a virus inside.Trojan Win32/Fuery.B!cl and other software also give a virus-alert.
+
+Reply
+Escape75
+April 10, 2017 at 2:53 am
+Are you talking about fix128 (aka patchpae3) or my mega link?
+
+My is just fix128 encapsulated with autohotkey and a .cmd that executes it,
+so unless fix128 contains something it will be the exact same thing …
+
+On a side note fix128 is niw twice as big as previous versions,
+but I think it just wasn’t packed with mpress or upx, however
+when I encapsulated with purebasic it was also triggering a virus
+warning so that’s why I switched to using autohotkey… strange!
+
+Reply
+Michael
+April 10, 2017 at 8:53 am
+I meant your “Updated, new link:”
+
+Reply
+Escape75
+April 11, 2017 at 2:27 am
+Ok, I’ve checked it out myself as well, see below, nothing to worry about.
+
+Reply
+evgeny
+April 10, 2017 at 5:16 am
+PatchPAE3 is command-line utility. It’s PatchPae2 mod.
+fix128 is GUI for PatchPAE3. It’s compilation of VBScript, 7zip, UPX and some Micro$oft utilities.
+PAE Patch 2.1 by Escape75 is very simple… (GUI without GUI?) wrapper for PatchPAE3 to easy use.
+PatchPae2.zip is not virus. It’s AV false positives heuristics, because any PatchPae modifies some windows critical kernel files just like virus. For example, when you run “PatchPae2.exe -type loader …”, you disable DRM, and Micro$oft and AVs worship DRM ??
+
+Reply
+Michael
+April 10, 2017 at 9:02 am
+Extracted PatchPAE3.EXE ist accepted by Defender. But extracted PATCHPAE.EXE is removed by Defender – reason: Virus (see abvove). I can only report what I see on the screen.
+
+Reply
+Escape75
+April 10, 2017 at 2:35 pm
+Yeah I had another look and you’re right, these A/V engines are weird …
+
+When I scan my PatchPAE.exe and PatchPAE.cmd separately they are clean (via virustotal.com)
+
+When I scan PatchPAE 2.1 which encapsulates the 2 above using AutoHotkey I get detections (16!)
+When I scan a test version of PatchPAE encapsulated with WinRAR SFX I get detections (8!)
+
+The PatchPAE.exe in all of the above files is PatchPAE3.exe by evgeny.
+So you get detections from all, but rest assured that PatchPAE 2.1 is clean.
+
+AutoHotkey source code is also very simplistic:
+
+#NoEnv
+#SingleInstance force
+#NoTrayIcon
+
+Random, Rand, 100000, 999999
+
+FileInstall, PatchPAE.cmd, %A_Temp%\PatchPAE.cmd, 1
+FileInstall, PatchPAE.exe, %A_Temp%\PatchPAE.exe, 1
+
+Gui, Color, 1E3C5A
+Gui, Font, S9 cB4D2F0, Lucida Console
+Gui, Margin, 10, 0
+Gui -MaximizeBox -MinimizeBox +Owner
+Gui, Add, Text, W640 H300 vVar
+Gui, Show, Center W640 H300, PAE Patch 2.1
+
+Run *runas %A_Temp%\PatchPAE.cmd > %A_Temp%\%Rand%.log,, Hide, PID
+
+Process, Exist, %PID%
+
+while (errorlevel)
+{
+Sleep, 250
+FileRead, Output, %A_Temp%\%Rand%.log
+GuiControl,, Var, %Output%
+Process, Exist, %PID%
+}
+
+Sleep, 5000
+
+GuiClose:
+GuiEscape:
+
+FileDelete, %A_Temp%\PatchPAE.cmd
+FileDelete, %A_Temp%\PatchPAE.exe
+FileDelete, %A_Temp%\%Rand%.log
+
+ExitApp
+
+Reply
+evgeny
+April 10, 2017 at 7:25 pm
+Michael
+>I can only report what I see on the screen.
+If you see on screen this, you must see on screen that:
+https://wj32.org/wp/2016/02/01/pae-patch-updated-for-windows-10/#comment-14455 – 2016.02.01 (!) year ago
+
+virus == modifier for kernel and loader, it’s true. I think, Defender (and any AVs) don’t want the program modify Windows files, and Defender deletes patch.
+
+Reply
+Hamada Arab
+April 10, 2017 at 1:24 pm
+When I type this command ‘C:\WherePatchPaeIs\PatchPae2.exe -type kernel -o ntoskrnx.exe ntoskrnl.exe’
+a message appears saying that system cannot find the patch specified
+
+Reply
+Hamada Arab
+April 10, 2017 at 1:32 pm
+I am using Windows 10 32bit
+
+When I type this command ‘C:\WherePatchPaeIs\PatchPae2.exe -type kernel -o ntoskrnx.exe ntoskrnl.exe’
+a message appears saying that system cannot find the patch specified
+
+Reply
+Escape75
+April 10, 2017 at 2:36 pm
+Just run my easy version …
+https://mega.nz/#!m55DgRha!lGhagmzgcaGMV0ixbPTB2q4VGdEwEir19FnK0zwo1Eo
+
+Reply
+derrick
+April 13, 2017 at 5:19 am
+i have 15063.138 @Escape75 when i run your patch the one with the funny logo it says “Error cannot detect Loader” any help please tried like most the patches u have put up none seem to work, others just CMD appear then dissapear nothing done thanks
+
+Reply
+Frank Shashaty
+April 13, 2017 at 5:31 am
+HELP….. Received this message when downloading:
+
+The following error occurred: Error code 0x80070002. The system cannot find the file specified.
+
+Category: Trojan Win32?Fuery.B!cl
+
+Description: This program is dangerous and executes commands from an attacker.
+
+Recommended action: Remove this software immediately.
+
+Items:
+containerfile:C:\Users\Downloads\PatchPAE.zip
+file:C:\Users\Downloads\PatchPAE.zip->PatchPAE.exe
+webfile:C:\Users\Downloads\PatchPAE.zip|about:internet|chrome.exe
+
+Reply
+Escape75
+April 13, 2017 at 5:51 am
+The Trojan warning is a false positive, you should white list the Patch program.
+What AV software is giving you the warning anyways? Windows Defender is fine for me.
+
+Frank Shashaty
+April 13, 2017 at 5:56 am
+Hello .. I’m using Windows Defender …. tried again .. same result — reports a virus
+
+Frank Shashaty
+April 13, 2017 at 6:04 am
+How do we do the following?
+
+’m guessing you’re running EFI boot and my patch needs to be corrected to work with that …
+
+FOR /F %%a in (‘bcdedit /enum {current} ^| find “%systemroot:~2%\system32\winload.exe”‘) do set winload=1
+FOR /F %%a in (‘bcdedit /enum {current} ^| find “%systemroot:~2%\system32\winloadx.exe”‘) do set winload=1
+if %winload% equ 0 (echo -ERROR- Cannot Detect Loader!) & (goto end)
+
+Hamada Arab
+April 16, 2017 at 11:08 am
+The link does not work ( file not found)
+
+Reply
+Frank Shashaty
+April 13, 2017 at 2:09 am
+The newest windows 10 creators edition doesn’t work with patchpae 3… Does anyone have a solution?
+
+Reply
+Escape75
+April 13, 2017 at 5:49 am
+I just tried the link I posted above file on 15063.138 and it patched it without any issues …
+
+https://mega.nz/#!m55DgRha!lGhagmzgcaGMV0ixbPTB2q4VGdEwEir19FnK0zwo1Eo
+
+Reply
+derrick
+April 13, 2017 at 5:19 am
+i have 15063.138 @Escape75 when i run your patch the one with the funny logo it says “Error cannot detect Loader” any help please tried like most the patches u have put up none seem to work, others just CMD appear then dissapear nothing done thanks
+
+Reply
+Escape75
+April 13, 2017 at 5:55 am
+I’m guessing you’re running EFI boot and my patch needs to be corrected to work with that …
+
+FOR /F %%a in (‘bcdedit /enum {current} ^| find “%systemroot:~2%\system32\winload.exe”‘) do set winload=1
+FOR /F %%a in (‘bcdedit /enum {current} ^| find “%systemroot:~2%\system32\winloadx.exe”‘) do set winload=1
+if %winload% equ 0 (echo -ERROR- Cannot Detect Loader!) & (goto end)
+
+Reply
+Frank Shashaty
+April 13, 2017 at 5:59 am
+How do we do this?
+
+Reply
+Escape75
+April 13, 2017 at 6:24 am
+Try this new EFI test version:
+
+http://s000.tinyupload.com/index.php?file_id=59518172338310431758
+
+Reply
+Escape75
+April 13, 2017 at 9:36 am
+http://s000.tinyupload.com/index.php?file_id=59518172338310431758
+
+I tested and the new version supports EFI now, it might still trigger a false positive virus warning.
+
+Reply
+evgeny
+April 13, 2017 at 5:26 pm
+And if you will patch winload.efi, first you need to disable secure boot.
+
+Reply
+Escape75
+April 14, 2017 at 8:39 am
+PAE Patch 2.3 now using WinRAR SFX so you can view what it contains
+in case Windows identifies it as a virus, which would be a false positive:
+
+https://mega.nz/#!fgIlyKRa!i0hZoUkL1KvIkCX3lqV78YEQzuuhWtb8AD6X1UnFhrE
+
+Reply
+fredrick
+April 16, 2017 at 4:40 am
+http://imgur.com/a/BZORB i still keep getting this when i try install
+
+Reply
+Fredrick / derrick
+April 16, 2017 at 4:51 am
+http://imgur.com/a/yDgAS this si the windows version im running
+
+Reply
+Escape75
+April 16, 2017 at 5:48 am
+Try opening cmd, and type:
+Dir c:\windows\system32\winload*.*
+
+This will show what files you have, is your boot drive c: ?
+
+Reply
+Escape75
+April 16, 2017 at 5:53 am
+You should also attach the output of (from elevated cmd)
+Bcdedit /enum
+
+Reply
+Derrick
+April 16, 2017 at 8:04 am
+http://imgur.com/a/WhSD0 i get this mate
+
+Reply
+wang
+April 26, 2017 at 10:31 pm
+Hi,can you share this 4 files?
+
+Reply
+Derrick
+April 16, 2017 at 8:07 am
+http://imgur.com/a/atfYU = Bcdedit /enum
+
+Reply
+Escape75
+April 16, 2017 at 8:50 am
+Ok I see a previous patch there, running as {current} …
+
+Try rebooting your windows 10 and selecting “Windows 10” at the boot menu,
+then after windows boots execute the patch again. Hopefully that will work.
+
+Reply
+Escape75
+April 16, 2017 at 9:18 am
+New version 2.4, just small bug fixes in the script …
+
+https://mega.nz/#!S9BSzaTL!7Nxaf_M_GKslNDNCSaLAB9ib57Ucrakde2Kp4fC2Rvk
+
+Reply
+Derrick
+April 16, 2017 at 11:13 am
+cheers man deleted all the old ones worked treat thanks again and fast respone ty
+
+Reply
+Escape75
+April 16, 2017 at 11:44 am
+Great, no problem.
+
+If you have more than 2 entries, default and PAE,
+you should be able to delete extra ones using:
+
+https://neosmart.net/wiki/easybcd/basics/deleting-entries/
+
+Reply
+Triviño
+April 19, 2017 at 10:34 pm
+I can’t decompress the file Pae-Mod.rar…
+
+Reply
+Khánh Lê Duy
+June 7, 2017 at 8:05 pm
+It works but it is black/white screen instead blue screen at Boot selection.
+
+Reply
+DKhanh
+April 7, 2018 at 1:41 pm
+Thank you very much for the mod.
+
+Reply
+Hamada Arab
+April 16, 2017 at 11:17 am
+I have tried all patches you posted, non of them worked unfortunately. The last one says ‘cannot detect loader’.
+I have Windows 10 32 bit
+15063
+
+Reply
+Escape75
+April 16, 2017 at 11:47 am
+Please post output of “bcdedit /enum” see above,
+I’m guessing there’s a previous patch or weird bcd entries …
+
+You could also try rebooting choosing another startup option.
+
+Reply
+Hamada Arab
+April 20, 2017 at 1:37 am
+This is the output https://drive.google.com/drive/folders/0B8H9H-vE69_jMnBCczdIWTJYc28
+
+Reply
+Hamada Arab
+April 20, 2017 at 1:43 am
+Ha ha It worked now. Windows Defender was blocking the process. I had to dis-activate it and launch the patch.
+
+Reply
+Escape75
+April 20, 2017 at 5:37 am
+Yeah makes sense, stupid defender false positives …
+
+Derrick
+April 16, 2017 at 9:17 pm
+Hi go to msconfig see how many windows you have at startup, if u already have a patched one that is default then delete it so u only have windows 10 then run that as defult, re-apply patch worked for me i had same issue.
+thanks to Escape75
+
+Reply
+Hamada Arab
+April 20, 2017 at 8:10 am
+I was so happy that I forgot to thank you.
+
+Thanks a lot man, you helped me a lot
+
+Reply
+akapuma
+April 21, 2017 at 7:27 am
+Patch PatchPAE3 with Windows 15063.138 works fine for me. But I’m wondering:
+
+“bootmenupolicy” is set to “Legacy” (checked with bcdedit /enum). The help of PatchPAE3 says:
+“This will set our boot menu to classic text mode before loading drivers.”
+
+But with new WIN10, boot menu is not the classic black/white text menu. It’s a blue (graphics?) menu. (Not always but usually.)
+
+Is this normal?
+
+Best regards
+
+akapuma
+
+Reply
+akapuma
+May 12, 2017 at 6:47 am
+I found the difference:
+During a “cold” start, the “classic text mode” (black/white) is used.
+During a “hibernate” start, the blue mode is used.
+
+Best regards
+
+akapuma
+
+Reply
+gb
+April 28, 2017 at 1:45 am
+@Escape75, JFYI : v2.4 of PatchPAE3 working OK with Windows 7 SP1 fully updated
+Thanks.
+PS : you could include a readme to tell users it is full auto. At first I tried to use it according to the instructions for the original PatchPAE2.
+
+Reply
+Sanjeev
+May 1, 2017 at 7:18 pm
+Patch pae 3 worked for my windows 10 version 1493.. but i am facing prblm while installing intel hd graphics its not installing nd screen goes while its installation ….processor is i3 2gen can anyone know how cn i install graphics driver
+
+Reply
+gildo
+May 6, 2017 at 9:25 pm
+can you add version 15063.250 this goes to automatic repair
+
+Reply
+Terry
+May 7, 2017 at 1:23 pm
+Gildo, the patch works OK for me with 15063.250.
+
+I’d suggest the problem may elsewhere.
+
+Reply
+gildo
+May 8, 2017 at 8:15 am
+if i chose the pateched version goes to automatic reapair if i chose the normal the windows works fine do you know what could be the possible causes? i do have an Geforce 220 could that be the problem?
+
+Reply
+gildo
+May 8, 2017 at 10:03 am
+i maybe somethig wrong las tme but now i get KERNEL_MODE_EXCEPTION_NOT_HANDLED as error as soon as i enter in my windows and see my desktop
+
+Reply
+van
+May 11, 2017 at 8:40 am
+Just tried the newest version on my Win 10 Pro installation and it worked like a charm. Many thanks!!
+
+Reply
+Pixelboy
+May 12, 2017 at 6:20 am
+Hi Guys !!
+
+Please !!
+writes please which hardware you are using in your comments !!
+This is helpfully for everyone, to use this Patch want.
+
+Thanks !!
+
+Pixelboy
+
+Reply
+Escape75
+May 30, 2017 at 5:41 am
+It’s pretty simple, unless you want to use really old drivers,
+the only requirement is an ATI Radeon card for this to work.
+
+Other than that, it should work on anything.
+
+Reply
+Greg Allen
+May 14, 2017 at 2:43 pm
+The PAE patch worked for me Windows 10 Update version1607 (KB4015438)
+
+Reply
+stanhcorder6
+May 18, 2017 at 1:17 pm
+Does this patch work if Windows is booted in UEFI mode?
+
+Reply
+stanhcorder6
+May 18, 2017 at 1:27 pm
+Does this patch work when Windows is booted in UEFI mode?
+
+Reply
+tamangspace
+May 27, 2017 at 4:26 pm
+Unsupported kernel version: 15063. Windows 10 creators update.
+
+Reply
+Tomkan
+June 7, 2017 at 9:45 pm
+Have you tried updated version? http://www.mediafire.com/file/ffjim5111corkcf/PatchPAE3_2017_03_28.zip
+It worked for me with Creators update (15063).
+
+Reply
+cvcgblog
+July 1, 2017 at 9:03 am
+This version of PatchPAE3 works with my W7ultimate x86 SP1. All other tips before didn’t work after this weeks update of W7. Before I used rampatch for 4(?) years w/o any problem.
+Thanks to evgen for his update and wrapper and wj32 for the basic works!
+
+Reply
+stanchcorder6anchcorder6
+June 23, 2017 at 4:23 pm
+Fall Creators update is coming! Anyone is working on the patch?
+
+Reply
+steven
+June 28, 2017 at 7:59 pm
+My computer has crached when using this tools on windows 7 sp1 update pack 06/2017
+
+Reply
+ANdrew
+July 11, 2017 at 11:49 am
+It worked on Win 7 32 bit. Sp1 Home premium running on Virtual box.
+My lesson was Make sure I follow the readme intructions exactly! I suggest extract the patch zip to root of drive ie C:\ seemed to work better than extracting into system 32 folder.
+You will note in the read me that the path given to the loader is \windows not c:\windows as I mistakenly used. I’m not sure why that is but just use what the read me has.
+If anyone little thing is wrong the loader wont work and as soon as you hit enter on the os selection screen it will go into windows recovery – dont give up! If you wait for the windows recovery to restart – and then select the same boot option again let windows recovery keep running untill it gives an error message – that will help alot – my error was cant find boot loader which helped me notice I had not followed the readme with the path. Note if you get a blue screen error thats different a driver possibly needs rolling back or an older driver installed (from what ive real mainly intel on board graphics)
+
+Yay Now in computer properties it shows 6gb ram.
+
+Reply
+Pixelboy
+July 11, 2017 at 8:44 pm
+Hello ANdrew ??
+
+Mine asks: which hardware has your system?
+Thanks for your replay !!
+
+Pixelboy
+
+Reply
+MisterLeeD
+July 13, 2017 at 6:26 am
+Am I crazy or did the latest update really make a mess?
+
+Reply
+Rich Reamer
+July 13, 2017 at 10:35 am
+maybe its the KB4025339 update thing I’m experiencing?
+
+Reply
+Rich Reamer
+July 13, 2017 at 10:32 am
+PaePatch 3 patched system fails to boot with a “pdc.sys” 0xc0000098 error after MS update KB4025339 installs. I have to remove KB4025339 and then system will start giving me full memory again. But then windows update starts downloading KB4025339 again. Ideas?
+
+Reply
+Rich Reamer
+July 13, 2017 at 1:00 pm
+Figured out how to fix/workaround:
+1) boot into original win kernel (original non-paepatch you should still have in boot menu) – let windows update finish installing
+2) might reboot again, boot back into original non-paepatch windows
+3) go into “control panel” -> “updates & security” — click “update history” — click “uninstall updates”
+4) find “Security Update … (KB4025339)” – select it and “uninstall” it
+5) let system reboot once
+6) when back up after update has been uninstalled
+7) open cmd prompt – goto “windows\system32\drivers” directory
+8) copy pdc.sys pdc.sys.org
+9) go back to “control panel” -> “updates & security” – watch and wait for windows to install the KB4025339 update again – let system reboot. startup will fail again so go back into the non-paepatch windows to complete KB4025339 install
+10) go into “control panel” -> “updates & security” — click “Recovery” – scroll down to “Advanced” and click “restart now”
+11) when it comes up in maintenace mode version – select “Troubleshooting” — then select “Advanced Options” — then select “commmand prompt”
+12) when it comes up do:
+d:
+cd \windows\system32\drivers
+ren pdc.sys pdc.sys.bad
+ren pdc.sys.org pdc.sys
+exit
+13) now you should be able to select you default paepatched windows
+
+## NOTE: ## — I found with this workaround — that now at this point with the old “pdc.sys” file back – that booting into the non-paepatched windows throws a bluescreen. So use at your known risk. since you keeping the new “pdc.sys” file you can always revert back.
+
+Reply
+Rich Reamer
+July 15, 2017 at 4:56 am
+ATTENTION: scratch all I said above !
+Except you can still uninstall update KB4025339 if you wish but it will come back.
+
+Ended up needing to redo the bcd edits – not just patch kernel and loader, the bcd got changed somehow.
+
+Reply
+MisterLeeD
+July 13, 2017 at 11:32 am
+Yeah they bombed me with multiple updates I should have paid attention to what they were doing.
+Sure enough I look and the PAE OS has crashed.
+
+Reply
+MisterLeeD
+July 13, 2017 at 1:37 pm
+Okay I went with your original idea of uninstalling updates.
+Sooner or later I am sure Microsoft will try to force on to me but maybe some one will come up with another patch.
+I also caught Norton security killing the patch so I was able to get around that.
+For now I got my computer back.
+Ryzen build I will have to give in and go 64 bit.
+
+Reply
+akapuma
+July 14, 2017 at 8:08 am
+Hello,
+
+the following worked for me:
+
+– Set default boot mode to non-paepatch.
+– Let Windows make all updates to 15063.483. If windows makes a reboot, paepatch is not active.
+– If windows updates are completely finished, re-apply PAE-patch !!!
+– Then, you can set default mode to paepatch and use it.
+
+Enjoy!
+
+Best regards
+
+akapuma
+
+Reply
+Rich Reamer
+July 15, 2017 at 3:06 am
+ah, interesting, my windows is kernel version 14393. I thought i re-patched the 2 files.. rechecked — the KB4025339 update provides new ntoskrnl.exe but no change to winload.exe. Didnt redo any bcdedit stuff.
+
+Reply
+Rich Reamer
+July 15, 2017 at 4:53 am
+yeah, now its working — read, rechecked the steps, and redid the bcdedits – that appeared to have changed.
+that was it — so no “pdc” workaround needed.
+
+Reply
+MisterLeeD
+July 14, 2017 at 2:03 pm
+Problem is whatever they did on that update mentioned the kernel does not patch.
+KB4025339
+
+Reply
+akapuma
+July 15, 2017 at 5:13 am
+My workaround (see above) works. All exe-files (ntknew, ntoskrnl, winldnew and winload) are 15063.483.
+
+I only patched both files. No bcdedit.
+
+Best regards
+
+akapuma
+
+Reply
+akapuma
+July 15, 2017 at 5:18 am
+Without the workaround, i got the following:
+
+– Windows update makes an update.
+– PC restarts
+– At boot time, there were messages like “PC is checked” or “PC is repaired”
+– PC restarts
+– After reboot, I got the message “Updates can’t be applied”
+– Procedure begins again.
+
+BR
+
+akapuma
+
+Reply
+koolong
+July 15, 2017 at 11:26 am
+For those uninitiated who are experiencing crashes after the latest windows update try this method:
+
+Run CMD as admin and type in ‘bcdedit /set removememory’, and then run your patch file.
+
+It worked for me.
+
+Reply
+koolong
+July 28, 2017 at 3:58 pm
+correction
+“bcdedit /set removememory 0” is the full sentence
+sorry for the cause
+
+Reply
+koolong
+July 28, 2017 at 4:02 pm
+correction.
+‘bcdedit /set removememory’ is the full sentence
+Sorry for the late response
+
+Reply
+MisterLeeD
+July 15, 2017 at 5:02 pm
+Hate to ask but what does the command do??
+Sooner or later Mr. softy is going to push that update down on me.
+I don’t even get an update loop.
+The PAE OS crashes and none of the other entries can I patch.
+
+Reply
+MisterLeeD
+July 23, 2017 at 5:54 pm
+Strange I let another update run and now it patches great.
+
+Reply
+423
+July 31, 2017 at 1:44 pm
+So….
+any solution for win10 (os:14393.1480) to use 8GB memory?
+
+Reply
+MisterLeeD
+August 2, 2017 at 12:47 am
+akapuma
+July 14, 2017 at 8:08 am
+Hello,
+the following worked for me:
+– Set default boot mode to non-paepatch.
+– Let Windows make all updates to 15063.483. If windows makes a reboot, paepatch is not active.
+– If windows updates are completely finished, re-apply PAE-patch !!!
+– Then, you can set default mode to paepatch and use it.
+Enjoy!
+Seems to be the best answer.
+Even if it does not move you up to latest version the last update I had was easy to patch.
+
+Reply
+Bill Clark
+August 16, 2017 at 7:51 am
+Is there a patch update for 15063.540?
+
+Reply
+akapuma
+August 16, 2017 at 8:41 am
+@Bill:
+
+Why? Patch works fine with 15063.540.
+
+BR
+
+akapuma
+
+Reply
+Bill Clark
+September 3, 2017 at 2:55 am
+****** Any way to get around this failing?
+
+C:\WINDOWS\system32>C:\PatchPae3.exe -type loader -o winldnew.exe winload.exe
+
+PatchPAE by wj32:
+– support for Windows Vista SP1/SP2, 7, 7 SP1, 8, 8.1
+– Server 2008 SP2
+evgen_b MOD:
+– added support for Vista SP0, 7 SP1 with KB3033929+,
+– Windows XP SP2/SP3,
+– Windows 10 (10240/10586/14393)
+– Server 2003 SP1/SP2/SP2R2, Server 2008 SP1
+– Server/Windows 2000 SP4 and 2000 SP4 with KernelEx by blackwingcat
+– Windows Longhorn (4093 stable), Visual C++ 2010 Redistributable required
+Version: 0.0.0.45
+
+Input file version: 15063
+Failed.
+
+Reply
+Bill Clark
+September 3, 2017 at 3:18 am
+Nevermind! It’s working now. I had to make sure I used PatchPAE3_2017_03_28.zip.
+
+Reply
+Scyzor
+September 8, 2017 at 1:56 pm
+I have done PatchPAE3 w/o any issues
+
+Input file version: 15063
+Patched.
+
+but after the reboot I still have 8GB (3GB usable)
+
+Any clue?
+
+Thanks
+
+Reply
+stanchcorder6
+September 8, 2017 at 5:22 pm
+Make sure you have enabled MMIO in BIOS
+
+Reply
+Randy
+January 6, 2018 at 2:29 am
+I’ve searched and I can’t find anything about MMIO for my x60. How do i check this setting?
+
+Reply
+evegeny
+September 12, 2017 at 4:31 am
+Make sure you have applied bcdedit.exe after PatchPAE3.
+
+Reply
+Randy
+January 6, 2018 at 2:31 am
+What does this mean? I have to rerun all the bcdedit commands again? Does it matter what boot load I’m in? Thanks
+
+Reply
+stanchcorder6
+October 12, 2017 at 8:40 pm
+Anyone working on the PAE patch for Windows 10 version 1709?
+
+Reply
+zaza
+October 15, 2017 at 6:33 pm
+will it work on Windows 10 Insider Preview 16299? May be anybody have already tried?
+
+Reply
+tester
+October 15, 2017 at 11:10 pm
+Fails on 1709 16299.19 with nVidia driver. PAE boot entry just keeps in restarting loop cycle or ends up with the green screen of death informing bout failure of some nvxyz.sys thingy. Also it screwed up the WinBtrfs module somehow; clicking on a drive in File Explorer results in An internal error occurred message.
+
+Reply
+stanchcorder6
+October 16, 2017 at 5:13 am
+Please update this patch for 1709
+
+Reply
+stanchcorder6
+October 18, 2017 at 4:05 pm
+Now the latest version of Windows 10 is 16299. Anyone is working on patching the new kernel and loader?
+
+Reply
+zaza
+October 18, 2017 at 4:18 pm
+I`ll try to day later on my notebook with ati and post the results
+
+Reply
+zaza
+October 19, 2017 at 6:15 am
+Cheked – runing good!
+
+Reply
+Frank
+October 22, 2017 at 2:48 am
+Hello guys!
+Do you know which Windows 10 32bit version will surely work with this patch?
+
+My specs are:
+Cpu Q6600
+Ram 8Gb Corsair
+Motherboard Asus P5K-E
+VGA nVidia Gt-440 (but i can change it
+with an ATI card)
+
+I don’t care if is an older Win 10 version, i need the 32 bit for my old printers ’cause they don’t have 64 bit drivers
+
+Thank you in advance if someone will help
+Frank
+
+Reply
+Michael
+October 22, 2017 at 3:52 am
+It is (only) a matter of the video-drivers. You have to obtain and use old (maybe Win7-)driver. Please see my comments above.
+
+Reply
+Frank
+October 23, 2017 at 12:57 am
+Even with the nvidia gt-440 card?
+
+Reply
+Michael
+October 23, 2017 at 1:08 am
+I don´t know. The latest/youngest driver which worked with the patch and my (old) Nvidia-cards (see above my old comments) was NVIDIA-Win7-driver 9.18.13.3221 (332.21) of 12-19-2013. Due to my experiences that no younger/later driver worked with the patch I assume that you must use/test this driver. Maybe it works with your card.
+
+Reply
+Frank
+October 23, 2017 at 1:55 am
+Thank you so much Michael. I really appreciate your help.
+So, last question just ’cause i’m a lame, no problem if i use Win 10 1703 or even 1709?
+
+Reply
+Michael
+October 23, 2017 at 4:42 am
+I do not use Win10 regularily. But due to my experiences with Win7 and Win10 in the past it is not a matter of the win10-version but a matter of the nvidia-driver-version. The same problem occurs with Win7. I also do not exspect that a newer Win10-version would not accept the old Win7-driver. But at last with all this patches and improvisations and workarounds: There is no guarantee, make a try.
+
+Asura
+October 24, 2017 at 7:31 pm
+For NVIDIA users try to install old drivers. Mine was in 2013
+
+Reply
+Michael
+October 24, 2017 at 9:16 pm
+Yes. See my comments of Feb.2017: NVIDIA-Win7-driver 9.18.13.3221 of 12-19-2013. Working “perfectly”.
+
+Reply
+Frank
+October 28, 2017 at 4:49 am
+Didn’t work for me with Windows 10 1703 or 1709.
+
+Reply
+Faris
+November 4, 2017 at 11:30 pm
+Uh why does it state that it “failed” when i did the command to patch the loader to disable signature verification? I need help thanks in advance
+
+Reply
+Michael
+November 7, 2017 at 2:07 am
+Upgrade to 1703 is done. This sh* MS-software again (unwanted and w/o giving notice) updated the NVidia-videocard-driver to the newest version. The result was that after patching the kernel the system does not boot. I went back to the previous driver
+NVIDIA-Win7-driver 9.18.13.3221 of 12-19-2013 (see my post of February 18, 2017)
+and now, as exspected, also the patched system is booting. 8GB from 8GB are in usage.
+Testet on an EVGA force 780i SLI FTW motherboard (132-YW-E178) with E8400-CPUs.
+
+Reply
+Pixelboy
+November 7, 2017 at 2:46 am
+Hi Michael, good day ??
+Which graphic card are you using?
+
+Thank you for your answer!
+
+Pixelboy
+
+Reply
+Michael
+November 7, 2017 at 4:08 am
+NVidia GeForce 8800GT
+
+Reply
+Michael
+November 7, 2017 at 2:40 am
+The differences between original and patched ntoskrnl.exe:
+
+original patched
+002E8 FD D0 59 65 54 5A
+516179 8B 75 DC 85 F6 74 3F BE 00 00 02 00 90 90
+5161A9 8B 4D FC 85 C9 74 06 B9 00 00 02 00 90 90
+
+The replacements with “BE 00 00 02 00 90 90?/”B9 00 00 02 00 90 90” are well-know form the manually-done Win7-patch.
+But what is the reason for replacing “FD D0 59” with “65 54 5A” ?
+
+The differences between original and patched winload.exe:
+
+original patched
+00148 FE A3 4C AC
+3AE06 8B F0 33 F6
+3BE50 8B D8 31 DB
+
+You may remember that when patching the Win7-kernel manually you must give the patched file ntkrlICE.exe a valid signature by using makecert.exe and signtool.exe and the commands:
+makecert -r -ss my -n “CN=Microsoft Windows”
+signtool sign -a -s my -n “Microsoft Windows” ntkrlICE.exe
+I have done and testet this procedure with a manually patched ntoskrnl.exe and also with the patchpae3-patched ntoskrnl.exe. Although there was no error-message and so the signature should be o.k. the system does not boot but starts the repair-procedure (of course w/o success).
+Any idea why this does not work with Win 10?
+
+Reply
+Michael
+November 7, 2017 at 9:31 pm
+Also upgrade to 1709 (Build 16299) is done. Again the updater updated (unwanted and w/o giving notice) the NVidia-videocard-driver to the newest version. The result was again that after patching the kernel the system does not boot. Again I went back to the previous driver
+NVIDIA-Win7-driver 9.18.13.3221 of 12-19-2013 (see my post of February 18, 2017)
+and now, as exspected, also the patched 1709-system is booting. 8GB from 8GB are in usage.
+Testet on an EVGA force 780i SLI FTW motherboard (132-YW-E178) with E8400-CPUs and NVidia GeForce 8800GT.
+
+Reply
+Michael
+November 8, 2017 at 12:55 am
+The differences between original and patched 1709-ntoskrnl.exe:
+
+…………original …………………………… patched
+002E8 . 87 FD 61 ………………………. F4 80 62
+5991C1 8B 75 FC 85. F6 74 3F …… BE 00 00 02 00 90 90
+5991F1 8B 4D FC 85 C9 74 06 ……. B9 00 00 02 00 90 90
+
+The replacements with “BE 00 00 02 00 90 90?/”B9 00 00 02 00 90 90” are well-know form the manually-done Win7-patch.
+But what is the reason for replacing “87 FD 61” with “F4 80 62” ?
+
+The differences between original and patched winload.exe:
+
+…………original …….. patched
+00148 .AD 5F ……… 59 0A
+3A5D7 8B F0 ……… 33 F6
+3B55C 8B D8 ……… 31 DB
+
+Reply
+Vox Humana
+January 1, 2018 at 9:51 pm
+The file checksum is obviously different, even if the code of the function is basically the same.
+
+Reply
+mike
+December 9, 2017 at 8:44 pm
+where is the pae patch for window 10 build 16299 ?
+
+Reply
+SaschaK
+December 10, 2017 at 8:22 pm
+I use the latest available patch für 16299. Works fine for me.
+
+Reply
+Lorenzo
+December 27, 2017 at 2:21 am
+I just downloaded the patch today but it isn’t working for me on version 16299. I’m getting an “incompatible with kernel 16299” message. Any ideas?
+
+Reply
+akapuma
+December 28, 2017 at 12:03 am
+Works fine with 16299. Search this thread for newest patch version!
+
+BR
+
+akapuma
+
+Reply
+Michael
+December 27, 2017 at 2:30 am
+I do not have any idea due to the fact that I do not know the sourcecode of the patcher.
+But you can do the necessary patches manually using a hexeditor and the information of my previous posts. Of course offline.
+
+Reply
+Vladimir
+January 5, 2018 at 5:32 am
+Hi !
+Friends, anyone can rebuild pae patch for Windows 10 core 1709?
+
+Reply
+akapuma
+January 5, 2018 at 6:23 am
+No need for this. Patch works fine with Version 1709 = OS build 16299.192.
+
+BR
+
+akapuma
+
+Reply
+Alex
+January 13, 2018 at 8:47 pm
+Hi from Germany… I used the PAE Patch bfore but now it doesn’t work anymore. I always get the the message: “Unsupported kernel version: 16299”
+
+My System: AMD FX-6300 six-cor @ 3,5 Ghz with 12 GB RAM Win 10 Pro 32bit Version 1709 Systembuild 16299.125
+
+How may I fix this again??? Thx 4 help
+
+Reply
+akapuma
+January 13, 2018 at 10:20 pm
+Hi Alex,
+hi from Germany, too.
+Had you used the newest patch from this thread?
+http://www.mediafire.com/file/ffjim5111corkcf/PatchPAE3_2017_03_28.zip
+Best regards
+Thomas
+
+Reply
+akapuma
+January 13, 2018 at 10:30 pm
+I just re-applied the patch. Neuw Windows kernel is 16299.192. Works fine with this version, too.
+
+Alex
+January 14, 2018 at 8:20 am
+yes! It worked… thx for help. Maybe it was the last Update on systembuild 16299.192
+
+Spyros
+January 24, 2018 at 11:06 pm
+24-Jan-2018 On a 32-Bit OS Windows 10 Home Version 1709 Build 16299.192 with Integrated on CPU Graphic Card Intel HD-530, the PatchPAE3_2017_03_28.zip posted above works and Memory from 2GB went to 16GB, even if the Executable did NOT mention that supports Build 16299.
+
+Randy
+January 6, 2018 at 1:23 am
+How can I determine if this is truly working on my system? I’m positive I followed all steps correctly, and dialogues seem to confirm. Upon reboot however, according to sys-info/sys properties it is not able to allocate more than 2.99 MB. Should I try the ntknew.exe command? I’m on the latest Win10 build (16299.192) and have a Lenovo x60 laptop. Perhaps there is a hardware conflict? Thanks, Randy
+
+Reply
+Vox Humana
+January 9, 2018 at 12:39 am
+I’m not quite clear about the amount of physical RAM your system is equipped with
+
+Reply
+Randy
+January 29, 2018 at 11:23 am
+I have 4gb
+
+Reply
+Yuri
+January 20, 2018 at 7:58 pm
+To determine this is working you can check systeminfo or use systeminfo.exe as a cmd prompt.
+
+Reply
+Randy
+January 29, 2018 at 11:24 am
+I’m not sure if you read my post very carefully, I checked the sysinfo.
+
+Reply
+Randy
+January 29, 2018 at 11:29 am
+So then what you’re telling me is that although it should be working (I installed PAE3_2017_03_28), it appears that it is not. Without the benefit of any troubleshooting guidelines, I guess I must conclude that my x60 is not compatible due to a hardware conflict…
+
+Reply
+Ross J
+February 5, 2018 at 12:46 pm
+The Lenovo X60 only has a 32 bit CPU not a 64 bit CPU so it cannot handle more than 3 GB of memory
+
+Reply
+Yuri
+January 20, 2018 at 7:55 pm
+PAE3_2017_03_28 posted above works with Microsoft Windows [Version 10.0.16299.192]
+
+Reply
+Patch
+February 19, 2018 at 8:13 pm
+Windows 7 6.1.7601.23992 KB4056897 likely broke windload.exe patch.
+
+Reply
+ecki
+March 17, 2018 at 8:31 pm
+PatchPae3 worked fine nearly one year for me until February-Update KB4074588. Update failed several Times (0x800f0845).
+So I selected the nonpatched-Entry as default from the Boot-Menu. Then after boot, KB4074588 was installed with now Problems.
+I delete the old ntoskrnx.exe and winloadp.exe and created them new with
+
+– PatchPae3.exe -type kernel -o ntoskrnx.exe ntoskrnl.exe
+– PatchPae3.exe -type loader -o winloadp.exe winload.exe
+
+In Boot-Menu I selected the patched-Entry as default again and booted: Everything works fine again.
+
+Reply
+stanchcorder6
+March 28, 2018 at 3:17 am
+Anyone working on the patch of upcoming Windows 10 RS4?
+
+Reply
+Tomkan
+March 28, 2018 at 11:41 pm
+It works! PatchPae3 succesfully tested on build 17127.
+Don’t be confused when patching loader it responds “failed”. Despite of this message, loader is patched correct way.
+
+Reply
+stanchcorder6
+April 7, 2018 at 3:53 pm
+How about 17133?
+
+Reply
+evegeny
+April 8, 2018 at 4:45 am
+http://www.mediafire.com/file/nbxnhp5vxutq17f/PatchPAE3_2018_04_07.zip
+
+– added: windows 10 pre-RS4 (tested with 17063…17133; 17623)
+– added: windows server 2003 sp0
+– fixed: MmAddPhysicalMemoryEx for windows server 2000/2003
+– added: Bypass Windows 8 CPU feature checks Patch by Jan1 for Windows 8.1
+– added: get timedatestamp, if can’t get version number
+– added: many Windows betas (6801,7000,7022,7048,7057,7068,7077,7100,7127,7137,7201,7231,7260,7264,7850,7955,8102,8250,8400,9431,9841,9926,10049,10074,10122,10130,10147,10159,10166,14316,14352,14366,14393,14901,14915,15048,16257,16281,16226,16353,17063,17123,17623)
+– added: many other improvements
+
+Reply
+DuyK
+April 8, 2018 at 5:24 am
+Can you make a mod like Escape 75 did before, just an exe file to make it work. Btw many thanks for your patch.
+
+Reply
+evegeny
+April 10, 2018 at 10:19 am
+http://www.mediafire.com/file/nhgidg9ibbz6do3/ScriptPAE3v25.zip
+
+OK, I hope it will be useful, but without any warranty. Just unzip and copy into the same directory with patchpae.
+
+Reply
+Ivan
+April 17, 2018 at 4:17 am
+Hi,
+how do i solve this error
+cannot set legacy boot menu!
+
+Reply
+evegeny
+April 19, 2018 at 5:01 pm
+Ignore it. Legacy boot menu option display boot menu before drivers will load in Windows 8/8.1/10 (Drivers maybe PAE-incompatible). Windows 7 has not such option, it has legacy boot menu only.
+
+http://www.mediafire.com/file/r8lvgrcbdnrkorp/ScriptPAE3v26.zip
+added simple test for UEFI SecureBoot, etc…
+
+Ivan
+April 20, 2018 at 2:35 am
+The scriptPAE3v26 process is completed without errors but does not activate the 4gb of memory on the windows 7 desktop
+
+Reply
+evgeny
+April 20, 2018 at 8:18 am
+I just installed windows 7 with latest updates (kernel 6.1.7601.24094) on my VM, ran the script and after reboot with “Windows 7 with PAE” boot menu item got all of VM RAM.
+
+Maybe your hardware can’t support PAE.
+
+Ivan
+April 20, 2018 at 8:33 am
+The kernel is 6.1.7601.24000.
+Should I disable security boot?
+
+romanmv
+April 21, 2018 at 9:46 pm
+not downloading
+
+Reply
+Ivan
+April 22, 2018 at 1:57 am
+Hi,
+
+I’m already using PatchPAE3_2018_04_07.zip
+not recognizing the 4gb
+
+Reply
+stanchcorder6
+April 30, 2018 at 1:36 am
+Does this patch work on the upcoming Windows 10 17134?
+
+Reply
+Bill Clark
+May 1, 2018 at 7:07 pm
+Yes it does. I just updated.
+
+Reply
+Tomkan
+July 17, 2018 at 11:22 pm
+Eugeny, attempting to patch W10 10.0.17692.1004, patching kernel does not work. Resulted file does not enable 4GB+. Previous versions could be patched well. Could you please look into new kernel file or publish your source code? Many THX.
+
+Original ntoskrnl.exe: https://drive.google.com/open?id=1pumLNSYWzwMJBjSKDdRUhwi0h1hyFdMX
+
+Reply
+Tos
+April 15, 2018 at 12:01 am
+A few problems so far:
+1) When I boot into Windows 10×86 and run the above Script Windows screams not on my watch and dumps me out without option. Full admin cmd and such.
+2) OK, I figure replacing the kernal while booted in the OS might be a problem, I’ll just use my dual boot option and run it from there.
+3) My dual boot is Windows 7×64 16GB dual physical single core CPUs. Running the script throws a x64 bit OS detected error and dumps me out. My XEON CPUs lack the commands necessary to run 8.1+ (believe me, I’ve tried).
+4) OK, let me try compatibility mode. No luck.
+5) My Windows 10×86 install is on F:\ in case that matters. I’ve got the patch files living in “f:\setup\PAE Patch”. Would the space matter?
+6) The biggest problem I’m having is the readme files seem to have disappeared somewhere along the way making it hard to do the manual install. I’ll try an old one from PatchPae2 but this doesn’t feel right.
+7) Any chance we can get the very top of this page updated to direct people down here? It took me rather too much time to find the current files.
+
+Reply
+evegeny
+April 15, 2018 at 3:57 am
+>readme files seem to have disappeared
+readme is part of PatchPAE3:
+
+cmd.exe – > PatchPAE3.exe
+
+output:
+…
+* print user guide for patch “4 Gb 32-bit memory limit”:
+PatchPAE3.EXE -help unlock_pae
+
+>When I boot into Windows 10×86 and run the above Script
+you can edit script. you can comment first line (@ECHO OFF -> rem @ECHO OFF), then run cmd.exe and then run script to see commands output to determine problem line. or run script with argument ScriptPAE3.cmd NOUAC
+
+the script is just good example. maybe it’s antivirus problem? and UEFI option “secure boot” can’t load patched (pirate) kernel/loader. maybe problem is in the script’s code page. and maybe you use non-standard windows loader.
+
+>5 space matter?
+No.
+
+>5 install is on F:\
+I think – no.
+
+Reply
+Tos
+April 15, 2018 at 2:59 pm
+Cool. Having seen the readme unzipped from the top of the thread it never occurred to me to treat the patchpae3.exe as any other command line using standard dos help.
+
+Aside from the exe downgrading my Xeons to i386s (inside joke for those who actually owned a 386 once upon a time) and some fat fingers it actually worked. It’s not super intuitive but as mentioned somewhere else, if you can’t translate these instructions yourself you shouldn’t be doing it.
+
+Playing with the boot record gave me a third boot option with the patch while leaving my original install safely there in case it’s needed. Wasn’t expecting that piece of good fortune.
+
+Viola. 16GB of ram shown, only 1.2GB used. Without memory hogs like Waterfox it may take me awhile to get programs to actually use that space, but I look forward to it with great anticipation.
+
+I’ve accomplished what I came for and learned quite a bit (of trivia?) over the last few days. Thank you for your help.
+
+Reply
+OldskoolOrion
+May 19, 2018 at 5:36 am
+1 Thing I don’t get.. you have a dual xeon machine with 16GB ram.. why would you WANT to run 32bit ? I’m not making fun.. just wondering.. might be some disturbing really old legacy software which was never upgraded etc.. I’ve seen some shit throughout the years believe me.. I’m even before the hayday of the 386dx.. waaay before ??
+
+So basically I’m just really curious ?? non-judgemental style ! ??
+
+Reply
+Tos
+April 15, 2018 at 3:24 pm
+Let’s talk W8CPUFeaturePatch. Is that really sane to do on my primary personal system? Are these newly required (dumb) commands really so obscure as to practically never execute? Will my system be stable if I do this? All I’ve ever wanted is a stable Windows 10×64 as God intended. Only now after I’ve got 16GB shown on Windows 10×86 does my forbidden fruit lie so tantalizing close.
+
+Alas, my inadequacies lie in the form of PrefechW and LAHF/SAHF. Not mentioned in the patch instructions. Do I continue to come up short or have you magicians solved this problem too?
+
+Reply
+Passkei1
+April 16, 2018 at 4:13 am
+Confirming programs punch right through 4GB without complaint.
+
+Weirdness, my hyperthreading turned off. It claims to be enabled on in the BIOS. Does some part of what we did turn it off? Firefox is hitting the CPU harder than anticipated. If I can’t get Hyperthreading back am I loosing cycles? Should I disable it in BIOS?
+
+Next question, Microsoft never recognized my failed attempts years ago to upgrade this hardware to Windows 10 and never supplied a digital key for it to install. Not really fair, but I don’t have too much standing in court. There used to be many ways to complete a free and legal Windows 10 upgrade. Do any of these remain? I’m willing to install / uninstall / create partition / patch / etc. yet again if need be.
+
+Reply
+DuyK
+May 2, 2018 at 1:15 am
+Seem the patch dont work correctly with the new win10 ver 17134. It says something like side-by-side configuration is incorrect when open programs. Any1 get the same problem?
+
+Reply
+Zarko
+May 12, 2018 at 9:11 am
+PatchPAE3_2018_04_07.zip works fine with the new win10 ver 17134.
+No problems here.
+
+Reply
+Escape75
+June 1, 2018 at 8:43 am
+Just a quick update to my Patch PAE based on PatchPAE3_2018_04_07 …
+https://mega.nz/#!y9YwwSzT!osE9VJUHYD9Bd7H8XkzAzlHAOT-Hp-WqlYepneN1fyk
+
+The executable was compressed with mpress, then converted to a hex text file,
+which gets re-assembled at runtime to prevent possible false positive virus detections.
+The self executable rar file is packed with upx to reduce size,- contents can be inspected.
+
+Reply
+guest2018
+June 2, 2018 at 4:12 am
+Thanks, it worked. But there are some strange things here:
+
+After using your version, 2 new boot entries added to system:
+Windows 10 (PAE)
+Windows (PAE Patched) <- Default OS
+
+The default entry "Windows (PAE Patched)" can't boot successful. The other one "Windows 10 (PAE)" worked.
+
+Reply
+Brian
+June 12, 2018 at 1:38 pm
+Hey, thanks! really thanks. I was wait this
+
+Reply
+Escape75
+June 2, 2018 at 5:37 am
+Strange, my script will add “Windows 10 (PAE)” so the “PAE Patched” would be from another script.
+You could use msconfig now and go under Boot and remove the other non-working boot entry.
+
+Reply
+Pixelboy
+June 2, 2018 at 5:40 am
+Attention > of topic!
+
+To the specialists / professionals among you !!
+Who can help? / knows a link / or has a newer executable program
+from Autodesk / ACAD 2010 for me !?
+I’m from Germany and 70years old and know the PC history since 1989.
+My job is electrical technician.
+My system: WIN 7 pro/ 64bit / 16gb Ram / RX Vega64.
+
+My problem:
+My ACAD 2005 is not running under my system! ??
+After the start, the message appears:
+“This program has known compatibility issues”
+
+Error Collection From WIN / ACAD:
+Problem signature:
+Problem event name: APPCRASH
+Application name: acad.exe
+Application Version: 22.1.63.0
+Application timestamp: 403c6a34
+Error Module Name: ntdll.dll
+Fault module version: 6.1.7601.24117
+Error module timestamp: 5add1d8d
+Exception code: c0000005
+Exception Offset: 00022393
+Operating system version: 6.1.7601.2.1.0.256.48
+Locale ID: 1031
+Additional information 1: 4c0d
+Additional Information 2: 4c0d4d78887f76d971d5d00f1f20a433
+Additional information 3: 4c0d
+Additional Information 4: 4c0d4d78887f76d971d5d00f1f20a433
+
+Thanks a lot for your answer
+
+Pixelboy
+
+Reply
+??525 (@kaiuriurikai)
+July 12, 2018 at 5:51 am
+My guess is that perhaps the software was designed for Windows XP and not compatible with Windows 7? There are a lot of internal difference between XP and Vista/7/8/10, notably user account control etc.
+
+Reply
+??525 (@kaiuriurikai)
+July 12, 2018 at 5:45 am
+Hello, I use Windows 7 32 bit with 8G RAM, this patch works fine except for USB such as printing to a printer connected to a USB port. I replaced USB related DLL files in \windows\system32\ folder with USB DLL files from Windows Server 2008 32bit Standard Edition’s evaluation ISO available in Microsoft web site, but the problem remains. This USB problem in PAEpatched Windows XP is solved by bringing USB DLL files from Windows Server 2003 32bit, but apparently not in Windows 7. My question is, 1)has anyone got USB to work reliably in PAEpatched Windows 7 32bit? 2)Does PAEpatched Windows 10 32bit have the same USB problem? Thanks in advance.
+
+Reply
+KoMV-Musicfeyang
+August 30, 2018 at 12:45 pm
+not all usb affected… usb port with certain chip is affected…i have 8 port, 2 port is not working, the rest is working fine.
+
+Reply
+??525 (@kaiuriurikai)
+October 8, 2018 at 10:55 pm
+Thanks, I have found out that to root of the USB problem I described was partly with HP driver software. HP printers such as the Officejet 6000 works in PAE Patched Windows 7 by using print driver labeled “corprate”.
+
+Non-corporate driver does not work in PAEPatched Windows 7 but it does in manually patched Windows XP. Similarly, HP printers for non-corporate consumers such as Deskjets do not have “corporate” driver, and do not work in PAE Patched Windows 7, but they do in patched Windows XP.
+
+Reply
+evgeny
+July 21, 2018 at 8:12 am
+http://www.mediafire.com/file/44g76n3e07j561n/PatchPAE3_2018_07_20.zip/file
+
+– added: windows 10 IP build 17692 (winload.exe)
+
+Reply
+Kelvin
+August 6, 2018 at 1:35 am
+win10 ver 1803, chip intel don’t work, chip AMD is good
+
+Reply
+DuyK
+September 7, 2018 at 11:29 pm
+It s working on my system Win 10 1803 – 32bit, Ryzen 1600X + nVidia1060 6GB + 16GB RAM, but i often get the error Not enough memory to process… Any one know about that problem?
+
+Reply
+Khánh Lê Duy
+August 11, 2018 at 1:39 am
+Thank u ??
+
+Reply
+Yuri
+October 6, 2018 at 7:50 am
+Thanks Evgeny, it works with your patch after latest Win10 update.
+
+Reply
+G.G.
+August 27, 2018 at 8:22 pm
+regards for the update, working on win XP , after microsoft update that made previous version unworkable
+
+Reply
+akapuma
+October 4, 2018 at 5:27 am
+Works fine with new Windows 1809 (10.0.17763.1), but must be patched completely new, including bcdedit.
+
+Best regards
+
+akapuma
+
+Reply
+Kabawe
+November 7, 2018 at 7:32 am
+Works fine with new Windows 10 / 32 but you need to download this patch:
+http://www.mediafire.com/file/75cl6cckllcubv9/PatchPAE3_2016_08_15.zip
+Result:
+http://i65.tinypic.com/23k9ooj.png
+Thank you all!!!
+
+Reply
+Leave a Reply	
+
+RECENT POSTS
+PAE patch updated for Windows 10
+F# code: memoize a recursive function
+Horn’s inequality for singular values via exterior algebra
+New web host
+PAE patch updated for Windows 8.1
+RECENT COMMENTS
+Sebi on PAE patch updated for Windows 7
+Kabawe on PAE patch updated for Windows 10
+Kabawe on PAE patch updated for Windows 10
+bimbiu on Line integrals: 1. Exact, conservative and closed forms
+bimbiu on Line integrals: 1. Exact, conservative and closed forms
+ARCHIVES
+February 2016
+January 2016
+December 2015
+September 2014
+October 2013
+June 2013
+March 2013
+February 2013
+January 2013
+December 2012
+November 2012
+October 2012
+April 2012
+December 2011
+October 2011
+February 2011
+July 2010
+May 2010
+March 2010
+January 2010
+May 2009
+April 2009
+February 2009
+January 2009
+October 2008
+CATEGORIES
+F#
+Hardware
+Mathematics
+Programming
+Website
+Windows
+META
+Log in
+Entries RSS
+Comments RSS
+WordPress.org
+© 2018 wj32
+Powered by WordPress	| Theme: Graphy by Themegrap

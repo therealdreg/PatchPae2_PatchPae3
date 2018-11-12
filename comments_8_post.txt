@@ -1,0 +1,918 @@
+Pingback: PAE patch updated for Windows 7 SP1 | wj32
+Teeluck
+December 26, 2012 at 4:10 pm
+Thank you, now i can install windows 8.
+
+Reply
+mc-kay
+December 27, 2012 at 1:05 am
+As always awesome work, bit I don’t get the point why someone would use this hack to use more than 4gig ran instant of just installing the x64 version of windows?
+
+Reply
+mp
+January 5, 2013 at 11:08 pm
+There is often older software that simply won’t run on 64 bit versions. Not only software but hardware as well for specific business related applications. Not every PC is for browsing and gaming.
+
+Reply
+jack sparrow
+May 14, 2013 at 6:47 am
+this is because 32 bit windows uses less memory. if you don’t believe, try installing x64 OS 1st and then afterwards an x86 of the same OS, but with all RAM unlocked, and just after formatting, just check the % of memory usage in task manager.
+and that is the reason you will find x64 versions of softwares(like office 2013, or 2010, CATIA, ANSYS) are larger in size tha their x86 versions
+
+Reply
+Unverified User (@AdamantForce)
+May 14, 2013 at 9:26 pm
+x 86 is just faster, longer and more widely used. Supports more software. And honestly, it is x64, with the exception that x64 runs x86 twice for the most part.
+
+Reply
+>Implying
+July 19, 2013 at 4:02 pm
+>x86
+>faster than AMD64
+what are you smoking?
+
+Reply
+nomine
+June 13, 2015 at 8:38 pm
+Yo do not know anything about hardware architecture not?
+It is faster except on optimized task like compression and multimedia.
+
+joushou
+July 19, 2013 at 7:28 pm
+AMD64/EM64T/x64/whatever-the-hell-you-want-to-call-it is a hell of a lot faster for 64-bit operations than x86 (*AND* more widely used). The cost, however, is that *everything* is 64-bit. Your pointers, your integers, your booleans, all regardless of whether or not you actually needed it.
+
+If your application never needs the extended instruction length and memory space, then yes, you’re just wasting memory, but the moment you need something above 32-bit, 32-bit execution will suffer a severe performance hit. If you have ever used software that uses RSA encryption, or other stuff requiring bigints (Heard of SSL/TLS?) or just 64-bit ints (e.g. Rabbit/Badger, any browser whatsoever, …), then you will benefit from 64-bit.
+
+x32 tries to remedy this – Can’t remember the details of it, though. I think it uses 32-bit pointers.
+
+Reply
+Vlad
+January 4, 2013 at 8:49 am
+i tryed this hack but after following the tutorial the system won’t boot anymore
+
+Reply
+Marcos Jacoby
+October 21, 2013 at 3:26 am
+Probably because you use a desktop/note/netbook with integrated intel video, and all video drivers for intel video have limmitations when using it on Windows Vista/7/8.
+See this blog posts to locate and read instruction to how download a xp driver that don’t have this limitation and install it on Windows Vista/7/8.
+
+Reply
+ColinWillies
+January 19, 2013 at 5:53 pm
+Hi folks, I have been using this patch successfully on Win7 and lately on Win8. I have however discovered that whereas on Win7 there was no issue, on Win8 the system fails to recover from Hibernate state when in PAE Patched kernel (hibernation recovery works fine when booted into the unpatched kernel). If anyone has any ideas to resolve this please share. Tks, Colin
+
+Reply
+ColinWillies
+January 28, 2013 at 3:27 am
+Could it be that \Windows\system32\winresume.exe also needs to be patched in Win8? If so can anyone provide the instructions?
+
+I have checked using Visual BCD editor and ensured that the GUID of the hibernate resumer for the PAE patched kernel corresponds to the GUID of the “AssociatedResumeObject” entry in the PAE Patched Loader. The issue persists – resume from hibernate works if booted into the un-patched kernel, but does not work when booted into the patched kernel. The same machine (a DELL E6420) does not have the issue with a Win7 Patched kernel.
+
+Reply
+wj32 
+January 28, 2013 at 8:50 am
+I can’t reproduce this problem. Hibernation seems to work fine here.
+
+Reply
+ColinWillies
+January 28, 2013 at 10:03 pm
+OK – I have reproduced the issue on another model – a DELL D630. I will do another fresh installation on this machine in coming days to confirm and report back here. For info I am using Win8 Pro installed via Windows Deployment Services.
+
+Reply
+orcinusadamantos
+January 31, 2013 at 1:08 pm
+Oh yay! I have been looking for a RAM patch for Windows 8 32Bit. I have Windows 7 x86 patched on my other HDD and it has NEVER given me any issues. I unfortunately had to upgrade to 8 to fix my Windows 7 after I screwed it up messing around with things. But having 8 in for a while I started to use it more often. And one thing that I noticed was that the system was once again stealing my RAM from me. So I called myself smart and ran the RAM patcher for windows 7 (in windows 7 mode) it completed but would not boot up again. So I stepped back in time and uninstalled it. Are you guys having any luck with this Windows 8 patch?
+
+Also Im using a Dell Precision T5400 – 8 cores 4GB RAM (overclocked 2.00GHz~2.44GHz)
+Do you think Dells have it rough for customizing like this? Or should it be smooth sailing?
+Thanks,
+Art
+
+Reply
+ColinWillies
+January 31, 2013 at 8:39 pm
+This patch works fine in Win 8. I have tested it on DELL D630 and DELL E6420 so far. The only issue I have is failure to resume from hibernate (on both platforms). The developer of the patch has not confirmed this to be an issue with the patch as he has not been able to reproduce on his hardware. I am still working on trying to understand why the resume from hibernate does not work on my machines, but in the meanwhile I am simply not using hibernate – the rest works fine! ??
+
+Reply
+wj32 
+January 31, 2013 at 8:41 pm
+Just to be clear – my “hardware” is VMware ??
+
+Reply
+orcinusadamantos
+February 1, 2013 at 10:55 am
+Sounds very promising. Kind of makes me wish that I had a test machine to try this out on. The only build I have at the moment is this one that Im on now. Im sure you guys know how it is having PC hot-rod’n as your hobby. Parts for days, software for days, but not too many test subjects. LOL I will download a sample and figure out a safe method of recovery just in case. And post here the results.
+Thanks a million.
+
+Reply
+ColinWillies
+June 3, 2013 at 8:20 am
+Hi all,
+
+@WJ32, I have just run some tests and it appears that there is something strange happening since the April / May updates from MS. On a test VM running vanilla Win8 I can patch and unpatch at will. After running Windows Update the kernel patch returns a failed message whereas the loader patch continues to succeed. However, after reboot everything works as expected and on examination the new ntoskernx is present with a datestamp of 10/04/2013. The only anomaly I have seen is the failed message on the kernel patch operation, but it looks like the operation is in fact successful. Can you please look into this and comment?
+
+Reply
+ColinWillies
+June 5, 2013 at 2:13 am
+Hi all, I tested today on a DELL E5400 with 4G of RAM (more than I had in the VM I used before). The command to patch the kernel does in fact fail, though a copy is still made. This means that the system boots using ntoskrnx, but since ntoskrnx is unchanged it is still subject to the 3.2G RAM limit…
+
+@WJ32, any chance of an updated version please?
+
+Reply
+OrcinusAdamantos
+March 17, 2013 at 11:55 pm
+Colin I have a Dell E5420 also, with the i Core 5 cpu, though Im running Windows 7 x86. Have you any experience with this patch and Windows 7? I ran the other RAM patcher that I would always use to do so. And wouldn’t you know, for some reason, on my E6420 it wouldnt do it properly. It would run, say its complete. Then upon a restart, would boot up like normal, but at the screen where it should show your login info, its stays black. With no HDD activity. Im going to check right now on one thing. I DID change my login method to NOT show the last user to log in. So I want to verify that, that is not the reason. I’m interested in trying this patch, but I have to learn how to uninstall my current failed patch first.
+
+Reply
+ColinWillies
+March 18, 2013 at 12:29 am
+Try disabling the Optimus techno on the GPU in the BIOS.
+
+Reply
+OrcinusAdamantos
+May 19, 2013 at 8:49 pm
+Hey buddy I dont have the E6420 with a GPU. Its got the Intel HD 3000 bull-crap integrated crap. but this little crapper eats 750MB of RAM doing nothing. Leaving me with a virtually useless platform to try to run a 64bit OS. Thus me trying to get my x86 patched. I recently installed a different HDD and installed Windows 7 x86, I have patched Windows 7 so many times before, but nooooooooooo! This Dell is a nightmare. -.-
+I dont care about this iCore crap generation of processors, OC’n is damn near impossible. I would much rather have my Xeon’s in a workstation or my QX9560’s in my skulltrail. Way more headroom. But if you can spare any time I would appreciate the help buddy. Thanks
+
+Reply
+ColinWillies
+June 3, 2013 at 8:24 am
+I will test with a 5420 in coming days and post my results (also an Intel GPU).
+
+ColinWillies
+June 5, 2013 at 2:05 am
+Hi M8. I’m afraid I was unsuccessful in getting a previously patched Win 7 OS from a 6420 to work on the 5420 – same symptom you experienced despite numerous BIOS tweaks (which were pretty much random shots in the dark even if performed with method…). The system works fine on the standard kernel in both the 6420 and the 5420 chassis… I did not test from vanilla up as I don’t intend using Seven much any more and really don’t want to spend more time on this – sorry…
+
+Abah Deden Rukhyadi
+February 5, 2013 at 9:27 am
+In windows 8 pro patchpae2.exe won’t work error : input file not specifield! Anyone can help ?
+
+Reply
+yoga
+March 5, 2013 at 11:44 pm
+sama punya saya juga gak bisaa
+
+Reply
+Deden Rukhyadi
+February 7, 2013 at 4:00 am
+solved ! wrong type write. patchpae work now on W7 and W8, thanks a lot.
+
+Reply
+rdi
+February 14, 2013 at 7:26 am
+Please let us know how you found the instruction sequence where the memory limit checked and why you didn’t override the stored value, but instead alter the returned result.
+
+Out of curiosity – have you explored the same patch for WinXP SP3?
+
+Thanks and keep up the great work.
+– R
+
+Reply
+jun94
+February 28, 2013 at 7:11 pm
+Thank you! Saved my day. Working great for my 32bit Win8 with 8G memory.
+
+Reply
+yogendra sonawane
+March 4, 2013 at 4:37 am
+Thanks for this patch..now I can use full 4GB ram on x86..this patch is great tool for all those who want to stick to x86 to run legacy apps n have a lightweight x86 system (x64 windows = larger drivers, larger files, 32-bit emulation layer, no 16 bit support) still with full 4GB or more ram
+
+Reply
+yoga
+March 5, 2013 at 11:43 pm
+help me,
+
+Reply
+GEG AEFG
+March 14, 2013 at 11:15 am
+Not so good ,
+crashing graphics card memory. All 3D game won’t work. System Become unstable .Can you fix these issues?
+Win8 32bit , GeForce GTX 580
+
+Reply
+OrcinusAdamantos
+March 18, 2013 at 12:57 am
+they dont offer assistance, so my best guess would be to use one of your file history states. or a system restore point. best of luck bro
+
+Reply
+borneo men
+March 15, 2013 at 7:13 pm
+no work,booting wim 8 me error
+help..
+
+Reply
+Giovanni
+March 19, 2013 at 9:02 am
+not working on w7, goes directly into recovery mode with low res screen…
+
+Reply
+Himson Li
+March 20, 2013 at 11:59 pm
+Sadly, the patch does not work for me. I was greeted with automatic repair.
+
+Luckily I could return to normal WIN 8 by choosing “Advanced Options” > “Use Another OS”.
+
+I think I just have to get the real 64 bit Windows. Free lunch is? nowhere to be found.
+
+Reply
+Max
+April 3, 2013 at 3:36 pm
+I’ve write a fully-automated batch scripts to do every copy-paste step for you!
+
+1.) Copy and paste text between lines in notepad and save as two different documents ‘Patch_WVi-7.bat’ and ‘Patch_W8.bat’.
+2.) Put batch files and ‘PatchPae2.exe’ in same folder.
+3.) Run appropriate batch script for your OS as Administrator.
+4.) System will be restarted automatically.
+
+~Batch script for Vista, Windows 7 and Windows 7 SP1~
+——————————————————————————-
+@echo off
+TITLE …::: WinVi-7 32-bit Unlocker Script :::… by: Wiwi-maX
+color 30
+echo Script use PatchPae v2.
+cd %Windir%\system32
+
+.\PatchPae2.exe -type kernel -o ntkrnlpx.exe ntkrnlpa.exe
+.\PatchPae2.exe -type loader -o winloadp.exe winload.exe
+echo.
+bcdedit /copy {current} /d “Windows 7 (Unlocked)”
+echo.
+echo.
+bcdedit /set {current} kernel ntkrnlpx.exe
+bcdedit /set {current} path \Windows\system32\winloadp.exe
+bcdedit /set {current} nointegritychecks 1
+bcdedit /set {bootmgr} default {current}
+bcdedit /set {bootmgr} timeout 2
+
+shutdown.exe -r -f -t 5 -c “RAM 2GB’s Limit Removed.”
+==================================================
+
+~Batch script for Windows 8~
+——————————————————————————-
+@echo off
+TITLE …::: Win8 32-bit Unlocker Script :::… by: Wiwi-maX
+color 30
+echo Script use PatchPae v2.
+cd %Windir%\system32
+
+.\PatchPae2.exe -type kernel -o ntoskrnx.exe ntoskrnl.exe
+.\PatchPae2.exe -type loader -o winloadp.exe winload.exe
+echo.
+bcdedit /copy {current} /d “Windows 8 (Unlocked)”
+echo.
+echo.
+bcdedit /set {current} kernel ntoskrnx.exe
+bcdedit /set {current} path \Windows\system32\winloadp.exe
+bcdedit /set {current} nointegritychecks 1
+bcdedit /default {current}
+bcdedit /set {bootmgr} timeout 2
+
+shutdown.exe -r -f -t 5 -c “RAM 2GB’s Limit Removed.”
+==================================================
+
+Everything else you need to do is to set (check) your new boot entry as default via msconfig.
+
+Reply
+Will
+April 16, 2013 at 11:34 pm
+Hi,
+
+Sadly, this causes BSOD for me.
+
+Minidump: http://www.filedropper.com/041613-23197-01
+
+Can NOT get full dump as I don’t have full admin rights on this PC.
+
+Running Windows 7 Pro. SP1 with all Windows Security updates installed (as of April 2013).
+
+cya,
+
+Will
+
+Reply
+jason
+April 21, 2013 at 8:31 am
+Thanks for your hard work! Needs to be updated though. April windows 8 updates have rendered it non-functional. Step 3 = response of “failed” both when trying to reapply the kernel as well as after deleting the patch and starting from scratch.
+
+Reply
+OrcinusAdamantos
+April 21, 2013 at 10:29 am
+Dude you should hit me up. I couldnt get it working on my X86 W8 system. -.- But as for your situation, it should be fairly enough easy. Why dont you uninstall the updates , and run bleachbit and remove installer files and clean the reg , basically the deep clean feature, and reboot. Then you should be refreshed and able to re-install. I never let MS tech tuesday auto install. I would always come home to a blue screen. LOL
+let me know if that works out for you. And once I get my system flowing steady again maybe you could give me a pointer or two to get it patched and moving.  ??
+
+ciao,
+OrcinusAdmantos
+
+Reply
+Farhad
+May 12, 2013 at 7:11 am
+it successfully in win 8 enterprise
+you most copy and paste valou’s in CMD (follow the readme.txt)
+
+Reply
+flynaj
+May 12, 2013 at 11:22 pm
+6.2.9200.16551 path Failed.
+
+Reply
+cihuyman
+May 19, 2013 at 5:38 pm
+when i try to enter this line C:\WherePatchPaeIs\PatchPae2.exe -type kernel -o ntoskrnx.exe ntoskrnl.exe its say “failed”, anybody help….
+
+Reply
+OrcinusAdamantos
+May 19, 2013 at 8:57 pm
+tell me you didnt enter it like that right? You actually entered the location of the files right? Like if it was saved to your desktop, you entered
+C:\Users\”whatever your profile name is on your PC”\Desktop\ “the name you saved the file under” (example)
+
+C:\Users\MikesPC\Desktop\savedfile.exe
+
+Reply
+xodarap7
+May 25, 2013 at 11:03 pm
+for me in step 3 it also says failed! having Windows 8 Pro en-Us May 2013 by Murphy78. Previously, it worked for me like a charm. Now it doesnt want to patch.
+
+Do you want to make an upadate, so we can use this patch for newer Versions of Windows 8?
+
+Reply
+bill_gates
+May 27, 2013 at 1:13 pm
+Windows 8 pro(with last updates) dont work:
+C:\Windows\System32>E:\pae\PatchPae2.exe -type kernel -o ntoskrnx.exe ntoskrnl.exe
+Failed.
+
+Reply
+bill_gates
+May 28, 2013 at 7:18 am
+also, before run windows update everything worked fine, but after updating flew off, new kernel is not available patch
+
+Reply
+Marcelo
+May 30, 2013 at 4:08 am
+Hi, everyone!! Maybe i talk a “little shit” but, if i can make a backup of kernel patched, and after windows updates, i restore that? You try make this? I waiting a response. See later.
+
+Reply
+ColinWillies
+June 9, 2013 at 8:33 pm
+I have tested this on a physical machine (DELL D630). If you save your old kernel (ntoskrnx.exe) you can still use it after a failed patch operation against the newer version as long as you follow all the proper steps as outlined by the developer. In my case I simply made a copy of ntoskrnx.exe, re-patched to double-check – patch failed, the OS still booted to the new ntoskrnx, but naturally providing access to only 3.5G of RAM and not the 5G installed on this machine. I renamed the new kernel, renamed the old patched one back to ntoskrnx, rebooted and the OS can once again address all 5G. As mentioned in another of my posts, this scenario is not ideal since the older kernel does not benefit from the latest MS fixes and enhancements, but at least you can access all your memory, and nothing gets broken…
+
+Reply
+OrcinusAdamantos
+June 10, 2013 at 3:32 pm
+Nice buddy,
+Thats what I do no matter the procedure. Ever since Windows introduced the concept of restore points, and my smarter than me friends always recommending to me to make redundant back ups of ALL my data. That concept of making a snapshot of what ever Im not sure of will break my system or not, before I modify it, is a standard practice. Plus learning about modding and bypassing and “cracking”, lets your mind grow and become more resourceful and creative.
+Glad to see others doing the same. ?
+
+Reply
+ColinWillies
+June 5, 2013 at 3:03 am
+Folks, please do not perform the patch on systems updated since March 2013 (using windows Update for example), since the patch will not work (if you do it correctly following the readme it wont break your system but you will be downgraded to 3.2 GB of RAM after the reboot). Previously patched systems will continue to function as before (addressing all of your RAM) even if you apply the Windows updates, as long as you do not re-patch your kernel (such systems will of course retain any vulnerabilities / issues that have been addressed in subsequent MS updates).
+
+@WJ32, it seems MS did not like what you did for us and they have tried to close the door on us – could you please let us know if you have found / believe you can find another way in?
+
+Reply
+irfan
+June 8, 2013 at 2:55 am
+@Colin and all, i wonder does it work for me ??
+
+i’m running HP Pavilion g4 2216TU, core 13-3110M 2,4Ghz,
+2 GB RAM (932 MB usable),
+Windows 8 Pro 32-bit OS, x-64 based processor,
+Update were installed 5/5/2013 12:11 AM.
+
+I wonder how can I reduce / remapping hardware-reserved memory usage for the machine, so i can get more usable-memory ? does the patch can do such stuffs ?
+
+any suggestions will be appreciate.
+thanks, regards.
+
+Reply
+OrcinusAdamantos
+June 10, 2013 at 3:52 pm
+Im guessing that your laptop does not have a seperate GPU (grafix processing unit). So that alone CAN, but not always take anywhere from 64Mb up to 1Gb+ of RAM just to “function” normally. This I know from experience and research on my own, and from school. I just corrected my teacher on this subject in front of the class.  ?? If you can, change the amount of memory your hardware uses, you can do it in 2 places. One is a setting in the registry that addresses virtual memory allocated. It will NOT give you more RAM, but it increases the systems total virtual memory. Think of that as RAM combined with unseen Phantom RAM. It uses the page area on your HDD.
+The other and Direct method is in your system BIOS. At power on, enter your BIOS, and look in your system config to see if there is a entry for video memory. Just remember the lower you go, the less you can do, because there will be less that you can see, literally. Certain games will not play with less than the desired amount of RAM. Certain formats of video will not decompress. Certain Windows programs will not be able to function with lower resources. Or they will just slow to a grinding slow speed similar to that of a 1GHz or so, processor.
+
+If you want to utilize your little amount of RAM, I would use http://distrowatch.com/table.php?distribution=damnsmall
+Or
+http://distrowatch.com/antix
+or
+http://distrowatch.com/slitaz
+
+those are the smallest OS’s that I know of and have used. The last one for example is only 30Mb (the entire OS) and takes only 80Mb for a complete install. All three of those OS’s can be ran live. Meaning off of a Disc, with no install.
+
+I hope that helps.
+Peeeeeeeeaaaaaceeeee out!
+
+Reply
+ColinWillies
+June 9, 2013 at 7:36 pm
+Hi Irfan, I am not a developer so do not have an intimate understanding of the mechanics of this patch (nor for that matter do I have the skill to comprehend the code even if I had the source). However, I do not think this is what you are looking for if you machine has less than 4 G of RAM. The purpose of this patch is to permit use of more memory than Win8 32-bit is officially designed to manage (i.e. typically 3 to 3.5 G depending on hardware reservation requirements). This patch is really useful if you need to run more than 4G of RAM (I am running 8) and you cannot or do not wish to use an X64 version of Win8. As for your OS declaring only 932 MB usable out of the 2G it can see this might need further investigation.
+
+Reply
+user
+June 19, 2013 at 12:41 am
+I note that the version of the kernel version is not a patch with the message failed, the loader kernel lends itself to unlock
+windows_8_enterprise_x86_dvd_917687.iso
+
+Reply
+user
+June 19, 2013 at 12:48 am
+I note that patching the kernel version ru_windows_8_enterprise_x86_dvd_917687 does not work with the version of the message failed, the loader kernel lends itself to unlock
+
+Reply
+ColinWillies
+June 22, 2013 at 6:41 pm
+@wj32, any progress on an updated version capable of patching the newer kernels MS has been imposing for the past couple of months via Windows Update?
+
+Reply
+wj32 
+June 22, 2013 at 6:46 pm
+I’m quite busy right now, but if I don’t get it done in the next few weeks feel free to send me an email to remind me ??
+
+Reply
+user
+June 23, 2013 at 3:12 am
+Windows_8_enterprise_x86 kernel version 6.2.9200.16604
+Microsoft Windows [Version 6.2.9200]
+
+C:\Windows\System32>PatchPae2.exe -type kernel -o ntoskrnx.exe ntoskrnl.exe
+Failed.
+
+C:\Windows\System32>
+
+Reply
+ColinWillies
+July 14, 2013 at 7:42 pm
+You asked me to remind you – so here it is ??
+
+I see there has been work done here by others who I am sure are quite competent, but I am not completely comfortable with any fully automated option that in addition appears to remove the original BCD entry. I would much prefer your step by step version and / or your validation of the other work presented here before proceeding further ??
+
+Reply
+wj32 
+July 19, 2013 at 3:57 pm
+I’ve updated the patch. You can re-download PatchPae2.zip now.
+
+Reply
+ColinWillies
+July 19, 2013 at 4:18 pm
+Much appreciated ?? … Lots on my plate here too right now ?? …Expect to update next week ?? … Thanks again! ??
+
+Ajay
+June 26, 2013 at 1:54 am
+Hello wj32,
+
+Mine also same problem, can you provide us latest PAE patch for kernel version 6.2 (build 9200)
+
+output:
+c:\Windows\System32>takeown /f ntoskrnl.exe
+
+SUCCESS: The file (or folder): “c:\Windows\System32\ntoskrnl.exe” now owned by u
+ser “xxx\Administrator”.
+
+c:\Windows\System32>C:\PatchPae2.exe -type kernel -o ntoskrnx.exe ntoskrnl.exe
+Failed.
+
+c:\Windows\System32>ver
+
+Microsoft Windows [Version 6.2.9200]
+
+Thanks
+
+Reply
+RWisdomw
+May 8, 2015 at 5:16 pm
+http://forums.evga.com/HOW-TO-Removing-4GB-Memory-Limit-on-32-bit-Windows-m960087.aspx
+
+Try this method.
+
+Reply
+Guest
+June 26, 2013 at 3:25 am
+Im looking through the code, I think the first 4 values are unneeded (I ran comparison with this vs another patcher that works and looked at before & after kernel image differences) thats the only sense I can make, gonna try recompiling and testing it.
+
+Reply
+Guest
+June 26, 2013 at 4:18 am
+Well, only if I knew where to get the dependencies & what software to compile it with lol… ugh, I try to compile in visual studio express 2012 and it cant find ph.h file & gets lots of wincrypt.h errors…. help!
+
+Reply
+Guest
+June 26, 2013 at 6:38 am
+Ok, think Ive got it figured out, recompiled a new version and testing it atm. The byte comparisons look good on stock kernel vs the patched one. So, will test my installer script shortly w/ the patched version of the pae2 patcher.
+
+Reply
+Guest
+June 26, 2013 at 7:04 am
+Ok, Ive successfully rewritten some of the code to work w/ both the older & newer kernel. Basically in the loop that compares the target & original code in the kernel, I have it skip 1 byte because I notice that one byte is different between the older kernel & the newer one. This does not mean, of course, that MS wont change some other byte again in the area … this patch looks for ‘pattern matching’ … heres the updated archive which has the new binary in root folder & modified source file
+http://www.tempfiles.net/download/201306/307589/pae2.html
+
+Ive also created a patcher which does all of the steps needed. I was using an older method for win7 & vista, before I found this script, which meant patching the MUI files as well. The script has an uninstall option when you run it with argument ‘uninstall’ (w/o quotes)
+
+http://www.tempfiles.net/download/201306/307591/Kernel4GBpatcher.html
+
+The above file automates the entire process for you.
+
+Reply
+Guest
+June 26, 2013 at 9:13 am
+Sorry, dont use the above automation script(the 2nd one I posted) … Ive updated it, it was not working right for vista / 7 .. here ya go
+http://www.tempfiles.net/download/201306/307593/Kernel4GBpatcher.html
+
+Reply
+user
+June 26, 2013 at 9:27 am
+found a way out of a situation where the involved PAE kernel does not support the original remains in the cache through a search draw appropriate kernel patching treatable:
+
+C:\Windows\WinSxS\x86_microsoft-windows-os-kernel_31bf3856ad364e35_6.2.9200.20521_none_69a2eadc9e79806f\ntoskrnl.???
+
+C:\Windows\WinSxS\x86_microsoft-windows-os-kernel_31bf3856ad364e35_6.2.9200.20555_none_69867c409e8e399e\ntoskrnl.exe
+
+Reply
+user
+June 26, 2013 at 9:37 am
+is to copy and rename
+kernel_31bf3856ad364e35_6.2.9200.20521_none_69a2eadc9e79806f\ntoskrnl.e??
+
+Microsoft Windows [Version 6.2.9200]
+C:\Windows\System32>PatchPae2.exe -type kernel -o “C:\Windows\System32\20522.exe
+” “C:\Windows\System32\20521.exe”
+Patched.
+
+C:\Windows\System32>
+
+[[ For Windows 8: ]]
+6. bcdedit /set {e041b0af-ddd5-11e2-aeb5-8ef23a4a1248} kernel 20522.exe
+This will set our boot entry to load our patched kernel.
+
+Reply
+Guest
+June 26, 2013 at 9:50 am
+that works as well, but ur still using an older kernel version. If you use my modified script(1st link if u dont want the autopatcher) it will work on newer kernel builds.
+
+Reply
+Guest
+June 27, 2013 at 4:49 am
+hey guys, updated the script again, my automated installer… now it just uses the posted method for all 3 OS variations(vista, 7 & 8) its more effecient and faster that way =)
+http://www.tempfiles.net/download/201306/307863/Kernel4GBpatcher.html
+
+Reply
+Stefan
+June 28, 2013 at 12:01 am
+Hi Guest,
+
+did you know why this doestn work under Windows 8.1?
+It says that it was unable to copy the file.
+
+Reply
+??????? ??????????
+June 29, 2013 at 8:07 am
+thanks,guys.it works fine but I have to fresh boot every time.
+
+Reply
+iqbal
+June 29, 2013 at 1:39 pm
+best script for all windows (vista, 7, 8). this will install only if you have 32bit os and if you have more than 3gb ram.
+it is not add another boot entry. it replacing existing one so you can safely install
+write following text to a note pad and save as “install.cmd” and placed on save folder contains “PatchPae2.exe”
+note that script will shows error if you don’t run as administrator mode
+
+@echo off
+
+:administrator
+NET SESSION >nul 2>&1
+IF NOT %ERRORLEVEL%==0 (ECHO.& ECHO failed….
+ECHO. && ECHO Run as administrator by right clicking this cmd
+ECHO. && TIMEOUT /T 6 >NUL && EXIT)
+
+::check windows is 32bit
+if exist “%Windir%\SysWOW64\cmd.exe” exit
+
+::check ram is more than 4gb {patch only above 3gb ram}
+SETLOCAL ENABLEEXTENSIONS
+for /f “tokens=2 delims==” %%A in (‘wmic memorychip get Capacity /VALUE’) DO CALL :slotot %%A
+IF %MEMTOTIN% GTR 3072 (GOTO :INSTALL) ELSE (exit)
+
+:slotot
+SET MEMSLO=%1
+SET/A MEMSLOMB=%MEMSLO:~0,-1%/104857
+SET/A MEMTOTIN=MEMTOTIN+MEMSLOMB
+GOTO :eof
+
+:INSTALL
+SET RQR1=REG QUERY “HKLM\SOFTWARE\Microsoft\WinDOws NT\CurrentVersion” /V “ProductName”
+%RQR1% | FINDSTR /I “WINDOWS.*8” >NUL && GOTO :WIN8
+%RQR1% | FINDSTR /I “WINDOWS.*7” >NUL && GOTO :WIN7
+%RQR1% | FINDSTR /I “WINDOWS.*VISTA” >NUL && GOTO :WIN7
+EXIT
+
+:WIN8
+IF EXIST “%windir%\system32\ntoskrnx.exe” DEL /F /Q “%windir%\system32\ntoskrnx.exe” >NUL
+“%~dp0PatchPae2.exe” -type kernel -o ntoskrnx.exe ntoskrnl.exe
+IF EXIST “%windir%\system32\ntoskrnx.exe” bcdedit /set {current} kernel ntoskrnx.exe >NUL
+GOTO :END
+
+:WIN7
+IF EXIST “%windir%\system32\ntkrnlpx.exe” DEL /F /Q “%windir%\system32\ntkrnlpx.exe” >NUL
+“%~dp0PatchPae2.exe” -type kernel -o ntkrnlpx.exe ntkrnlpa.exe
+IF EXIST “%windir%\system32\ntkrnlpx.exe” bcdedit /set {current} kernel ntkrnlpx.exe >NUL
+
+:END
+IF EXIST “%windir%\system32\winloadp.exe” DEL /F /Q “%windir%\system32\winloadp.exe” >NUL
+“%~dp0PatchPae2.exe” -type loader -o winloadp.exe winload.exe
+IF EXIST “%windir%\system32\winloadp.exe” bcdedit /set {current} path \Windows\system32\winloadp.exe >NUL
+bcdedit /set {current} nointegritychecks 1 >NUL
+bcdedit /set {current} bootstatuspolicy ignoreallfailures >NUL
+bcdedit /set {bootmgr} timeout 5 >NUL
+bcdedit /set {current} increaseuserva 2500 >NUL
+
+Reply
+last
+July 5, 2013 at 7:49 am
+when there will be support Windows 8.1 (9431)
+
+Reply
+uncle Bance
+July 6, 2013 at 7:02 am
+do not rush things, there is always a good alternative, as is 64-bit version of Windows 8.1 Preview, which only began to be tested on the client computers, although it can be said of a certain stability and speed kernel Smaller volume of occupied space on the system partition as compared to the previous uncle Bill’s development office …
+
+Reply
+advanced user
+July 17, 2013 at 1:33 am
+Saferbytes x86 memory bootkit – the only credible alternative that does not replace the original kernel and bootloader, and only the right boot information in the MBR
+
+Reply
+advanced user
+July 17, 2013 at 1:49 am
+despite the fact that in the Windows 8.1 build 9431 with a version of the 6 .3 .6431.0, which initially incorporated support for PAE mode (ntkrpamp.exe – multiprocessor kernel Windows with more than 3 GB of RAM)
+
+Reply
+advanced user
+July 17, 2013 at 2:26 am
+with that at the moment the only version of the kernel is included in the assembly of Windows 8.1 Preview build9431 ntoskrnl.ehe the original file name NTKRPAMP.EXE, multi-processor with PAE, and in which it is possible to unlock inaccessible memory
+
+Pingback: 32 bit?Windows?4GB?????????????PAE patch??Windows 8??? | ??????????
+Raymond
+July 20, 2013 at 4:26 pm
+when i type PatchPae2.exe -type kernel -o ntoskrnx.exe ntoskrnl.exe
+
+it just shows:
+unsupported kernel version .
+
+i can’t continue to next step
+
+how can i fix it ?
+
+Reply
+advanced user
+July 21, 2013 at 12:46 am
+If it goes on Windows 8.1 build 9431, the patch bezsilen with a specific version of the kernel at the moment there is a good alternative to this patch, such as Saferbytes x86 memory bootkit
+
+Reply
+advanced user
+July 21, 2013 at 12:47 am
+If it goes on Windows 8.1 build 9431, the patch is powerless with the specific version of the kernel at the moment there is a good alternative to this patch, such as Saferbytes x86 memory bootkit
+
+Reply
+Pingback: Quita la limitación de ram en Windows 32 bits | UnUsuario
+advanced user
+July 22, 2013 at 6:12 am
+that, under what other new updated if the patch on the same link gives a similar warning:
+
+Microsoft Windows [Version 6.3.9431]
+(c) ?????????? ?????????? (Microsoft Corporation), 2013. ??? ????? ????????.
+
+C:\Windows\system32>PatchPae2.exe -type kernel -o ntoskrnx.exe ntoskrnl.exe
+Unsupported kernel version.
+
+C:\Windows\system32>
+
+Reply
+Pingback: Quitar la limitación de ram en Windows 32 bits | Rodrigo Satch
+furulevi
+August 26, 2013 at 11:36 pm
+Please make a version for Windows XP also !!!!!!!!!!!!!!!!!!!!!!
+Thank you !!!!!!!!!!!!!!!!!!
+
+Reply
+Ferdinand
+August 31, 2013 at 2:36 pm
+any update for windows 8.1 otw? ??
+
+Reply
+Rdi
+October 2, 2013 at 5:33 pm
+Thanks! I followed the instructions in the included text file. I have tested and the system can indeed allocate more than 4GB in RAM. Windows reports 20GB RAM useable. Games (Grid 2) work fine too.
+
+Windows 7 SP1 32 bit
+2xXeon E5540, Quadro K5000, 24GB RAM
+
+Reply
+Pingback: Physical address extension patch for Windows 8 | Vesa Vlad
+Claudio
+October 4, 2013 at 6:37 pm
+I think you’re a master. A genius or something similar. Thank you so much. Could you please tell me if I can run this patch in Windows 7 Pro 32bit native installation on a MacPro machine?
+
+Regards.
+
+Reply
+forumups
+October 20, 2013 at 2:06 am
+windows 8.1 ???
+
+Reply
+zex
+October 20, 2013 at 8:13 am
+add support for windows 8.1 build 9600
+
+Reply
+zx
+October 20, 2013 at 9:46 pm
+please add support for windows 8.1
+
+Reply
+AGVirt
+October 23, 2013 at 12:22 am
+Please support for W 8.1.
+
+Reply
+Yaad Etgar
+October 23, 2013 at 1:19 am
+Any update for 8.1?
+
+Reply
+Sdd
+October 27, 2013 at 8:16 pm
+I don’t understand what people with Integrated intel graphics should do. I have 8 GB of RAM on my laptop and just 3.3 is usable… :/
+
+Reply
+Yaad Etgar
+October 29, 2013 at 3:17 am
+Interesting…
+After patching 8.1 it still writes me 7gb out of 8… ?!?!
+
+Reply
+Pingback: Windows 8 (x86) with more than 4Gb of RAM | Vlad [at] Kano.ro
+Jayburt
+November 18, 2013 at 4:15 pm
+Hi, installed beautifully on my machine, Windows 7 w/Sp1 but then I ran a ‘tweaker’ program that I believe turned my ‘patched’ loader to “forcedisablePae”, is that supposed to be so in our ‘patched’ loader? or is it ok to have it like that?Thanks in advance for your response and your fine work on this limitation in Windows 32 bit.
+
+Reply
+Juan Carlos Gebhardt
+February 15, 2014 at 3:23 am
+is there any troubleshooting link or part in where I can see why the hell am I the only one that can patch my CP, thanks !!!!
+
+Reply
+Pingback: ¿Mi pc solo reconoce 4gb de ram? Como lo soluciono
+zy526
+May 5, 2014 at 2:14 am
+Hi wj32, I used this patch for my tablet but got problem. It’s a win8.1 pad, which is using Intel Atom z3770 cpu. According to the official description, seems it can only support 4GB memory. I guess maybe this patch is trying to patch to use 128GB, so failed on my pad. Can you help? Thanks in advance!
+
+Reply
+Pingback: Windows 8 32bit ???????!RAM ????????? | ?
+Paul
+September 8, 2014 at 5:08 am
+Trying this on Win7 32 bit SP1 on an older T2500 Core Duo system and it does not boot, getting Windows Loading Files which fails, then Repair menu. Patchpae2 says that both files patch correctly. System has ATI graphics and I thought that their drivers are ok. Any suggestions? Is the patch still valid with all the windows updates since last tested? Should I try a basic VGA driver rather than the ATI driver?
+
+Reply
+Paul
+September 8, 2014 at 6:04 am
+Sorry tried it again and it booted this time, I was able to see that everything is set up correctly with bcdedit /enum yet I see 4GB installed 3.5 GB usable. The 3.5 usable should be gone after the patch as I understand it. Any suggestions to determine if the patch is working?
+
+Reply
+jacob blankenship
+September 25, 2014 at 12:05 pm
+WIN 8.1 PRO = doesn’t work at bootup!! pls fix/help!! at after windows loading screen it tries to go to login screen but instead I get a terrible graphics problem, some have gotten BSOD, I get a bunch of random pink spots and fuzziness…. PAE patch for win8.1 isn’t working!
+
+Reply
+JayBurt
+September 25, 2014 at 1:28 pm
+Go back through the procedure and make sure your using “-type kernel -o ntoskrnx.exe ntoskrnl.exe” and not “-type kernel -o ntkrnlpx.exe ntkrnlpa.exe” which is for Win 7,probably the most common mistake.Also make sure your in c:/windows/system32 at the command prompt or it will not work correctly,take your time,follow the steps correctly,make sure you do them all correctly and you should be fine
+
+Reply
+JayBurt
+September 25, 2014 at 1:33 pm
+oops,those front /slashes obviously need to be back\slashes C:\Windows\system32…long day is all I can say
+
+Reply
+Pietia
+November 14, 2014 at 9:23 am
+Can anyone help me ? I recently installed win7 32 professional and wanted to use this hack , I upgraded my system thought windows update so my winloadp is 6.1.7601.17514 and my ntkrnl is 6.1.7601.18409 I booted into pae patched kernel but there were 2 BSOD’s my laptop is acer v3 771G and here are .dmp files:
+http://www.filedropper.com/dumps
+caused by ntfs.sys and ntkrnlpx.exe
+Thank you very much ??
+
+Reply
+JayDB
+November 18, 2014 at 5:30 am
+Clear all aspects of this patch out, and go to here;http://news.saferbytes.it/analisi/2013/02/saferbytes-x86-memory-bootkit-new-updated-build-is-out/ ,scroll down to “download” and download and unzip..then install using the GUI interface. Have gone to this and I’m no longer getting any of the BSOD I was frequently getting w/the patch.Do install all of the updates for your operating system 1st,and it will install and run fine,even tells you in the ‘log’ file that they’ve to a non-standard’ loader and it takes care of that too.
+
+Reply
+Al
+December 22, 2014 at 4:18 am
+Question: can I patch twice Windows 7/8 in dual boot? I mean, do two new entries patches, one for each operating system.
+
+Reply
+Pingback: Make Windows 7, 8 and Vista 32-bit (x86) Support More Than 4GB Memory • Raymond.CC
+CA
+January 20, 2015 at 6:06 am
+Has anyone tried this while running MacDrive? The former version was not compatible and the HFS drives were never mounted.
+
+Reply
+Alexandra
+February 24, 2015 at 2:17 am
+i have BSOD using your patch and every single patch i’ve found in the internet. it’s always complaining about direct x and nvidia files. but works fine in safe mode. please help, can i fix that? 64 bit is not an option for me
+
+Reply
+RWisdomw
+May 8, 2015 at 5:19 pm
+Pretty sure this patch is broken people. Try this method: http://forums.evga.com/HOW-TO-Removing-4GB-Memory-Limit-on-32-bit-Windows-m960087.aspx
+
+Good luck!
+
+Reply
+japanitsearch
+August 12, 2015 at 7:00 am
+Great tool,Thanks
+
+Reply
+Joshua Juarez
+November 5, 2015 at 12:34 pm
+Can you have one for windows 10 32-bit. I need it pretty badly.
+
+Reply
+Colin WILLIES
+January 14, 2016 at 6:02 pm
+I would also appreciate using this on Win 10 – any updates in the pipeline?
+
+Reply
+Terry
+January 15, 2016 at 3:55 pm
+Colin, Joshua, go to the page for Win 8.1
+http://wj32.org/wp/2013/10/25/pae-patch-updated-for-windows-8-1/
+
+and scroll down to the postings by evgeny November 23 2015 where you can download the latest patch for Win 10.
+
+There is also a post further down by Escape75 on November 23 giving a link to an executable script file he wrote incorporating evgeny’s patch.
+This works well, it installs the patch and does all the hard work for you.
+
+It would pay you to read the various comments on this site concerning Nvidia video drivers which prevent the patch from working
+
+Reply
+Colin WILLIES
+January 18, 2016 at 7:05 am
+This worked for me (Win10 Version 1511 – OS Build 10586.63) – I ran the patch commands manually using the instructions in the PatchPae2 readme against the updated patch (PatchPAE3). Many thanks for the guidance.
+
+Reply
+WebBlast
+February 21, 2016 at 5:19 am
+Windows 7 SP1
+
+Delete update only ! ! !
+
+3060716
+3068708
+3071756
+3080149
+3126587
+3126593
+
+Reply
+WebBlast
+March 11, 2016 at 5:10 am
+Windows 7 SP1
+
+Not work with PAE ! ! !
+
+KB3060716
+KB3068708
+KB3071756
+KB3080149
+KB3126587
+KB3126593
+KB3088195
+KB3101746
+KB3121212
+KB3140410
+
+Reply
+Sergey
+May 13, 2016 at 1:52 am
+Windows 7 SP1
+
+Not work with PAE ! ! !
+
+KB3045999
+KB3060716
+KB3068708
+KB3071756
+KB3080149
+KB3088195
+KB3101746
+KB3121212
+KB3126587
+KB3126593
+KB3140410
+KB3146706
+KB3147071
+KB3153171
+
+Reply
