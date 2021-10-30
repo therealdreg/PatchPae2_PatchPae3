@@ -1,5 +1,7 @@
 PatchPae2 by wj32 + PatchPae3 evgen_b MOD
 
+Plese, consider make a donation: https://github.com/sponsors/therealdreg
+
 Executable releases:
 
 PatchPae3: PatchPAE3_2018_07_20.zip
